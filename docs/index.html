@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive research project on the Digital Family Card and welfare eligibility in Kazakhstan.">
+  <title>Scored for Support</title>
+  <link rel="stylesheet" href="./static/site.css">
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="shell header-row">
+      <a class="brand" href="./" aria-label="Scored for Support home"><span class="brand-mark" aria-hidden="true"><b>B</b><b>C</b></span> Scored for Support</a>
+      <button class="menu-button" type="button" aria-controls="site-nav" aria-expanded="false">Menu</button>
+      <nav id="site-nav" aria-label="Main navigation">
+        
+        <a href="#problem">Problem</a>
+        
+        <a href="#data">Data</a>
+        
+        <a href="#research">Research</a>
+        
+        <a href="#solution">Solution</a>
+        
+        <a href="#verdict">Verdict</a>
+        
+        <a href="./methods/" >Methods</a>
+      </nav>
+    </div>
+    <div class="progress-track" aria-hidden="true"><div id="reading-progress"></div></div>
+  </header>
+  <main id="main" tabindex="-1">
+<section class="hero">
+  <div class="shell hero-grid">
+    <div>
+      <p class="eyebrow"><span></span> Kazakhstan · Social policy</p>
+      <h1>Who does Kazakhstan’s welfare algorithm <em>miss?</em></h1>
+      <div class="hero-copy"><p>October 2026. Families across Kazakhstan began receiving notices: from 1 January, some of the benefits they count on (the payment when a baby is born, the monthly childcare allowance) would depend on a letter of the alphabet. A, B, C, D or E. The letter is not chosen by a social worker. It is calculated by the Digital Family Card, a government system that reads more than six million families' records from state databases and turns them into a score.</p>
+<p>A family in category A or B loses the listed benefits. A family that earns one tenge more than a line on a table can jump from C to B. A family whose old car is still registered, or whose income is paid in cash, may be scored as richer or poorer than it really is.</p>
+<p>This site asks a simple question with a complicated answer: who does the algorithm miss, and can AI help Kazakhstan see them?</p></div>
+      <div class="actions"><a class="button primary" href="#simulator">Score a family yourself</a><a class="button secondary" href="#verdict">Skip to the verdict</a></div>
+    </div>
+    <aside class="hero-card" aria-labelledby="sample-title">
+      <div class="hero-card-header"><h2 id="sample-title">Example household</h2><span>DFC / SCORECARD</span></div>
+      <div class="hero-result"><div class="category-tile" id="hero-category">B</div><div><div class="display-number" id="hero-score">870</div><span class="meta">POINTS · CATEGORY B</span></div></div>
+      <dl class="hero-points" id="hero-points"><div><dt>Income per person</dt><dd>+620</dd></div><div><dt>Two working members</dt><dd>+300</dd></div><div><dt>One child</dt><dd>−50</dd></div></dl>
+      
+<div class="score-scale" data-scale="hero" aria-label="Score categories from E to A">
+  <div class="scale-bands" aria-hidden="true"><span>E</span><span>D</span><span>C</span><span>B</span><span>A</span></div>
+  <div class="scale-marker" aria-hidden="true"></div>
+</div>
+
+      <p class="score-note">A change in income can move this family from B to C.</p>
+      <a class="text-link" href="#cliff">Explore the threshold</a>
+    </aside>
+  </div>
+  <div class="shell hero-source"><p>Facts used: notices to A/B recipients from 1 October 2026 (<a class="citation" href="./methods/#bizmedia-kz-2026">Bizmedia.kz, 2026</a>); five categories and A/B exclusion (<a class="citation" href="./methods/#digital-business-2026">Digital Business, 2026</a>); 6.2 million families in the DFC (<a class="citation" href="./methods/#cdb-kz-2026">Ministry of Labour via CDB.kz, 2026</a>); birth and childcare benefits on the list (<a class="citation" href="./methods/#bizmedia-kz-2026">Resolution No. 870, via Bizmedia.kz, 2026</a>). The 'one tenge' jump is Figure 1.</p></div>
+</section>
+<div class="arc"><nav class="shell arc-links" aria-label="Research sections">
+  <a class="arc-link" href="#problem"><span>01</span>Problem</a><a class="arc-link" href="#data"><span>02</span>Background &amp; data</a><a class="arc-link" href="#research"><span>03</span>Research</a><a class="arc-link" href="#solution"><span>04</span>Solution &amp; costs</a><a class="arc-link" href="#verdict"><span>05</span>Verdict</a>
+</nav></div>
+
+<section class="chapter shell" id="problem">
+  <header class="chapter-heading"><p class="eyebrow">01 / The problem</p><h2>A score now decides who is needy</h2></header>
+  <div class="stat-grid">
+    <article class="stat"><div>6.2M</div><h3>families in the Digital Family Card</h3><p><a href="./methods/#cdb-kz-2026">Ministry of Labour via CDB.kz</a></p></article>
+  
+    <article class="stat"><div>≈980K</div><h3>families with no official income in 2022</h3><p><a href="./methods/#undp-kazakhstan-n-d">UNDP Kazakhstan</a></p></article>
+  
+    <article class="stat"><div>₸700bn</div><h3>projected 2027 savings · about 0.35% of GDP</h3><p><a href="./methods/#zakon-kz-2026b">Zakon.kz, 2026b</a></p></article>
+  </div>
+  <div class="split-content"><div class="prose"><p>From 1 January 2027, Kazakhstan will grant a group of state benefits according to a family's "level of social well-being" rather than its social status alone. Government Resolution No. 870 of 5 October 2026 lists ten benefits affected, among them the one-time birth benefit and the monthly childcare benefit for children under one and a half (<a class="citation" href="./methods/#bizmedia-kz-2026">Bizmedia.kz, 2026</a>). The Ministry of Labour describes the wider change as 14 of the 36 payments funded from the national budget (<a class="citation" href="./methods/#bizmedia-kz-2026">Bizmedia.kz, 2026</a>; <a class="citation" href="./methods/#finance-kz-2026">Finance.kz, 2026</a>). Other outlets report 39.</p>
+<p>The level of well-being is not assessed by a caseworker. The Digital Family Card (DFC) assigns it automatically from government databases, sorting every family into one of five categories, from A (high well-being) to E (economically and socially vulnerable). Families in categories A and B, with 730 points or more, lose the right to the listed benefits (<a class="citation" href="./methods/#digital-business-2026">Digital Business, 2026</a>). The DFC already holds records on 20.6 million citizens grouped into 6.2 million families (<a class="citation" href="./methods/#cdb-kz-2026">Ministry of Labour via CDB.kz, 2026</a>).</p>
+<p>The government's stated aim is fairness and savings. Prime Minister Olzhas Bektenov told the National Kurultai that wealthier people should rely on themselves, and that the new principle would save 700 billion tenge in 2027 and about 2.5 trillion over three years (<a class="citation" href="./methods/#zakon-kz-2026b">Zakon.kz, 2026b</a>). Against the forecast 2027 nominal GDP of 199.3 trillion tenge (<a class="citation" href="./methods/#government-of-kazakhstan-2026">Government of Kazakhstan, 2026</a>), 700 billion is about 0.35% of GDP: a real saving, but one the government says it will redirect to other priorities, not to debt reduction.</p><h3>Who is affected, and how it is changing</h3>
+<ul><li>Families near the B threshold. The score adds points in steps, so a small rise in income can move a family across the line (Section 2, Figure 1).</li><li>Families the databases cannot see clearly. UNDP, using Ministry data from 2022, reported that more than 980,000 of 5.9 million families had no official income at all (<a class="citation" href="./methods/#undp-kazakhstan-n-d">UNDP Kazakhstan, n.d.</a>). Informal earnings are invisible to a registry.</li><li>Families with outdated records. A car sold but still registered, or a relative who moved away, can change a score. In October 2026 the Minister approved new rules on the completeness and accuracy of DFC data, which shows the government sees this risk too (<a class="citation" href="./methods/#zakon-kz-2026c">Zakon.kz, 2026c</a>).</li><li>Everyone, because the rule keeps moving. The methodology was approved in 2023, amended in June 2026, and revised again after the Minister's announcement on 29 October 2026 (<a class="citation" href="./methods/#informburo-kz-2026b">Informburo.kz, 2026b</a>).</li></ul></div>
+    <aside class="question prose"><h3>The social-science question</h3>
+<p>James Scott (<a class="citation" href="./methods/#scott-1998">1998</a>) argued that modern states govern what they can make "legible": what they can count, map and record. The DFC is a striking case. It lets the state see millions of families at once, but only through the records it holds. The question inside this policy is therefore about power and institutions as much as money: when eligibility is decided by what state databases can see, who becomes invisible or misread, and can citizens contest a number they are never shown?</p>
+<p>Kazakhstan's own Law on Artificial Intelligence, in force since January 2026, gives people the right to be told when decisions about them are made with AI and to object (<a class="citation" href="./methods/#legal500-2025">Legal500, 2025</a>; <a class="citation" href="./methods/#astana-times-2025">Astana Times, 2025</a>). Whether a points-based scoring rule counts as such a system is unsettled, which is part of the problem.</p></aside></div>
+</section>
+
+<section class="chapter data-section" id="data"><div class="shell">
+  <header class="chapter-heading"><p class="eyebrow">02 / Background & data</p><h2>What the state measures</h2></header>
+  <div class="prose reading-width"><h3>What the state measures, and what the numbers show</h3>
+<p>The DFC applies the Methodology for Determining the Social Well-being of a Family (Person), Ministry of Labour Order No. 267 of 29 June 2023, developed with UNDP (<a class="citation" href="./methods/#zakon-uchet-kz-2023">Zakon.uchet.kz, 2023</a>; <a class="citation" href="./methods/#ministry-of-labour-and-social-protection-of-the-population-2023">Ministry of Labour, 2023</a>). UNDP and ITU describe it as based on the Alkire–Foster multidimensional poverty method (<a class="citation" href="./methods/#itu-n-d">ITU, n.d.</a>). Press reports describe 59 indicators across eight areas: income and loans, transport, employment, social protection, health, education, housing and agriculture (<a class="citation" href="./methods/#azattyq-ryhy-2026b">Azattyq Rýhy, 2026b</a>; <a class="citation" href="./methods/#informburo-kz-2026a">Informburo.kz, 2026a</a>). Points are added or subtracted for each, and the total sets the category.</p></div>
+  <div class="panel score-demo">
+    <div><h3>How the score works</h3><p>Income, work, children and other recorded circumstances each add or subtract points.</p>
+      <button class="button secondary" type="button" id="replay-score">Replay scoring example</button></div>
+    <div><div class="tokens" id="score-tokens"><span>Income <b>+620</b></span><span>Work <b>+300</b></span><span>Child <b>−50</b></span><span>Loan <b>−50</b></span></div>
+<div class="score-scale" data-scale="demo" aria-label="Score categories from E to A">
+  <div class="scale-bands" aria-hidden="true"><span>E</span><span>D</span><span>C</span><span>B</span><span>A</span></div>
+  <div class="scale-marker" aria-hidden="true"></div>
+</div>
+<p class="meta" id="demo-result">820 points · B</p></div>
+  </div>
+  <details class="disclosure prose"><summary>The reported scoring table</summary><p>The full points table is in the legal text, which I could not open (see "What I need from you"). The table below collects what the Ministry and the press have published, with how far each item can be trusted.</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Research table"><table><thead><tr><th scope="col">Indicator</th><th scope="col">Points reported</th><th scope="col">Source</th><th scope="col">Rating</th></tr></thead><tbody><tr><th scope="row">Category thresholds</th><td>A ≥ 1,800 · B 730–1,799 · C −30 to 729 · D −460 to −29 · E ≤ −459</td><td>Digital Business (2026), citing Ministry document; same A/B cut-offs in 2023 draft (<a class="citation" href="./methods/#informburo-kz-2023">Informburo.kz, 2023</a>)</td><td>B</td></tr><tr><th scope="row">Income per person (in 2026 subsistence minimums, SM = 50,851 ₸)</th><td>Below poverty line 40 · poverty line–1 SM 100 · 1–2 SM 170 · 2–3 SM 280 · 3–4 SM 400 · ≥4 SM 620</td><td>Finratings (<a class="citation" href="./methods/#finratings-kz-2026">2026</a>); top band (620 at ≥4 SM) confirmed by Azattyq Rýhy (2026a)</td><td>C / D</td></tr><tr><th scope="row">Working members</th><td>One +150 · two or more +300</td><td>Finratings (<a class="citation" href="./methods/#finratings-kz-2026">2026</a>) only</td><td>D</td></tr><tr><th scope="row">Children</th><td>−50 per child, to −200 for four or more</td><td>Finratings (<a class="citation" href="./methods/#finratings-kz-2026">2026</a>) only D</td><td>D</td></tr><tr><th scope="row">Loans</th><td>Active loan −50; overdue &gt; 90 days and &gt; 1,000 ₸: −250 (one adult), −500 (all adults)</td><td>Overdue rule: June 2026 amendment (<a class="citation" href="./methods/#zakon-kz-2026a">Zakon.kz, 2026a</a>). Active loan: Azattyq Rýhy (2026a), Finratings (<a class="citation" href="./methods/#finratings-kz-2026">2026</a>)</td><td>B / C</td></tr><tr><th scope="row">Car, housing</th><td>No car −50 · no own housing −200; cars over 20 years old ignored</td><td>Azattyq Rýhy (2026a); Informburo.kz (2026b)</td><td>C</td></tr><tr><th scope="row">Not counted as income</th><td>State benefits, alimony, housing aid, birth payments, charity, Otbasy Bank housing savings</td><td>Ministry of Labour via Informburo.kz (2026b)</td><td>B</td></tr></tbody></table></div>
+<p>Point values come from before the 29 October 2026 revision and may have changed. One outlet reported seven categories rather than five (<a class="citation" href="./methods/#azattyq-ryhy-2026a">Azattyq Rýhy, 2026a</a>); every other source says five.</p></details>
+
+  <figure class="panel chart-card" id="cliff">
+    <h3>Figure 1 · One tenge can change a family's category</h3>
+    <div class="chart-toolbar">
+      <div><label for="archetype">Household example</label><select id="archetype"><option value="reference">Two earners · one child</option><option value="noChildren">Two earners · no children</option><option value="oneEarner">One earner · one child</option></select></div>
+      <output id="cliff-status" class="result-pill" aria-live="polite">650 points · C</output>
+    </div>
+    <canvas id="cliff-chart" aria-hidden="true"></canvas>
+    <div class="range-control"><label for="chart-income">Monthly income per person <output id="chart-income-value" for="chart-income"></output></label><input id="chart-income" type="range">
+    <div class="range-ends"><span>₸0</span><span id="income-max"></span></div></div>
+    <div class="chart-toolbar"><div class="small-actions"><button type="button" id="below-cliff">₸1 below the threshold</button><button type="button" id="at-cliff">At the threshold</button></div><p id="benefit-status" class="benefit-status"></p></div>
+    <figcaption class="prose"><p>Figure 1. Score of a family of three (two earners, one child) at different per-person incomes, using the points reported above. Own calculation. Archetype, not a real family. Source of rules: Finratings (<a class="citation" href="./methods/#finratings-kz-2026">2026</a>), Azattyq Rýhy (2026a), Digital Business (2026). Subsistence minimum: Kapital.kz (2025).</p><p id="cliff-summary">For the reference family, the score jumps from 650 to 870 at ₸203,404 per person.</p></figcaption>
+    <details class="disclosure"><summary>Show chart data</summary><div class="table-wrap" id="cliff-table"></div></details>
+  </figure>
+  <div class="prose reading-width"><p>The rule works in steps. For this family, every income band below four subsistence minimums leaves them in category C. Cross 203,404 tenge per person and their income points jump from 400 to 620, the score rises from 650 to 870, and the family moves into B. In 2026 that would have cost it the birth benefit of 164,350 tenge for a new child (<a class="citation" href="./methods/#nur-kz-2026">NUR.kz, 2026</a>). Economists call this a notch: a small gain in income produces a large loss in support. The rule also counts income per person without any adjustment for household size, which treats a family of six like six single people.</p></div>
+
+  <section class="simulator panel" id="simulator" aria-labelledby="simulator-title">
+    <header><p class="eyebrow">Interactive scorecard</p><h3 id="simulator-title">Score a family yourself</h3>
+      <p class="notice">Simulation of the reported rule only. Unpublished indicators, including property and health, are left out. For research use only.</p></header>
+    <noscript><p>The calculator and chart controls require JavaScript.</p></noscript>
+    <div class="sim-grid">
+      <form id="family-form">
+        
+<fieldset class="choices"><legend>Income per person</legend><div>
+  
+  <label><input type="radio" name="income" value="0" ><span>No income</span></label>
+  
+  <label><input type="radio" name="income" value="1" ><span>Below poverty line</span></label>
+  
+  <label><input type="radio" name="income" value="2" ><span>Poverty line to 1 SM</span></label>
+  
+  <label><input type="radio" name="income" value="3" ><span>1–2 SM</span></label>
+  
+  <label><input type="radio" name="income" value="4" ><span>2–3 SM</span></label>
+  
+  <label><input type="radio" name="income" value="5" checked><span>3–4 SM</span></label>
+  
+  <label><input type="radio" name="income" value="6" ><span>4 SM or more</span></label>
+  
+</div></fieldset>
+
+        
+<fieldset class="choices"><legend>Working members</legend><div>
+  
+  <label><input type="radio" name="workers" value="0" ><span>0</span></label>
+  
+  <label><input type="radio" name="workers" value="1" ><span>1</span></label>
+  
+  <label><input type="radio" name="workers" value="2+" checked><span>2+</span></label>
+  
+</div></fieldset>
+
+        
+<fieldset class="choices"><legend>Children</legend><div>
+  
+  <label><input type="radio" name="children" value="0" ><span>0</span></label>
+  
+  <label><input type="radio" name="children" value="1" checked><span>1</span></label>
+  
+  <label><input type="radio" name="children" value="2" ><span>2</span></label>
+  
+  <label><input type="radio" name="children" value="3" ><span>3</span></label>
+  
+  <label><input type="radio" name="children" value="4+" ><span>4+</span></label>
+  
+</div></fieldset>
+
+        
+<fieldset class="choices"><legend>Active loan</legend><div>
+  
+  <label><input type="radio" name="loan" value="0" checked><span>No</span></label>
+  
+  <label><input type="radio" name="loan" value="1" ><span>Yes</span></label>
+  
+</div></fieldset>
+
+        
+<fieldset class="choices"><legend>Debt over 90 days and above ₸1,000</legend><div>
+  
+  <label><input type="radio" name="overdue" value="none" checked><span>None</span></label>
+  
+  <label><input type="radio" name="overdue" value="one" ><span>One adult</span></label>
+  
+  <label><input type="radio" name="overdue" value="all" ><span>All adults</span></label>
+  
+</div></fieldset>
+
+        
+<fieldset class="choices"><legend>Car ownership</legend><div>
+  
+  <label><input type="radio" name="car" value="1" checked><span>Has a car</span></label>
+  
+  <label><input type="radio" name="car" value="0" ><span>No car</span></label>
+  
+</div></fieldset>
+
+        
+<fieldset class="choices"><legend>Housing</legend><div>
+  
+  <label><input type="radio" name="housing" value="1" checked><span>Owns housing</span></label>
+  
+  <label><input type="radio" name="housing" value="0" ><span>No own housing</span></label>
+  
+</div></fieldset>
+
+      </form>
+      <div class="sim-result">
+        <div class="hero-result" aria-live="polite" aria-atomic="true"><div class="category-tile cool" id="sim-category">C</div><div><div class="display-number" id="sim-score">650</div><span class="meta">ESTIMATED POINTS</span></div></div>
+        
+<div class="score-scale" data-scale="sim" aria-label="Score categories from E to A">
+  <div class="scale-bands" aria-hidden="true"><span>E</span><span>D</span><span>C</span><span>B</span><span>A</span></div>
+  <div class="scale-marker" aria-hidden="true"></div>
+</div>
+
+        <p class="sim-meaning" id="sim-meaning"></p>
+        <dl class="hero-points" id="sim-points"></dl>
+        <div class="small-actions"><button class="button secondary" type="button" id="share-family">Share this family</button><button type="reset" form="family-form">Reset</button></div>
+        <label for="share-url" id="share-label" hidden>Scenario link<input id="share-url" type="url" readonly></label>
+        <p id="share-status" role="status"></p>
+      </div>
+    </div>
+    <p class="source">Ministry methodology as reported by Digital Business, Finratings, Azattyq Rýhy, Informburo, Zakon.kz (2026). To be checked against Order No. 267 as amended. <a href="./methods/#references">Sources</a></p>
+  </section>
+
+  <figure class="panel chart-card" id="inflation">
+    <h3>Figure 2 · Benefits are losing value to inflation</h3>
+    <div class="chart-toolbar"><div><label for="price-view">Display basis</label><select id="price-view"><option value="2020">December 2020 prices</option><option value="2026">January 2026 prices</option></select></div>
+    <div class="chart-key"><span class="nominal-key">Nominal</span><span class="real-key" id="real-key">Real · 2020 prices</span></div></div>
+    <canvas id="benefit-chart" aria-hidden="true"></canvas>
+    <div class="range-control"><label for="inflation-rate">2026 inflation assumption <output id="inflation-value" for="inflation-rate">10%</output></label><input type="range" id="inflation-rate" min="0" max="20" value="10"><div class="range-ends"><span>0%</span><span>20%</span></div></div>
+    <p class="benefit-status" id="projection" aria-live="polite"></p>
+    <figcaption class="prose"><p>Figure 2. One-time birth benefit for a first to third child, nominal and in December-2020 prices. Own calculation. Benefit = 38 × MRP (MRP: CDB.kz, n.d.; <a class="citation" href="./methods/#zakon-kz-2025">Zakon.kz, 2025</a>). Prices: December-on-December CPI, Bureau of National Statistics (<a class="citation" href="./methods/#bureau-of-national-statistics-of-kazakhstan-2024">2024</a>, <a class="citation" href="./methods/#bureau-of-national-statistics-of-kazakhstan-2026">2026</a>).</p><p>The January 2026 benefit was ₸164,350, equivalent to ₸94,116 in December 2020 prices.</p></figcaption>
+    <details class="disclosure"><summary>Show chart data</summary><div class="table-wrap" id="benefit-table"></div></details>
+  </figure>
+  <div class="prose reading-width"><p>Most of these benefits are set in monthly calculation indices (MRP). The birth benefit is 38 MRP (<a class="citation" href="./methods/#nur-kz-2026">NUR.kz, 2026</a>). Between January 2021 and January 2026 the MRP rose 48%, from 2,917 to 4,325 tenge. Over the same five years consumer prices rose about 75%: 8.4% in 2021, 20.3% in 2022, 9.8% in 2023, 8.6% in 2024 and 12.3% in 2025 (Bureau of National Statistics, 2024, 2026). In real terms the benefit fell from about 110,800 to 94,100 tenge in 2020 prices, a loss of about 15%. So while the reform debates who should get support, the support itself has been shrinking for those who keep it.</p>
+<p>Method note: January benefit values are deflated by the December-on-December CPI of the previous year. The mid-2022 MRP increase for benefits (3,180 ₸ from April) is not shown; including it would not change the trend.</p></div>
+  <h3 class="feature-heading">Where the data is silent</h3>
+  <div class="gap-grid">
+    <details class="gap-card"><summary>The rule itself</summary><div class="prose">Sources disagree on basic facts: 30 or more than 120 source databases (<a class="citation" href="./methods/#kapital-kz-2026">Kapital.kz, 2026</a>; <a class="citation" href="./methods/#itu-2025">ITU, 2025</a>); 59, 80 or more than 100 indicators (<a class="citation" href="./methods/#azattyq-ryhy-2026b">Azattyq Rýhy, 2026b</a>; <a class="citation" href="./methods/#undp-kazakhstan-n-d">UNDP Kazakhstan, n.d.</a>; <a class="citation" href="./methods/#itu-n-d">ITU, n.d.</a>); 10, 14 or 39 benefits; five or seven categories. A citizen cannot easily find the full, current points table.</div></details>
+  
+    <details class="gap-card"><summary>Informal income</summary><div class="prose">Families paid in cash, or working abroad, look poorer or richer than they are depending on what the registries record.</div></details>
+  
+    <details class="gap-card"><summary>Data errors</summary><div class="prose">No public figures exist on how many DFC records are wrong, how many families have asked for a correction, or how many appeals succeeded.</div></details>
+  
+    <details class="gap-card"><summary>Error rates</summary><div class="prose">The government has published the savings it expects, but not an estimate of how many needy families might be scored A or B. That figure needs survey microdata (the Household Budget Survey) linked to DFC categories, which is not public.</div></details>
+  
+    <details class="gap-card"><summary>Bank data</summary><div class="prose">From 2027, banks will pass account data on benefit applicants to the state with their consent (<a class="citation" href="./methods/#sputnik-kazakhstan-2026">Sputnik Kazakhstan, 2026</a>). How that data will be weighted is not published.</div></details>
+  </div>
+  <div class="prose reading-width"><h3>How far can the numbers be trusted?</h3>
+<p>Price and MRP data are official and reliable. The scoring rule is reliable in outline (five categories, the A/B cut-off) but uncertain in detail, because the points circulating in the press predate the October 2026 revision. Savings figures are political estimates, not costed projections. Error rates are unknown. That is the gap this project addresses.</p></div>
+</div></section>
+
+<section class="chapter shell" id="research">
+  <header class="chapter-heading"><p class="eyebrow">03 / Current state of research</p><h2>Four ways of studying who gets help</h2><p>Research on deciding who receives social assistance falls into four approaches. Each answers a different question, and each leaves something the others must fill.</p></header>
+  <div class="research-grid"><article class="panel prose"><h3>1. The economics of targeting: every method makes mistakes</h3>
+<p>Economists have long compared ways of targeting the poor. Hanna and Olken (<a class="citation" href="./methods/#hanna-2018">2018</a>) show that means tests and proxy means tests (PMTs) exclude many poor households, and that the gains from targeting must be weighed against those errors and against simpler universal transfers. Testing PMTs in nine African countries, Brown, Ravallion and van de Walle (<a class="citation" href="./methods/#brown-2018">2018</a>) find they filter out the non-poor well but miss many of the poor, especially the poorest; a simple demographic scorecard often does as well. In Indonesia, Alatas et al. (<a class="citation" href="./methods/#alatas-2012">2012</a>) found community-based targeting slightly less accurate than a PMT by consumption measures, but more satisfying to local residents. McBride and Nichols (<a class="citation" href="./methods/#mcbride-2018">2018</a>) show that PMTs built to predict well out of sample, using cross-validation and ensemble methods, perform substantially better. Grosh et al. (<a class="citation" href="./methods/#grosh-2022">2022</a>) summarise the lesson for governments: no single method is best, and every choice trades accuracy against cost, speed and legitimacy.</p>
+<p>What this means for Kazakhstan: the DFC is a kind of PMT built on administrative data. The literature predicts it will make both kinds of error, and that the question is how many and for whom.</p></article><article class="panel prose"><h3>2. Machine learning and new data: better than crude rules, worse than good registries</h3>
+<p>A newer literature uses machine learning (ML) on non-traditional data. In Togo's Novissi programme, which paid COVID-19 relief, ML on mobile-phone and satellite data reduced exclusion errors by 4–21% compared with the geographic targeting options the government considered. It would have increased them by 9–35% compared with a full social registry, which Togo lacked (<a class="citation" href="./methods/#aiken-2022">Aiken et al., 2022</a>). In Afghanistan, ML on phone records identified ultra-poor households nearly as accurately as survey-based consumption measures (<a class="citation" href="./methods/#aiken-2023">Aiken et al., 2023</a>). Comparing Bangladesh and Togo, Aiken et al. (<a class="citation" href="./methods/#aiken-2025">2025</a>) find PMTs most accurate, with algorithms more cost-effective only where many households must be screened on a small budget. Working with governments in Latin America, Noriega-Campero et al. (<a class="citation" href="./methods/#noriega-campero-2020">2020</a>) show ML can improve both accuracy and fairness, but institutions disagreed on what "fair" should mean.</p>
+<p>What this means for Kazakhstan: Kazakhstan already has something close to a full registry. The evidence suggests ML should not replace the DFC but could check it, for example by measuring its errors against survey data.</p></article><article class="panel prose"><h3>3. Access and administrative burden: eligible people still miss out</h3>
+<p>Being eligible is not the same as receiving help. Ko and Moffitt (<a class="citation" href="./methods/#ko-2022">2022</a>) review take-up worldwide and find that information gaps, stigma and administrative barriers leave many eligible people without benefits. Herd and Moynihan (<a class="citation" href="./methods/#herd-2018">2018</a>) call these learning, compliance and psychological costs "administrative burden", and show they fall hardest on those with the least time and resources. New work tests whether AI can lower these costs. In a randomised experiment with Los Angeles caseworkers, accurate chatbot suggestions raised the accuracy of answers on benefit eligibility by 27 percentage points, but wrong suggestions sharply reduced accuracy on questions caseworkers would otherwise have got right (<a class="citation" href="./methods/#gosciak-2026">Gosciak et al., 2026</a>).</p></article><article class="panel prose"><h3>4. Critical and sociotechnical research: who controls the score</h3>
+<p>A fourth approach asks what scoring does to citizens and the state. Eubanks (2018) documents how automated eligibility systems in the United States shifted risk onto poor families. Selbst et al. (<a class="citation" href="./methods/#selbst-2019">2019</a>) warn that fairness cannot be engineered into a model in isolation from the institution that uses it. Scott (<a class="citation" href="./methods/#scott-1998">1998</a>) explains why states simplify people into categories they can administer. Legal cases show the stakes: a Dutch court halted the SyRI welfare-risk system in 2020 for violating the right to private life (<a class="citation" href="./methods/#hague-district-court-2020">Hague District Court, 2020</a>), and Australia's Royal Commission found the Robodebt scheme's automated debts inaccurate and unlawful (<a class="citation" href="./methods/#royal-commission-into-the-robodebt-scheme-2023">Royal Commission into the Robodebt Scheme, 2023</a>).</p></article></div>
+  <div class="prose reading-width regional"><h3>Kazakhstan and the region</h3>
+<p>Evidence on Kazakhstan comes mostly from evaluations by international organisations: UNICEF's evaluation of child and family social protection for 2015–2020, which reports that the number of children among social assistance recipients fell sharply after 2018 reforms (<a class="citation" href="./methods/#unicef-kazakhstan-n-d">UNICEF Kazakhstan, n.d.</a>), and the World Bank's 2024 Poverty and Equity Assessment, prepared with the government's planning agency (<a class="citation" href="./methods/#world-bank-2024">World Bank, 2024</a>). The DFC has won prizes from the World Government Summit and ITU (<a class="citation" href="./methods/#undp-kazakhstan-2024">UNDP Kazakhstan, 2024</a>), but prizes are not evaluations. I found no independent, peer-reviewed study of how accurately the DFC scores families.</p>
+<p class="missing">[MISSING: Kazakhstan-focused academic sources from the NU library.]</p></div>
+  <div class="research-summary"><article class="panel prose"><h4>Known</h4>
+<p>all targeting excludes some of the poor; registries beat ML where they exist; access costs keep eligible people out.</p></article><article class="panel prose"><h4>Contested</h4>
+<p>whether targeting is worth its errors compared with universal benefits, and what fairness means.</p></article><article class="panel prose"><h4>Gap</h4>
+<p>Kazakhstan now uses a nationwide scoring system to remove benefits, yet nobody outside government has measured how often it is wrong, for whom, or whether families can understand and contest it. This project designs the tools to do that.</p></article></div>
+</section>
+
+<section class="chapter data-section" id="solution"><div class="shell">
+  <header class="chapter-heading"><p class="eyebrow">04 / The AI-assisted solution</p><h2>Audit the score, fix its data, explain it to families</h2><p>The proposal does not replace the DFC or let AI decide who receives a benefit. It adds three AI tools around the existing rule. Each targets a different failure: nobody knows how often the score is wrong; wrong records lower scores; families cannot see or contest their score.</p></header>
+  <div class="pipeline" aria-label="Proposed welfare workflow">
+    <div class="pipeline-step">Government databases</div>
+    <details class="pipeline-step tool"><summary>Data-quality flags</summary><p>Flags records that look outdated or wrong before they affect a score</p><p>Ministry caseworkers inside the DFC</p><p>A caseworker confirms every flag; family is told</p></details>
+    <div class="pipeline-step">Scoring rule <span>A–E</span></div>
+    <details class="pipeline-step tool"><summary>Citizen explainer</summary><p>Explains a family&#39;s score in Kazakh or Russian and how to correct or appeal it</p><p>Ministry, through eGov Mobile</p><p>Never decides; one tap to a human officer</p></details>
+    <div class="pipeline-step">Official decides</div>
+    <details class="pipeline-step tool audit"><summary>Independent audit</summary><p>Measures how often the DFC category disagrees with measured poverty, by region and family type</p><p>Supreme Audit Chamber or a university, independent of the Ministry</p><p>Auditors interpret; no individual decisions</p></details>
+  </div>
+  <details class="disclosure prose"><summary>How the proposed tools would work</summary><div class="table-wrap" tabindex="0" role="region" aria-label="Research table"><table><thead><tr><th scope="col"></th><th scope="col">Independent audit</th><th scope="col">Data-quality flags</th><th scope="col">Citizen explainer</th></tr></thead><tbody><tr><th scope="row">What it does</th><td>Measures how often the DFC category disagrees with measured poverty, by region and family type</td><td>Flags records that look outdated or wrong before they affect a score</td><td>Explains a family's score in Kazakh or Russian and how to correct or appeal it</td></tr><tr><th scope="row">AI used</th><td>Supervised ML trained on Household Budget Survey data, compared with DFC categories</td><td>Record linkage and anomaly detection (e.g. a car with no tax or insurance for years)</td><td>Language model answering only from the published rule and the family's own record (retrieval)</td></tr><tr><th scope="row">Run by</th><td>Supreme Audit Chamber or a university, independent of the Ministry</td><td>Ministry caseworkers inside the DFC</td><td>Ministry, through eGov Mobile</td></tr><tr><th scope="row">Reaches</th><td>Parliament, Ministry, public (yearly report)</td><td>Families who may be misclassified</td><td>Every family told its category</td></tr><tr><th scope="row">Human control</th><td>Auditors interpret; no individual decisions</td><td>A caseworker confirms every flag; family is told</td><td>Never decides; one tap to a human officer</td></tr></tbody></table></div>
+<p>Design rule: AI is never on the path that removes a benefit. A data-quality flag can only trigger a review that may restore support. This avoids the pattern of the Dutch SyRI system, where data-linking was used to hunt for fraud.</p>
+<p>The explainer could run on ISSAI KAZ-LLM, the open-source model released by Nazarbayev University's Institute of Smart Systems and AI in December 2024 for Kazakh, Russian and English (<a class="citation" href="./methods/#issai-2024">ISSAI, 2024</a>). A local model keeps citizens' data inside Kazakhstan.</p></details>
+  <div class="prototype-grid">
+    <article class="panel prototype">
+      <p class="eyebrow">Phone</p><h3>Citizen explainer</h3><p class="meta">Prototype · Scripted answers</p>
+      <div class="device phone"><details class="chat-question"><summary>Why is this family in category B?</summary><p>The rule works in steps. For this family, every income band below four subsistence minimums leaves them in category C. Cross 203,404 tenge per person and their income points jump from 400 to 620, the score rises from 650 to 870, and the family moves into</p></details><details class="chat-question"><summary>What if a record is incorrect?</summary><p>A caseworker confirms every flag; family is told.</p></details><details class="chat-question"><summary>Who can I speak to?</summary><p>One tap to a human officer.</p></details></div>
+    </article>
+    <article class="panel prototype">
+      <p class="eyebrow">Caseworker workspace</p><h3>Flag queue</h3><p class="meta">Prototype · Fictional records</p>
+      <div class="device laptop"><details><summary>Vehicle ownership mismatch</summary><p>A fictional household reports a vehicle sale while the registry still lists the vehicle. A caseworker would check the record.</p></details><details><summary>Household roster mismatch</summary><p>A fictional household reports a member moving out. A caseworker would confirm the current household composition.</p></details></div>
+    </article>
+    <article class="panel prototype">
+      <p class="eyebrow">Annual report</p><h3>Independent audit</h3><p class="meta">Prototype · No data yet</p>
+      <div class="device"><table class="matrix"><caption>Audit error matrix</caption><thead><tr><th scope="col">Survey</th><th scope="col">A/B</th><th scope="col">C–E</th></tr></thead><tbody><tr><th scope="row">In poverty</th><td>[x]%</td><td>[x]%</td></tr><tr><th scope="row">Above poverty line</th><td>[x]%</td><td>[x]%</td></tr></tbody></table></div>
+    </article>
+  </div>
+  <h3 class="feature-heading">Real cases this builds on</h3>
+  <div class="case-grid"><article class="panel prose "><h4>Togo · Novissi</h4>
+<p>Deployed nationally to pay COVID-19 relief; independently evaluated in Nature. ML cut exclusion errors by 4–21% against geographic targeting, but did worse than a full registry would have (<a class="citation" href="./methods/#aiken-2022">Aiken et al., 2022</a>). Lesson for Kazakhstan: use ML to audit a registry, not to replace it.</p></article><article class="panel prose "><h4>United Kingdom · GOV.UK Chat</h4>
+<p>In two public pilots over 18 months, more than 10,000 users asked about 26,000 questions on services including benefits. Measured accuracy rose from 76% to 90%; the tool answers only from official guidance, shows source links and warnings, and users asked for a route to a human advisor (<a class="citation" href="./methods/#government-digital-service-2026">Government Digital Service, 2026</a>). Lesson: an explainer must cite its source and hand over to people. Note that these figures are reported by the government team itself.</p></article><article class="panel prose "><h4>Los Angeles</h4>
+<p>A randomised experiment shows accurate chatbots help caseworkers, while wrong ones do real harm (<a class="citation" href="./methods/#gosciak-2026">Gosciak et al., 2026</a>).</p></article><article class="panel prose warning-card"><h4>SyRI and Robodebt</h4>
+<p>SyRI (<a class="citation" href="./methods/#hague-district-court-2020">Hague District Court, 2020</a>) and Robodebt, which issued around 470,000 wrongful debts before it ended in 2020 (<a class="citation" href="./methods/#jurist-2023">Jurist, 2023</a>; Royal Commission, 2023), show what happens when automated welfare decisions lack transparency and human review.</p></article></div>
+  <details class="disclosure prose"><summary>Optional explainer experiment</summary><p>Give a real model (KAZ-LLM, Claude or ChatGPT) the published points rule and ten archetype families whose correct category you have calculated. Ask in Kazakh and Russian: "What category is this family, and why?" Record how many categories and explanations it gets right. [MISSING: optional experiment results.] If it makes mistakes, that is</p></details>
+  <section class="panel bill" aria-labelledby="bill-title">
+    <h3 id="bill-title">The bill</h3>
+    <div class="tab-list" id="bill-tabs" aria-label="Costs and risks" hidden>
+      <button type="button" id="bill-tab-1" data-tab="bill-1">Environmental</button><button type="button" id="bill-tab-2" data-tab="bill-2">Economic</button><button type="button" id="bill-tab-3" data-tab="bill-3">Labor</button><button type="button" id="bill-tab-4" data-tab="bill-4">Governance</button><button type="button" id="bill-tab-5" data-tab="bill-5">Data ethics</button>
+    </div>
+    
+    <div class="bill-panel prose" id="bill-1"><h4>Environmental</h4>
+<p>The audit runs a few times a year on survey-sized data and needs little compute. Data-quality flags run on registry records and are also light. The explainer is the main load: a language model answering questions from up to 6.2 million families, mostly in the months after categories are announced. Kazakhstan's electricity comes largely from coal, so this load has a carbon cost; a smaller local model such as the 8-billion-parameter KAZ-LLM, run in a domestic data centre, would cost far less energy than a 70-billion-parameter one. [Check the coal share with KEGOC or IEA data before publishing.]</p><p class="risk">Risk level · Set by author</p></div>
+    
+    <div class="bill-panel prose" id="bill-2"><h4>Economic</h4>
+<p>Costs are building the tools, hosting, data-sharing agreements, the independent audit team, caseworker time to review flags, and maintenance every time the rule changes. These would be small next to the 700 billion tenge the government expects to save in 2027. Who profits matters: the DFC is run by the state company National Information Technologies with UNDP (<a class="citation" href="./methods/#itu-n-d">ITU, n.d.</a>), and an outsourced AI contract risks vendor lock-in. The cheapest alternative, which AI must beat, is to publish the full points table, staff a review desk and publish appeals statistics.</p><p class="risk">Risk level · Set by author</p></div>
+    
+    <div class="bill-panel prose" id="bill-3"><h4>Labor</h4>
+<p>Caseworkers gain new work: reviewing flags and handling escalations from the explainer. That is a cost, but also the human check the system needs. Hidden labor includes cleaning registry data, translating and testing Kazakh answers, and labelling records to train the flag models. Front-line staff risk deskilling if they defer to the machine; the Los Angeles study shows people follow wrong suggestions too (<a class="citation" href="./methods/#gosciak-2026">Gosciak et al., 2026</a>).</p><p class="risk">Risk level · Set by author</p></div>
+    
+    <div class="bill-panel prose" id="bill-4"><h4>Governance</h4>
+<p>Kazakhstan's Law No. 230-VIII "On Artificial Intelligence", signed on 17 November 2025 and in force since 18 January 2026, sorts AI systems by risk and gives people the right to know about automated processing, to object to it, and to an explanation (<a class="citation" href="./methods/#ey-kazakhstan-2025">EY Kazakhstan, 2025</a>; <a class="citation" href="./methods/#legal500-2025">Legal500, 2025</a>). An AI tool touching welfare eligibility would likely count as high-risk, which points to independent audit. The bigger risk is surveillance creep: adding bank data and AI flags to a database on 20 million people builds capacity that could be used for control rather than support. Control must sit with an independent auditor, with published results.</p><p class="risk">Risk level · Set by author</p></div>
+    
+    <div class="bill-panel prose" id="bill-5"><h4>Data ethics</h4>
+<p>The audit needs survey data linked to DFC categories, which requires a legal basis and strict anonymisation. The flags and the explainer use data the state already holds, but families must be told and able to correct it. Proxy discrimination is a real risk: indicators such as region, housing type or family size can stand in for ethnicity or rural poverty. Every model must report error rates by group.</p><p class="risk">Risk level · Set by author</p></div>
+    
+  </section>
+</div></section>
+
+<section id="verdict" class="chapter verdict"><div class="shell">
+  <header class="chapter-heading"><p class="eyebrow">05 / Verdict</p><h2>Only under conditions</h2></header>
+  <div class="verdict-grid">
+    <article><p class="eyebrow">Independent audit</p><h3>Yes</h3><p>Run independently of the Ministry; results published yearly, including uncertainty.</p></article>
+  
+    <article><p class="eyebrow">Data-quality flags</p><h3>Yes, with review</h3><p>Flags may only restore support; a caseworker confirms each; families are notified.</p></article>
+  
+    <article><p class="eyebrow">Citizen explainer</p><h3>Pilot only</h3><p>Scale up only if a test shows high accuracy in Kazakh and more successful corrections or appeals.</p></article>
+  </div>
+  <div class="closing prose"><p>Kazakhstan should not use AI to decide who is needy; it already has a rule for that. It should use AI to check whether the rule is right and to help people challenge it when it is not. If the government will not publish the points table or allow an independent audit, the honest answer is no: AI would only make an opaque system faster.</p></div>
+  <a class="button light" href="./methods/">Read the methods & sources</a>
+</div></section>
+</main>
+  <footer class="site-footer">
+    <div class="shell footer-row">
+      <div><a class="brand" href="./">Scored for Support</a><p>PLS 419 final project · Kazakhstan</p></div>
+      <nav aria-label="Project information"><a href="./methods/">Methods & sources</a><a href="./about/">AI transparency</a></nav>
+      <p>Research pack dated <time datetime="2026-11-23">23 November 2026</time><br>Rule verification pending</p>
+    </div>
+  </footer>
+  <script type="module" src="./static/site.mjs"></script>
+</body>
+</html>

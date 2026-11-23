@@ -1,0 +1,24 @@
+{
+  "source": "Scored for Support research pack, Section 1",
+  "retrieved": "2026-11-23",
+  "cards": [
+    {
+      "value": "6.2M",
+      "label": "families in the Digital Family Card",
+      "source": "Ministry of Labour via CDB.kz",
+      "ref": "cdb-kz-2026"
+    },
+    {
+      "value": "≈980K",
+      "label": "families with no official income in 2022",
+      "source": "UNDP Kazakhstan",
+      "ref": "undp-kazakhstan-n-d"
+    },
+    {
+      "value": "₸700bn",
+      "label": "projected 2027 savings · about 0.35% of GDP",
+      "source": "Zakon.kz, 2026b",
+      "ref": "zakon-kz-2026b"
+    }
+  ]
+}
