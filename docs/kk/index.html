@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Қазақстандағы Отбасының цифрлық картасы мен әлеуметтік көмекке қол жеткізу туралы интерактивті зерттеу.">
+  <title>Көмекке қойылған балл</title>
+  <link rel="stylesheet" href="../static/site.css">
+<link rel="alternate" hreflang="en" href="../"><link rel="alternate" hreflang="kk" href="./"><link rel="alternate" hreflang="ru" href="../ru/"></head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Негізгі мазмұнға өту</a>
+  <header class="site-header">
+    <div class="shell header-row">
+      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"><b>B</b><b>C</b></span> Көмекке қойылған балл</a>
+      <button class="menu-button" type="button" aria-controls="site-nav" aria-expanded="false">Мәзір</button>
+      <nav id="site-nav" aria-label="Негізгі мәзір">
+        <a href="#problem">Мәселе</a>
+        <a href="#data">Деректер</a>
+        <a href="#research">Зерттеулер</a>
+        <a href="#solution">Шешім</a>
+        <a href="#verdict">Қорытынды</a>
+        <a href="./methods/" >Әдістер</a>
+      </nav>
+      <nav class="language-switch" aria-label="Сайт тілі">
+        <a data-language-link href="../" lang="en" hreflang="en" >English</a>
+        <a data-language-link href="./" lang="kk" hreflang="kk" aria-current="page">Қазақша</a>
+        <a data-language-link href="../ru/" lang="ru" hreflang="ru" >Русский</a>
+      </nav>
+    </div>
+    <div class="progress-track" aria-hidden="true"><div id="reading-progress"></div></div>
+  </header>
+  <main id="main" tabindex="-1"><section class="hero">
+  <div class="shell hero-grid">
+    <div>
+      <p class="eyebrow"><span></span> Қазақстан · Әлеуметтік көмек</p>
+      <h1>Қазақстанның әлеуметтік көмек алгоритмі <em>кімді байқамай қалады?</em></h1>
+      <div class="hero-copy"><p>2026 жылғы қазанда Қазақстандағы отбасыларға хабарламалар келе бастады. 1 қаңтардан бастап бала туу және бала күтімі сияқты кейбір жәрдемақылар A, B, C, D немесе E санатына байланысты болады. Санатты Отбасының цифрлық картасы есептейді. Бұл мемлекеттік жүйе алты миллионнан астам отбасы туралы дерекқорлардағы жазбаларды бір баллға айналдырады.</p>
+<p>A немесе B санатындағы отбасы тізімдегі жәрдемақылардан айырылады. Белгілі бір табыс шегінде бір теңгелік өсім отбасын C санатынан B санатына өткізуі мүмкін. Сатылған, бірақ әлі тіркеуде тұрған көлік немесе қолма-қол төленетін табыс отбасының әл-ауқатын бұрмалап көрсетуі мүмкін.</p>
+<p>Алгоритм кімді байқамай қалады және жасанды интеллект Қазақстанға сол отбасыларды көруге көмектесе ала ма?</p></div>
+      <div class="actions"><a class="button primary" href="#problem">Мәселені оқу</a><a class="button secondary" href="#simulator">Балл калькуляторын ашу</a></div>
+    </div>
+    <aside class="case-file" aria-labelledby="sample-title">
+      <header class="file-header">
+        <p class="eyebrow">Үлгі отбасының ісі</p>
+        <h2 id="sample-title">Бір отбасы, екі нәтиже</h2>
+        <p>Екі жұмыс істейтін ересек · бір бала · бала туу жәрдемақысы</p>
+      </header>
+      <div class="case-comparison">
+        <article class="case-slip below">
+          <h3>Шектен төмен</h3>
+          <dl>
+            <div><dt>Бір адамға шаққандағы айлық табыс</dt><dd class="file-income">203 403 ₸</dd></div>
+            <div class="file-score"><dt class="file-category">C</dt><dd>650 <span>балл</span></dd></div>
+            <div class="file-outcome"><dt>Бала туу жәрдемақысының мысалы</dt><dd>164 350 ₸</dd></div>
+          </dl>
+          <p class="file-stamp">A/B шектеуі қолданылмайды</p>
+          <a class="text-link" href="#cliff" data-income-point="below">Осы мәнді графикте көру</a>
+        </article>
+<p class="case-delta">Адам басына +1 ₸</p>        <article class="case-slip at">
+          <h3>Шекке жеткенде</h3>
+          <dl>
+            <div><dt>Бір адамға шаққандағы айлық табыс</dt><dd class="file-income">203 404 ₸</dd></div>
+            <div class="file-score"><dt class="file-category">B</dt><dd>870 <span>балл</span></dd></div>
+            <div class="file-outcome"><dt>Бала туу жәрдемақысының мысалы</dt><dd>0 ₸</dd></div>
+          </dl>
+          <p class="file-stamp">A/B ережесі бойынша шеттетіледі</p>
+          <a class="text-link" href="#cliff" data-income-point="at">Осы мәнді графикте көру</a>
+        </article>
+      </div>
+      <p class="file-note">Мысалда жарияланған баллдар мен 2026 жылғы жәрдемақы сомасы қолданылған. Нақты төлем басқа талаптарға да байланысты.</p>
+    </aside>
+  </div>
+  <div class="shell hero-source"><p>Дереккөздер: A/B алушыларына 2026 жылғы 1 қазаннан бастап берілген хабарламалар (<a class="citation" href="./methods/#bizmedia-kz-2026">Bizmedia.kz, 2026</a>); бес санат және A/B шектеуі (<a class="citation" href="./methods/#digital-business-2026">Digital Business, 2026</a>); картадағы 6,2 млн отбасы (<a class="citation" href="./methods/#cdb-kz-2026">Ministry of Labour via CDB.kz, 2026</a>); бала туу және күтімі жәрдемақылары (<a class="citation" href="./methods/#bizmedia-kz-2026">Resolution No. 870, via Bizmedia.kz, 2026</a>). Бір теңгелік ауысу 1-суретте көрсетілген.</p></div>
+</section>
+<div class="arc"><nav class="shell arc-links" aria-label="Зерттеу бөлімдері">
+<a class="arc-link" href="#problem"><span>01</span>Мәселе</a><a class="arc-link" href="#data"><span>02</span>Мәнмәтін және деректер</a><a class="arc-link" href="#research"><span>03</span>Зерттеулер</a><a class="arc-link" href="#solution"><span>04</span>Шешім және шығындар</a><a class="arc-link" href="#verdict"><span>05</span>Қорытынды</a></nav></div>
+
+<section class="chapter shell" id="problem">
+  <header class="chapter-heading"><p class="eyebrow">01 / Мәселе</p><h2>Көмекке кім мұқтаж екенін балл анықтайды</h2></header>
+  <div class="issue-lead prose"><p><strong>Мәселе — Қазақстанда отбасыларды автоматты балл арқылы бағалау салдарынан олардың әлеуметтік жәрдемақылардан шет қалуы.</strong> Мемлекеттік жазба немесе есептелген табыстың шағын өзгерісі отбасын A не B санатына өткізіп, оның кейбір төлемге құқығынан айыруы мүмкін.</p></div>
+  <section class="decision-flow" aria-labelledby="chain-title">
+    <h3 id="chain-title">Тізілімдегі жазбадан жәрдемақы шешіміне дейін</h3>
+    <ol>
+      <li><h4>Мемлекеттік жазбалар</h4><p>Табыс, жұмыс, отбасы және тіркелген мүлік</p></li>
+      <li><h4>Отбасы баллы</h4><p>Отбасының цифрлық картасы A–E санатын береді</p></li>
+      <li><h4>Жәрдемақы алу</h4><p>A/B санаты кей төлемдерден айыруы мүмкін</p></li>
+      <li><h4>Түзету немесе шағым</h4><p>Отбасы бастапқы деректерді көріп, дауласа ала ма?</p></li>
+    </ol>
+  </section>
+  <div class="stat-grid">    <article class="stat"><div>6,2 млн</div><h3>Отбасының цифрлық картасына енген отбасы</h3><p><a href="./methods/#cdb-kz-2026">Еңбек министрлігі, CDB.kz арқылы</a></p></article>
+    <article class="stat"><div>≈980 мың</div><h3>2022 жылы ресми табысы болмаған отбасы</h3><p><a href="./methods/#undp-kazakhstan-n-d">БҰҰДБ Қазақстан</a></p></article>
+    <article class="stat"><div>700 млрд ₸</div><h3>2027 жылға болжанған үнем · ЖІӨ-нің шамамен 0,35%-ы</h3><p><a href="./methods/#zakon-kz-2026b">Zakon.kz, 2026b</a></p></article>
+</div>
+  <div class="split-content"><div class="prose"><p>2027 жылғы 1 қаңтардан бастап Қазақстан бірқатар төлемді отбасының «әлеуметтік әл-ауқат деңгейіне» қарай тағайындауды жоспарлап отыр. Баспасөз мәліметінше, Үкіметтің 2026 жылғы 5 қазандағы № 870 қаулысы он төлемді, соның ішінде бала туу және бір жарым жасқа дейінгі бала күтімі жәрдемақыларын қамтиды (<a class="citation" href="./methods/#bizmedia-kz-2026">Bizmedia.kz, 2026</a>). Еңбек министрлігі ауқымды өзгерісті республикалық бюджеттен қаржыланатын 36 төлемнің 14-іне қатысты деп сипаттайды. Басқа хабарларда 39 саны аталады (<a class="citation" href="./methods/#bizmedia-kz-2026">Bizmedia.kz, 2026</a>; <a class="citation" href="./methods/#finance-kz-2026">Finance.kz, 2026</a>).</p>
+<p>Отбасының цифрлық картасы (ОЦК) мемлекеттік дерекқорларға сүйеніп, A (әл-ауқаты жоғары) мен E (әлеуметтік және экономикалық тұрғыдан осал) арасындағы санатты автоматты түрде береді. 730 баллдан басталатын A және B санаттарындағы отбасылар тізімдегі төлемдерден шеттетіледі (<a class="citation" href="./methods/#digital-business-2026">Digital Business, 2026</a>). Картада 6,2 млн отбасыға біріктірілген 20,6 млн адам туралы жазба бар (<a class="citation" href="./methods/#cdb-kz-2026">Ministry of Labour via CDB.kz, 2026</a>).</p>
+<p>Үкімет әділ бөлу мен үнемдеуді мақсат етіп отыр. Премьер-министр Олжас Бектенов 2027 жылы 700 млрд теңге және үш жылда шамамен 2,5 трлн теңге үнемделетінін айтты (<a class="citation" href="./methods/#zakon-kz-2026b">Zakon.kz, 2026b</a>). 2027 жылға болжанған 199,3 трлн теңгелік ЖІӨ-мен салыстырғанда бұл шамамен 0,35%. Үкімет қаражаттың басқа басымдықтарға бағытталатынын мәлімдеді (<a class="citation" href="./methods/#government-of-kazakhstan-2026">Government of Kazakhstan, 2026</a>).</p><h3>Бұл кімге әсер етеді және не өзгеріп жатыр?</h3>
+<ul><li>B шегіне жақын отбасылар. Балл сатылы өсетіндіктен, табыстың шағын артуы отбасын шектен өткізуі мүмкін.</li><li>Мемлекеттік дерекқорларда толық көрінбейтін отбасылар. Министрліктің 2022 жылғы дерегіне сүйенген БҰҰДБ 5,9 млн отбасының 980 мыңнан астамында ресми табыс болмағанын хабарлады (<a class="citation" href="./methods/#undp-kazakhstan-n-d">UNDP Kazakhstan, n.d.</a>). Бейресми табыс тізілімде көрінбеуі мүмкін.</li><li>Жазбалары ескірген отбасылар. Сатылған көлік немесе көшіп кеткен туыс баллды өзгертуі мүмкін. 2026 жылғы қазанда министрлік ОЦК деректерінің толықтығы мен дәлдігі бойынша жаңа қағидаларды бекітті (<a class="citation" href="./methods/#zakon-kz-2026c">Zakon.kz, 2026c</a>).</li><li>Ереже өзгеретіндіктен, қамтылған отбасылардың бәріне әсер етеді. Әдістеме 2023 жылы бекітіліп, 2026 жылғы маусымда өзгертілді және 29 қазандағы хабарландырудан кейін қайта қаралды (<a class="citation" href="./methods/#informburo-kz-2026b">Informburo.kz, 2026b</a>).</li></ul></div>
+    <aside class="question prose"><h3>Әлеуметтік ғылым сұрағы</h3>
+<p><strong>Мемлекеттік тізілімдер кімнің мұқтаж екенін анықтағанда, жетіспейтін немесе ескірген жазбалардың салдарын кім көтереді және баллды көруге, түзетуге немесе даулауға кімнің мүмкіндігі бар?</strong> Бұл әсіресе бейресми табысы бар, тізілім жазбалары ескірген және табысы A/B шегіне жақын отбасыларға маңызды.</p>
+<p>James Scott (<a class="citation" href="./methods/#scott-1998">1998</a>) мемлекеттің санап, сипаттап, тіркей алатын құбылыстарын басқаратынын түсіндіреді. ОЦК миллиондаған отбасын тек қолындағы жазбалар арқылы көрсетеді. Сондықтан мәселе билік пен институттарға қатысты: маңызды деректерді кім таңдайды және отбасы өзіне көрсетілмеген бағамен қалай дауласады?</p>
+<p>Қазақстанның 2026 жылғы қаңтардан қолданыстағы жасанды интеллект туралы заңы шешімде ЖИ қолданылғанын білу және оған қарсылық білдіру құқықтарын көздейді (<a class="citation" href="./methods/#legal500-2025">Legal500, 2025</a>; <a class="citation" href="./methods/#astana-times-2025">Astana Times, 2025</a>). Бұл қағидалардың баллдық әдістемеге қолданылуы ашық сұрақ күйінде.</p></aside></div>
+</section>
+
+<section class="chapter data-section" id="data"><div class="shell">
+  <header class="chapter-heading"><p class="eyebrow">02 / Мәнмәтін және деректер</p><h2>Мемлекет нені өлшейді және сандар нені көрсетеді?</h2></header>
+  <div class="prose reading-width"><p>ОЦК Еңбек министрлігінің 2023 жылғы 29 маусымдағы № 267 бұйрығымен бекітілген, БҰҰДБ-мен бірге әзірленген отбасының (адамның) әлеуметтік әл-ауқатын айқындау әдістемесін қолданады (<a class="citation" href="./methods/#zakon-uchet-kz-2023">Zakon.uchet.kz, 2023</a>; <a class="citation" href="./methods/#ministry-of-labour-and-social-protection-of-the-population-2023">Ministry of Labour, 2023</a>). ITU оны Алкайр–Фостердің көпөлшемді кедейлік әдісіне негізделген деп сипаттайды (<a class="citation" href="./methods/#itu-n-d">ITU, n.d.</a>). Баспасөз сегіз саладағы 59 көрсеткішті атайды: табыс пен несие, көлік, жұмыспен қамту, әлеуметтік қорғау, денсаулық, білім, баспана және ауыл шаруашылығы (<a class="citation" href="./methods/#azattyq-ryhy-2026b">Azattyq Rýhy, 2026b</a>; <a class="citation" href="./methods/#informburo-kz-2026a">Informburo.kz, 2026a</a>). Қосылған және шегерілген баллдардың жиыны санатты анықтайды.</p></div>
+  <div class="panel score-demo">
+    <div><h3>Балл қалай есептеледі?</h3><p>Табыс, жұмыс, балалар және тіркелген өзге жағдайлар баллды арттырады немесе азайтады.</p>
+      <button class="button secondary" type="button" id="replay-score">Есептеу үлгісін қайталау</button></div>
+    <div><div class="tokens" id="score-tokens"><span>Табыс <b>+620</b></span><span>Жұмыс <b>+300</b></span><span>Бала <b>−50</b></span><span>Несие <b>−50</b></span></div><div class="score-scale" data-scale="demo" aria-label="E-ден A-ға дейінгі балл санаттары">
+  <div class="scale-bands" aria-hidden="true"><span>E</span><span>D</span><span>C</span><span>B</span><span>A</span></div>
+  <div class="scale-marker" aria-hidden="true"></div>
+</div>
+<p class="meta" id="demo-result">820 балл · B</p></div>
+  </div>
+  <details class="disclosure prose"><summary>Ереженің жарияланған бөліктері</summary><p>Кестеде министрлік пен баспасөздегі мәліметтер жинақталған. Қолданыстағы толық шкала ресми әдістемемен салыстырылуы керек.</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Зерттеу кестесі"><table><thead><tr><th scope="col">Көрсеткіш</th><th scope="col">Жарияланған баллдар</th><th scope="col">Дереккөз</th><th scope="col">Баға</th></tr></thead><tbody><tr><th scope="row">Санаттардың шегі</th><td>A ≥ 1 800 · B 730–1 799 · C −30-дан 729-ға дейін · D −460-тан −29-ға дейін · E ≤ −459</td><td>Digital Business (2026); 2023 жылғы жобадағы A/B шектері бірдей (<a class="citation" href="./methods/#informburo-kz-2023">Informburo.kz, 2023</a>)</td><td>B</td></tr><tr><th scope="row">Бір адамға шаққандағы табыс (2026 жылғы ең төмен күнкөріс деңгейі, ЕТК = 50 851 ₸)</th><td>Кедейлік шегінен төмен 40 · шектен 1 ЕТК-ге дейін 100 · 1–2 ЕТК 170 · 2–3 ЕТК 280 · 3–4 ЕТК 400 · ≥4 ЕТК 620</td><td>Finratings (<a class="citation" href="./methods/#finratings-kz-2026">2026</a>); жоғарғы аралықты Azattyq Rýhy (2026a) растайды</td><td>C / D</td></tr><tr><th scope="row">Жұмыс істейтін мүшелер</th><td>Бір адам +150 · екі не одан көп +300</td><td>Тек Finratings (<a class="citation" href="./methods/#finratings-kz-2026">2026</a>)</td><td>D</td></tr><tr><th scope="row">Балалар</th><td>Әр балаға −50, төрт және одан көп балаға −200</td><td>Тек Finratings (<a class="citation" href="./methods/#finratings-kz-2026">2026</a>)</td><td>D</td></tr><tr><th scope="row">Несиелер</th><td>Қолданыстағы несие −50; мерзімі 90 күннен асса және қарыз 1 000 ₸-ден жоғары болса: −250 (бір ересек), −500 (барлық ересек)</td><td>Маусым түзетуі (<a class="citation" href="./methods/#zakon-kz-2026a">Zakon.kz, 2026a</a>); қолданыстағы несие: Azattyq Rýhy (2026a), Finratings (<a class="citation" href="./methods/#finratings-kz-2026">2026</a>)</td><td>B / C</td></tr><tr><th scope="row">Көлік пен баспана</th><td>Көлік жоқ −50 · меншікті баспана жоқ −200; 20 жылдан асқан көлік есептелмейді</td><td>Azattyq Rýhy (2026a); Informburo.kz (2026b)</td><td>C</td></tr><tr><th scope="row">Табысқа кірмейді</th><td>Жәрдемақы, алимент, тұрғын үй көмегі, бала туу төлемі, қайырымдылық, Отбасы банкіндегі тұрғын үй жинағы</td><td>Еңбек министрлігі, Informburo.kz (2026b) арқылы</td><td>B</td></tr></tbody></table></div>
+<p>Баллдар 2026 жылғы 29 қазандағы қайта қарауға дейін жарияланған және өзгеруі мүмкін. Бір дереккөз жеті санат, қалғандары бес санат деп көрсетеді (<a class="citation" href="./methods/#azattyq-ryhy-2026a">Azattyq Rýhy, 2026a</a>).</p></details>
+
+  <figure class="panel chart-card" id="cliff">
+    <h3>1-сурет · Бір теңге отбасының санатын өзгерте алады</h3>
+    <div class="chart-toolbar">
+      <div><label for="archetype">Отбасы үлгісі</label><select id="archetype"><option value="reference">Екі жұмыс істейтін адам · бір бала</option><option value="noChildren">Екі жұмыс істейтін адам · бала жоқ</option><option value="oneEarner">Бір жұмыс істейтін адам · бір бала</option></select></div>
+      <output id="cliff-status" class="result-pill" aria-live="polite">650 балл · C</output>
+    </div>
+    <canvas id="cliff-chart" aria-hidden="true"></canvas>
+    <div class="range-control"><label for="chart-income">Бір адамға шаққандағы айлық табыс <output id="chart-income-value" for="chart-income"></output></label><input id="chart-income" type="range">
+    <div class="range-ends"><span>₸0</span><span id="income-max"></span></div></div>
+    <div class="chart-toolbar"><div class="small-actions"><button type="button" id="below-cliff">Шектен 1 ₸ төмен</button><button type="button" id="at-cliff">Шекке жеткенде</button></div><p id="benefit-status" class="benefit-status"></p></div>
+    <figcaption class="prose"><p>1-сурет. Екі жұмыс істейтін ересек және бір баладан тұратын үлгі отбасының әр табыс деңгейіндегі баллы. Жарияланған ережелер бойынша есеп: Finratings (<a class="citation" href="./methods/#finratings-kz-2026">2026</a>), Azattyq Rýhy (2026a), Digital Business (2026). Күнкөріс минимумы: Kapital.kz (2025).</p><p id="cliff-summary"></p></figcaption>
+    <details class="disclosure"><summary>График деректерін көрсету</summary><div class="table-wrap" id="cliff-table"></div></details>
+  </figure>
+  <div class="prose reading-width"><p>Балл сатылы өзгереді. Бір адамға 203 404 теңге болғанда табыс баллы 400-ден 620-ға, жалпы балл 650-ден 870-ке өседі. Отбасы C санатынан B-ға өтеді. 2026 жылғы бала туу жәрдемақысының мөлшері 164 350 теңге болған (<a class="citation" href="./methods/#nur-kz-2026">NUR.kz, 2026</a>). Бұл — шектік әсер: табыстың шағын өсімі қолдаудың елеулі азаюына әкеледі. Есепте табыс отбасы мүшелерінің санына бөлінеді, отбасы мөлшеріне бөлек түзету қолданылмайды.</p></div>
+
+  <section class="simulator panel" id="simulator" aria-labelledby="simulator-title">
+    <header><p class="eyebrow">Интерактивті бағалау парағы</p><h3 id="simulator-title">Отбасының баллын өзіңіз есептеңіз</h3>
+      <p class="notice">Жарияланған баллдарға негізделген зерттеу моделі. Мүлік, денсаулық және өзге көрсеткіштердің жарияланбаған бөлшектері есепке алынбаған.</p></header>
+    <noscript><p>Калькулятор мен графикті басқару үшін JavaScript қажет.</p></noscript>
+    <div class="sim-grid">
+      <form id="family-form">
+        <fieldset class="choices"><legend>Бір адамға шаққандағы табыс</legend><div>
+  <label><input type="radio" name="income" value="0" ><span>Табыс жоқ</span></label>
+  <label><input type="radio" name="income" value="1" ><span>Кедейлік шегінен төмен</span></label>
+  <label><input type="radio" name="income" value="2" ><span>Кедейлік шегінен 1 ЕТК-ге дейін</span></label>
+  <label><input type="radio" name="income" value="3" ><span>1–2 ЕТК</span></label>
+  <label><input type="radio" name="income" value="4" ><span>2–3 ЕТК</span></label>
+  <label><input type="radio" name="income" value="5" checked><span>3–4 ЕТК</span></label>
+  <label><input type="radio" name="income" value="6" ><span>4 ЕТК немесе одан жоғары</span></label>
+</div></fieldset>
+
+        <fieldset class="choices"><legend>Жұмыс істейтін мүшелер</legend><div>
+  <label><input type="radio" name="workers" value="0" ><span>0</span></label>
+  <label><input type="radio" name="workers" value="1" ><span>1</span></label>
+  <label><input type="radio" name="workers" value="2+" checked><span>2+</span></label>
+</div></fieldset>
+
+        <fieldset class="choices"><legend>Балалар</legend><div>
+  <label><input type="radio" name="children" value="0" ><span>0</span></label>
+  <label><input type="radio" name="children" value="1" checked><span>1</span></label>
+  <label><input type="radio" name="children" value="2" ><span>2</span></label>
+  <label><input type="radio" name="children" value="3" ><span>3</span></label>
+  <label><input type="radio" name="children" value="4+" ><span>4+</span></label>
+</div></fieldset>
+
+        <fieldset class="choices"><legend>Өтеліп жатқан несие</legend><div>
+  <label><input type="radio" name="loan" value="0" checked><span>Жоқ</span></label>
+  <label><input type="radio" name="loan" value="1" ><span>Иә</span></label>
+</div></fieldset>
+
+        <fieldset class="choices"><legend>90 күннен асқан және 1 000 ₸-ден жоғары берешек</legend><div>
+  <label><input type="radio" name="overdue" value="none" checked><span>Жоқ</span></label>
+  <label><input type="radio" name="overdue" value="one" ><span>Бір ересек</span></label>
+  <label><input type="radio" name="overdue" value="all" ><span>Барлық ересектер</span></label>
+</div></fieldset>
+
+        <fieldset class="choices"><legend>Көлік иелігі</legend><div>
+  <label><input type="radio" name="car" value="1" checked><span>Көлігі бар</span></label>
+  <label><input type="radio" name="car" value="0" ><span>Көлігі жоқ</span></label>
+</div></fieldset>
+
+        <fieldset class="choices"><legend>Тұрғын үй</legend><div>
+  <label><input type="radio" name="housing" value="1" checked><span>Баспана меншігінде</span></label>
+  <label><input type="radio" name="housing" value="0" ><span>Меншікті баспанасы жоқ</span></label>
+</div></fieldset>
+
+      </form>
+      <div class="sim-result">
+        <div class="hero-result" aria-live="polite" aria-atomic="true"><div class="category-tile cool" id="sim-category">C</div><div><div class="display-number" id="sim-score">650</div><span class="meta">Болжамды балл</span></div></div>
+        <div class="score-scale" data-scale="sim" aria-label="E-ден A-ға дейінгі балл санаттары">
+  <div class="scale-bands" aria-hidden="true"><span>E</span><span>D</span><span>C</span><span>B</span><span>A</span></div>
+  <div class="scale-marker" aria-hidden="true"></div>
+</div>
+
+        <p class="sim-meaning" id="sim-meaning"></p>
+        <dl class="hero-points" id="sim-points"></dl>
+        <div class="small-actions"><button class="button secondary" type="button" id="share-family">Осы үлгімен бөлісу</button><button type="reset" form="family-form">Қалпына келтіру</button></div>
+        <label for="share-url" id="share-label" hidden>Сценарий сілтемесі<input id="share-url" type="url" readonly></label>
+        <p id="share-status" role="status"></p>
+      </div>
+    </div>
+    <p class="source">Балл мәндері баспасөзде жарияланған. Әдістеме ескертпесін қараңыз. <a href="./methods/#references">Дереккөздер</a></p>
+  </section>
+
+  <figure class="panel chart-card" id="inflation">
+    <h3>2-сурет · Инфляция жәрдемақының сатып алу қабілетін төмендетеді</h3>
+    <div class="chart-toolbar"><div><label for="price-view">Баға негізі</label><select id="price-view"><option value="2020">2020 жылғы желтоқсан бағасы</option><option value="2026">2026 жылғы қаңтар бағасы</option></select></div>
+    <div class="chart-key"><span class="nominal-key">Атаулы</span><span class="real-key" id="real-key">Нақты · 2020 бағасы</span></div></div>
+    <canvas id="benefit-chart" aria-hidden="true"></canvas>
+    <div class="range-control"><label for="inflation-rate">2026 жылғы инфляция болжамы <output id="inflation-value" for="inflation-rate">10%</output></label><input type="range" id="inflation-rate" min="0" max="20" value="10"><div class="range-ends"><span>0%</span><span>20%</span></div></div>
+    <p class="benefit-status" id="projection" aria-live="polite"></p>
+    <figcaption class="prose"><p>2-сурет. Бірінші, екінші немесе үшінші балаға берілетін біржолғы жәрдемақы, атаулы және 2020 жылғы желтоқсан бағасымен. Есеп: 38 × АЕК (<a class="citation" href="./methods/#cdb-kz-n-d">CDB.kz, n.d.</a>; <a class="citation" href="./methods/#zakon-kz-2025">Zakon.kz, 2025</a>). Желтоқсаннан желтоқсанға дейінгі инфляция: Bureau of National Statistics (<a class="citation" href="./methods/#bureau-of-national-statistics-of-kazakhstan-2024">2024</a>, <a class="citation" href="./methods/#bureau-of-national-statistics-of-kazakhstan-2026">2026</a>).</p><p>The January 2026 benefit was ₸164,350, equivalent to ₸94,116 in 2020 жылғы желтоқсан бағасы.</p></figcaption>
+    <details class="disclosure"><summary>График деректерін көрсету</summary><div class="table-wrap" id="benefit-table"></div></details>
+  </figure>
+  <div class="prose reading-width"><p>2021 жылғы қаңтардан 2026 жылғы қаңтарға дейін АЕК 48%-ға, 2 917-ден 4 325 теңгеге өсті. Сол кезеңде бағалар шамамен 75%-ға өсті: 2021 жылы 8,4%, 2022 жылы 20,3%, 2023 жылы 9,8%, 2024 жылы 8,6% және 2025 жылы 12,3% (Bureau of National Statistics, 2024, 2026). 38 АЕК мөлшеріндегі жәрдемақы (<a class="citation" href="./methods/#nur-kz-2026">NUR.kz, 2026</a>) 2020 жылғы бағамен шамамен 110 800-ден 94 100 теңгеге азайған. Сатып алу қабілетінің төмендеуі шамамен 15%.</p>
+<p>Әдіс: қаңтардағы төлемдер алдыңғы жылдың соңындағы жинақталған тұтыну бағалары индексіне бөлінді. 2022 жылғы сәуірде АЕК-тің 3 180 ₸-ге өсуі графикке кірмеді.</p></div>
+  <h3 class="feature-heading">Деректер қай жерде үнсіз?</h3>
+  <div class="gap-grid">    <details class="gap-card"><summary>Ереженің өзі</summary><div class="prose">Дереккөздер дерекқорлар саны (<a class="citation" href="./methods/#kapital-kz-2026">Kapital.kz, 2026</a>; <a class="citation" href="./methods/#itu-2025">ITU, 2025</a>), көрсеткіштер (<a class="citation" href="./methods/#azattyq-ryhy-2026b">Azattyq Rýhy, 2026b</a>; <a class="citation" href="./methods/#undp-kazakhstan-n-d">UNDP Kazakhstan, n.d.</a>; <a class="citation" href="./methods/#itu-n-d">ITU, n.d.</a>), төлемдер және санаттар жөнінде әртүрлі мәлімет береді. Отбасыға толық қолданыстағы шкаланы табу қиын.</div></details>
+    <details class="gap-card"><summary>Бейресми табыс</summary><div class="prose">Қолма-қол төлем немесе шетелде жұмыс істеу тізілімдерде толық көрінбеуі мүмкін.</div></details>
+    <details class="gap-card"><summary>Жазба қателері</summary><div class="prose">Жоба материалдарында қате жазбалар, түзету өтініштері және сәтті шағымдар саны туралы ашық дерек жоқ.</div></details>
+    <details class="gap-card"><summary>Қате жіктеу жиілігі</summary><div class="prose">A/B санатына түскен мұқтаж отбасыларды анықтау үшін үй шаруашылығы бюджетінің микродеректерін ОЦК санаттарымен байланыстыру керек. Бұл деректер жарияланбаған.</div></details>
+    <details class="gap-card"><summary>Банк деректері</summary><div class="prose">Баспасөз бойынша, 2027 жылдан банктер өтініш берушілердің шоттары туралы мәліметті олардың келісімімен береді. Олардың баллға әсері белгісіз (<a class="citation" href="./methods/#sputnik-kazakhstan-2026">Sputnik Kazakhstan, 2026</a>).</div></details>
+</div>
+  <div class="prose reading-width"><h3>Сандарға қаншалық сенуге болады?</h3>
+<p>Бағалар мен АЕК қатарлары ресми деректерге сүйенеді. Баспасөздегі кей балл қазан айындағы қайта қараудан ертерек жарияланған және тексерілуі керек. Үнемдеу — үкіметтің болжамы. Қателер жиілігі белгісіз. Жоба осы олқылықты зерттейді.</p></div>
+</div></section>
+
+<section class="chapter shell" id="research">
+  <header class="chapter-heading"><p class="eyebrow">03 / Зерттеулерге шолу</p><h2>Көмекті кім алатынын зерттеудің төрт тәсілі</h2><p>Әлеуметтік көмек алушыларды іріктеу зерттеулерінде төрт тәсіл бар. Әрқайсысының өз сұрағы мен шектеуі бар.</p></header>
+  <div class="research-grid"><article class="panel prose"><h3>1. Нысаналы көмектің экономикасы</h3>
+<p>Тікелей табысты тексеру және жанама белгілерге сүйенген бағалау кей мұқтаж отбасыларды қамтымайды. Нысаналы көмектің ұтысын осы қателермен және әмбебап төлемдермен салыстыру қажет (<a class="citation" href="./methods/#hanna-2018">Hanna and Olken, 2018</a>). Африканың тоғыз елінде жанама бағалау ауқатты отбасыларды ажыратқанымен, көптеген мұқтаж, әсіресе ең кедей отбасыларды өткізіп жіберген. Қарапайым демографиялық шкала жиі сондай нәтиже берген (<a class="citation" href="./methods/#brown-2018">Brown, Ravallion and van de Walle, 2018</a>). Индонезияда жергілікті қауым іріктеуі тұтыну бойынша сәл дәлсіз болды, бірақ тұрғындар оны жақсырақ қабылдады (<a class="citation" href="./methods/#alatas-2012">Alatas et al., 2012</a>). Жаңа деректерде тексеру мен бірнеше модельді біріктіру болжамды жақсартады (<a class="citation" href="./methods/#mcbride-2018">McBride and Nichols, 2018</a>). Дәлдік, құн, жылдамдық және қоғамдық мойындау арасында таңдау қажет (<a class="citation" href="./methods/#grosh-2022">Grosh et al., 2022</a>).</p>
+<p>ОЦК мұқтаждықты әкімшілік деректердегі жанама белгілермен өлшейді. Негізгі сұрақ — қателер қанша және қай отбасыларға әсер етеді?</p></article><article class="panel prose"><h3>2. Машиналық оқыту және жаңа дерек</h3>
+<p>Тогоның Novissi бағдарламасы COVID-19 кезінде көмек көрсету үшін телефон және жерсерік деректерін пайдаланды. Географиялық іріктеумен салыстырғанда шеттету қатесі 4–21% азайды. Толық әлеуметтік тізілім болғанда, соған сүйенген іріктеумен салыстырғанда қате 9–35% жоғары болар еді (<a class="citation" href="./methods/#aiken-2022">Aiken et al., 2022</a>). Ауғанстанда телефон жазбалары аса мұқтаж топтарды тұтыну сауалнамасына жуық дәлдікпен тапты (<a class="citation" href="./methods/#aiken-2023">Aiken et al., 2023</a>). Бангладеш пен Тогоны салыстырған жұмыс жанама бағалаудың дәлірек екенін, ал бюджеті аз жаппай іріктеуде алгоритмнің арзанға түсуі мүмкін екенін көрсетті (<a class="citation" href="./methods/#aiken-2025">Aiken et al., 2025</a>). Латын Америкасында машиналық оқыту дәлдік пен әділдіктің кей өлшемдерін жақсартты, алайда мекемелер әділдікті әртүрлі анықтады (<a class="citation" href="./methods/#noriega-campero-2020">Noriega-Campero et al., 2020</a>).</p>
+<p>Қазақстанда толыққа жақын тізілім бар. Машиналық оқытуды сауалнама деректері арқылы ОЦК қателерін тәуелсіз тексеруге қолдануға болады.</p></article><article class="panel prose"><h3>3. Қолжетімділік және әкімшілік ауыртпалық</h3>
+<p>Жәрдемақы алуға құқылы болу оны алуға кепілдік бермейді. Ақпараттың жетіспеуі, стигма және рәсімдік кедергілер адамдарды тоқтатады (<a class="citation" href="./methods/#ko-2022">Ko and Moffitt, 2022</a>). Ережені үйрену, талапты орындау және психологиялық ауыртпалық уақыт пен ресурсы аз адамдарға қатты әсер етеді (<a class="citation" href="./methods/#herd-2018">Herd and Moynihan, 2018</a>). Лос-Анджелестегі мамандармен жүргізілген тәжірибеде чат-боттың дұрыс кеңестері жәрдемақыға құқық туралы жауаптардың дәлдігін 27 пайыздық тармаққа көтерді. Қате кеңестер мамандар өздері дұрыс шеше алатын сұрақтарда дәлдікті төмендетті (<a class="citation" href="./methods/#gosciak-2026">Gosciak et al., 2026</a>).</p></article><article class="panel prose"><h3>4. Сыни зерттеулер және баллды кім бақылайды?</h3>
+<p>АҚШ-та жәрдемақыны автоматты тағайындау қаупін кедей отбасыларға жүктеді (<a class="citation" href="./methods/#eubanks-2018">Eubanks, 2018</a>). Модельдің әділдігі оны қолданатын институтқа да тәуелді (<a class="citation" href="./methods/#selbst-2019">Selbst et al., 2019</a>). Мемлекет адамдарды басқаруға қолайлы санаттарға бөледі (<a class="citation" href="./methods/#scott-1998">Scott, 1998</a>). Нидерланд соты 2020 жылы жеке өмір құқығын бұзған SyRI жүйесін тоқтатты (<a class="citation" href="./methods/#hague-district-court-2020">Hague District Court, 2020</a>). Австралияның комиссиясы Robodebt автоматты қарыз жүйесін дәлсіз және заңсыз деп тапты (<a class="citation" href="./methods/#royal-commission-into-the-robodebt-scheme-2023">Royal Commission into the Robodebt Scheme, 2023</a>).</p></article></div>
+  <div class="prose reading-width regional"><h3>Қазақстан және өңір</h3>
+<p>Қазақстан бойынша негізгі дәлелдер халықаралық ұйымдардың бағалауынан алынған. ЮНИСЕФ 2018 жылғы реформалардан кейін көмек алушы балалар саны күрт азайғанын хабарлайды (<a class="citation" href="./methods/#unicef-kazakhstan-n-d">UNICEF Kazakhstan, n.d.</a>). Дүниежүзілік банк Қазақстанның жоспарлау агенттігімен бірге 2024 жылғы кедейлік пен теңдік туралы бағалауды дайындады (<a class="citation" href="./methods/#world-bank-2024a">World Bank, 2024a</a>). ОЦК халықаралық марапаттарға ие болды (<a class="citation" href="./methods/#undp-kazakhstan-2024">UNDP Kazakhstan, 2024</a>). Бұл дереккөздер бағалаудың дәлдігін өлшемейді.</p>
+<p>Қазақстандағы эконометриялық зерттеу атаулы көмектің өмір сүру деңгейіне ықпалы шектеулі екенін және әсіресе ауылда бұл көмек туралы ақпараттың аз екенін көрсетті (<a class="citation" href="./methods/#daulieva-2024">Daulieva and Sagynbay, 2024</a>). Мамандармен сұхбат және қызмет көрсету орталықтарындағы бақылау құжат рәсімдеу қиындығын, талаптардың күрделілігін және қызметкер ресурсының тапшылығын анықтады (<a class="citation" href="./methods/#gutova-2026">Gutova et al., 2026</a>). Көрші Өзбекстанда цифрлық тізілім жәрдемақыға құқықты тексеруді басқа мемлекеттік базалармен байланыстырды, бірақ өтініш берушілер әр бағдарламадағы қайталанатын рәсімдерге тап болды (<a class="citation" href="./methods/#world-bank-2024b">World Bank, 2024b</a>). Бұл зерттеулер автоматтандыруды әкімшілік ауыртпалықпен байланыстырады. Қазақстандағы ОЦК-ның қате жіктеу жиілігі ашық сұрақ болып отыр.</p></div>
+  <div class="research-summary"><article class="panel prose"><h4>Белгілі</h4>
+<p>Нысаналы жүйелер мұқтаждардың бір бөлігін қамтымайды. Тізілімдер салыстыруға негіз береді. Көмекке жүгіну шығыны құқығы бар адамдарды да шет қалдырады.</p></article><article class="panel prose"><h4>Даулы</h4>
+<p>Нысаналы төлемнің ұтысы әмбебап төлеммен салыстырғанда қателерді ақтай ма және әділдікті қалай анықтау керек?</p></article><article class="panel prose"><h4>Олқылық</h4>
+<p>ОЦК-ның кімге және қай жерде қате баға беретінін, отбасылар есепті түсініп дауласа алатынын анықтайтын қолжетімді тәуелсіз бағалау жоқ. Жоба соны тексеруге арналған құралдарды ұсынады.</p></article></div>
+</section>
+
+<section class="chapter data-section" id="solution"><div class="shell">
+  <header class="chapter-heading"><p class="eyebrow">04 / Шешім және шығындар</p><h2>Баллды тексеру, деректі түзету және есепті отбасыға түсіндіру</h2><p>Ұсыныс ОЦК-ға үш құрал қосады. Олар үш мәселеге жауап береді: бағалау қатесінің жиілігі белгісіз, жазбалар қате болуы мүмкін, ал отбасы есепті қалай көріп, даулауға болатынын білмеуі мүмкін. Жәрдемақы туралы шешім адамда қалады.</p></header>
+  <div class="pipeline" aria-label="Әлеуметтік көмек рәсімінің ұсынылған сызбасы">
+    <div class="pipeline-step">Мемлекеттік дерекқорлар</div>
+    <details class="pipeline-step tool"><summary>Дерек сапасының белгілері</summary><p>Ескірген не қате болуы ықтимал жазбаларды белгілейді</p><p>ОЦК-да жұмыс істейтін министрлік мамандары</p><p>Маман әр белгіні тексеріп, отбасыға хабарлайды</p></details>
+    <div class="pipeline-step">Балл ережесі <span>A–E</span></div>
+    <details class="pipeline-step tool"><summary>Отбасыға түсіндіру</summary><p>Баллды және оны түзету не даулау жолын қазақша не орысша түсіндіреді</p><p>Министрлік, eGov Mobile арқылы</p><p>Отбасы маманға жүгіне алады, модель шешім қабылдамайды</p></details>
+    <div class="pipeline-step">Шешімді маман қабылдайды</div>
+    <details class="pipeline-step tool audit"><summary>Тәуелсіз аудит</summary><p>ОЦК санатын өңір мен отбасы түрі бойынша өлшенген кедейлікпен салыстырады</p><p>Министрліктен тәуелсіз Жоғары аудиторлық палата немесе университет</p><p>Аудиторлар нәтижені түсіндіреді, жеке шешім қабылдамайды</p></details>
+  </div>
+  <details class="disclosure prose"><summary>Ұсынылған құралдардың жұмыс тәртібі</summary><div class="table-wrap" tabindex="0" role="region" aria-label="Зерттеу кестесі"><table><thead><tr><th scope="col"></th><th scope="col">Тәуелсіз аудит</th><th scope="col">Дерек сапасының белгілері</th><th scope="col">Отбасыға түсіндіру</th></tr></thead><tbody><tr><th scope="row">Не істейді?</th><td>ОЦК санатын өңір мен отбасы түрі бойынша өлшенген кедейлікпен салыстырады</td><td>Ескірген не қате болуы ықтимал жазбаларды белгілейді</td><td>Баллды және оны түзету не даулау жолын қазақша не орысша түсіндіреді</td></tr><tr><th scope="row">Қандай ЖИ?</th><td>Үй шаруашылығы бюджеті сауалнамасымен үйретіліп, ОЦК санатымен салыстырылатын модель</td><td>Жазбаларды сәйкестендіру және ауытқуларды табу, мысалы ұзақ уақыт сақтандырылмаған көлік</td><td>Жарияланған ереже мен отбасының өз жазбасынан жауап іздейтін тілдік модель</td></tr><tr><th scope="row">Кім басқарады?</th><td>Министрліктен тәуелсіз Жоғары аудиторлық палата немесе университет</td><td>ОЦК-да жұмыс істейтін министрлік мамандары</td><td>Министрлік, eGov Mobile арқылы</td></tr><tr><th scope="row">Кімге арналған?</th><td>Парламент, министрлік және жұртшылыққа жылдық есеп</td><td>Қате жіктелуі мүмкін отбасылар</td><td>Санаты хабарланған отбасылар</td></tr><tr><th scope="row">Адамның бақылауы</th><td>Аудиторлар нәтижені түсіндіреді, жеке шешім қабылдамайды</td><td>Маман әр белгіні тексеріп, отбасыға хабарлайды</td><td>Отбасы маманға жүгіне алады, модель шешім қабылдамайды</td></tr></tbody></table></div>
+<p>ЖИ белгісі қолдауды қайтаруы мүмкін тексерісті бастай алады. ЖИ төлемнен айыруға қатыспауы тиіс. Бұл деректерді алаяқтықты іздеу үшін біріктірген Нидерландтың SyRI жүйесінен өзгеше.</p>
+<p>Түсіндіру үшін Назарбаев Университетіндегі Ақылды жүйелер және жасанды интеллект институты 2024 жылғы желтоқсанда жариялаған ISSAI KAZ-LLM ашық моделін қарастыруға болады. Ол қазақ, орыс және ағылшын тілдеріне арналған (<a class="citation" href="./methods/#issai-2024">ISSAI, 2024</a>). Ел ішінде орналастыру деректерді Қазақстанда сақтауға мүмкіндік береді.</p></details>
+  <div class="prototype-grid">
+    <article class="panel prototype">
+      <p class="eyebrow">Телефон</p><h3>Отбасыға түсіндіру</h3><p class="meta">Прототип · Дайын жауаптар</p>
+      <div class="device phone"><details class="chat-question"><summary>Неліктен отбасы B санатында?</summary><p>Бір адамға шаққандағы табыс 203 404 теңгеге жеткенде табыс баллы 400-ден 620-ға, жалпы балл 650-ден 870-ке өседі. Жарияланған ереже бойынша үлгі отбасы C санатынан B санатына өтеді.</p></details><details class="chat-question"><summary>Жазба қате болса не істеуге болады?</summary><p>Маман әр белгіні тексеріп, нәтижесін отбасыға хабарлайды.</p></details><details class="chat-question"><summary>Кіммен сөйлесе аламын?</summary><p>Ұсынылған интерфейс маманмен байланысуға мүмкіндік береді.</p></details></div>
+    </article>
+    <article class="panel prototype">
+      <p class="eyebrow">Маманның жұмыс орны</p><h3>Тексеру кезегі</h3><p class="meta">Прототип · Ойдан шығарылған жазбалар</p>
+      <div class="device laptop"><details><summary>Көлік иесі туралы сәйкессіздік</summary><p>Отбасы көлігін сатқанын хабарлайды, бірақ ол әлі тізілімде тұр. Маман жазбаны тексерер еді.</p></details><details><summary>Отбасы құрамы туралы сәйкессіздік</summary><p>Отбасы бір мүшесінің көшіп кеткенін хабарлайды. Маман отбасының қазіргі құрамын анықтар еді.</p></details></div>
+    </article>
+    <article class="panel prototype">
+      <p class="eyebrow">Жылдық есеп</p><h3>Тәуелсіз аудит</h3><p class="meta">Прототип · Дерек әлі жоқ</p>
+      <div class="device"><table class="matrix"><caption>Аудиттің қателер матрицасы</caption><thead><tr><th scope="col">Сауалнама</th><th scope="col">A/B</th><th scope="col">C–E</th></tr></thead><tbody><tr><th scope="row">Кедейлік жағдайында</th><td>[x]%</td><td>[x]%</td></tr><tr><th scope="row">Кедейлік шегінен жоғары</th><td>[x]%</td><td>[x]%</td></tr></tbody></table></div>
+    </article>
+  </div>
+  <h3 class="feature-heading">Құжатталған мысалдар</h3>
+  <div class="case-grid"><article class="panel prose "><h4>Того · Novissi</h4>
+<p>Бағдарлама COVID-19 кезінде көмек төледі. Nature журналындағы тәуелсіз бағалау шеттету қатесі географиялық іріктеуден 4–21% төмен болғанын көрсетті, бірақ толық тізілім жақсырақ нәтиже берер еді (<a class="citation" href="./methods/#aiken-2022">Aiken et al., 2022</a>). Қазақстан үшін сабақ — машиналық оқытуды тізілімді аудиттеуге қолдану.</p></article><article class="panel prose "><h4>Ұлыбритания · GOV.UK Chat</h4>
+<p>18 айдағы екі ашық пилотта 10 000-нан астам адам мемлекеттік қызметтер, оның ішінде жәрдемақы туралы шамамен 26 000 сұрақ қойды. Жоба тобының дерегінше, дәлдік 76%-дан 90%-ға өскен. Жүйе ресми нұсқаулықтарға сілтеме береді, ал пайдаланушылар маманға өту мүмкіндігін сұрады (<a class="citation" href="./methods/#government-digital-service-2026">Government Digital Service, 2026</a>). Түсіндірме дереккөзді көрсетіп, адамға хабарласу жолын беруі керек.</p></article><article class="panel prose "><h4>Лос-Анджелес</h4>
+<p>Кездейсоқ бөлінген экспериментте дұрыс кеңес мамандарға көмектесті, ал қате кеңес жауап сапасын төмендетті (<a class="citation" href="./methods/#gosciak-2026">Gosciak et al., 2026</a>).</p></article><article class="panel prose warning-card"><h4>SyRI және Robodebt</h4>
+<p>SyRI мен Robodebt ашықтық пен адам бақылауы жетіспегендегі салдарды көрсетеді. Robodebt 2020 жылы тоқтағанға дейін шамамен 470 000 негізсіз қарыз шығарды (<a class="citation" href="./methods/#hague-district-court-2020">Hague District Court, 2020</a>; <a class="citation" href="./methods/#jurist-2023">Jurist, 2023</a>; <a class="citation" href="./methods/#royal-commission-into-the-robodebt-scheme-2023">Royal Commission into the Robodebt Scheme, 2023</a>).</p></article></div>
+  <details class="disclosure prose"><summary>Түсіндіруді қосымша тексеру</summary><p>Ресми шкала тексерілгеннен кейін KAZ-LLM, Claude немесе ChatGPT жүйесіне қолмен есептелген он үлгі беруге болады. Модельдің қазақша және орысша санаттары мен түсіндірмелерін салыстыру керек. [КЕРЕК: қосымша тәжірибе нәтижелері.]</p></details>
+  <section class="panel bill" aria-labelledby="bill-title">
+    <h3 id="bill-title">Шығындар</h3>
+    <div class="tab-list" id="bill-tabs" aria-label="Шығындар мен тәуекелдер" hidden>
+<button type="button" id="bill-tab-1" data-tab="bill-1">Экологиялық</button><button type="button" id="bill-tab-2" data-tab="bill-2">Экономикалық</button><button type="button" id="bill-tab-3" data-tab="bill-3">Еңбек</button><button type="button" id="bill-tab-4" data-tab="bill-4">Басқару</button><button type="button" id="bill-tab-5" data-tab="bill-5">Деректер этикасы</button>    </div>
+    <div class="bill-panel prose" id="bill-1"><h4>Экологиялық</h4>
+<p>Аудит жылына бірнеше рет жүреді. Негізгі есептеу жүктемесі санаттар жарияланғаннан кейінгі түсіндірмелерге түседі. Пилотта мың жауапқа жұмсалған электр энергиясын өлшеп, деректер орталығынан салқындату суы туралы мәлімет сұрау керек. Қазақстанның көмір электрін ескеріп, көмір үлесін тексеру қажет. 8 млрд параметрлі модельді ірі модельмен және дайын мәтіндік түсіндірмемен салыстыруға болады.</p><p class="risk">Тәуекел деңгейі · Автор белгілейді</p></div>
+    <div class="bill-panel prose" id="bill-2"><h4>Экономикалық</h4>
+<p>Шығынға әзірлеу, орналастыру, дерек алмасу, тәуелсіз аудит тобы, маманның уақыты және ереже өзгергенде жаңарту кіреді. Мемлекеттік орган енгізу мен тексеруге төлейді. Мердігер ұзақ мерзімді келісімшартқа ие болса, жүйе соған тәуелді болуы мүмкін. ОЦК-ны БҰҰДБ қатысуымен «Ұлттық ақпараттық технологиялар» мемлекеттік компаниясы жүргізеді (<a class="citation" href="./methods/#itu-n-d">ITU, n.d.</a>). Пилотты толық шкаланы жариялау, тексеру қызметі және шағымдар статистикасымен салыстыру қажет. Смета әзірленбеген.</p><p class="risk">Тәуекел деңгейі · Автор белгілейді</p></div>
+    <div class="bill-panel prose" id="bill-3"><h4>Еңбек</h4>
+<p>Мамандар белгілерді тексереді және түсіндіру құралы бағыттаған адамдарға жауап береді. Көзге көрінбейтін еңбекке тізілімді тазалау, деректі таңбалау, қазақша жауаптарды аудару және тексеру кіреді. Машина кеңесіне шамадан тыс сену маманның дербес бағалау дағдысын әлсіретуі мүмкін (<a class="citation" href="./methods/#gosciak-2026">Gosciak et al., 2026</a>).</p><p class="risk">Тәуекел деңгейі · Автор белгілейді</p></div>
+    <div class="bill-panel prose" id="bill-4"><h4>Басқару</h4>
+<p>Қазақстанның ЖИ туралы № 230-VIII заңы 2025 жылғы 17 қарашада қол қойылып, 2026 жылғы 18 қаңтардан күшіне енді. Шолуларда тәуекел бойынша жіктеу және ақпарат алу, қарсылық білдіру, түсіндірме сұрау құқықтары аталады (<a class="citation" href="./methods/#ey-kazakhstan-2025">EY Kazakhstan, 2025</a>; <a class="citation" href="./methods/#legal500-2025">Legal500, 2025</a>). Осы жүйеге қолданылатын талапты бөлек тексеру қажет. Банк деректерін автоматты белгілермен біріктіру бақылауды кеңейту қаупін арттырады. Деректерді ел ішінде сақтау, бақылау мен есепті тәуелсіз аудиторға беру ұсынылады.</p><p class="risk">Тәуекел деңгейі · Автор белгілейді</p></div>
+    <div class="bill-panel prose" id="bill-5"><h4>Деректер этикасы</h4>
+<p>Аудитке сауалнама мен ОЦК-ның байланыстырылған дерегі, заңды негіз және дербестендіру белгілерін мұқият алып тастау қажет. Отбасыларға жазбалардың қолданылғанын айтып, оларды түзету жолын беру керек. Өңір, тұрғын үй және отбасы мөлшері этносты немесе ауылдық кедейлікті жанама көрсетуі мүмкін. Қателер жиілігін топтар бойынша жариялау ұсынылады.</p><p class="risk">Тәуекел деңгейі · Автор белгілейді</p></div>
+  </section>
+</div></section>
+
+<section id="verdict" class="chapter verdict"><div class="shell">
+  <header class="chapter-heading"><p class="eyebrow">05 / Қорытынды</p><h2>Тек осы шарттармен</h2></header>
+  <div class="verdict-grid">    <article><p class="eyebrow">Тәуелсіз аудит</p><h3>Иә</h3><p>Аудитті министрліктен тәуелсіз өткізіп, белгісіздікті көрсетіп, нәтижелерді жыл сайын жариялау.</p></article>
+    <article><p class="eyebrow">Дерек сапасының белгілері</p><h3>Иә, тексерумен</h3><p>Белгі төлемді қалпына келтіруге ықпал ете алады. Маман әр белгіні тексеріп, отбасыға хабарлайды.</p></article>
+    <article><p class="eyebrow">Отбасыға түсіндіру</p><h3>Тек пилот</h3><p>Тексеру қазақ тіліндегі жоғары дәлдікті және сәтті түзетулер немесе шағымдар санының өсуін көрсетсе ғана кеңейту.</p></article>
+</div>
+  <div class="closing prose"><p>ЖИ есепті тексеруге және отбасыға оны даулауға көмектесуге жарайды. Толық шкаланы жариялау мен тәуелсіз аудит міндетті шарт. Әйтпесе ЖИ түсініксіз жүйенің жұмысын ғана жылдамдатады.</p></div>
+  <a class="button light" href="./methods/">Әдістер мен дереккөздерді оқу</a>
+</div></section>
+</main>
+  <footer class="site-footer">
+    <div class="shell footer-row">
+      <div><a class="brand" href="./">Көмекке қойылған балл</a><p>PLS 419 қорытынды жобасы · Қазақстан</p></div>
+      <nav aria-label="Жоба туралы"><a href="./methods/">Әдістер мен дереккөздер</a><a href="./about/">ЖИ қолдану туралы мәлімдеме</a></nav>
+      <p>Зерттеу жинағының күні <time datetime="2026-11-23">2026 жылғы 23 қараша</time><br>Бағалау ережесі әлі тексерілуде</p>
+    </div>
+  </footer>
+  <script type="application/json" id="site-messages">{"assumed": "\u0411\u043e\u043b\u0436\u0430\u043c: {amount}", "band": "\u0422\u0430\u0431\u044b\u0441 \u0430\u0440\u0430\u043b\u044b\u0493\u044b", "benefitExcluded": "\u0411\u0430\u043b\u0430 \u0442\u0443\u0443 \u0436\u04d9\u0440\u0434\u0435\u043c\u0430\u049b\u044b\u0441\u044b \u043c\u044b\u0441\u0430\u043b\u044b \u00b7 {amount}-\u0434\u0435\u043d 0 \u20b8-\u0433\u0435", "benefitIncluded": "\u0411\u0430\u043b\u0430 \u0442\u0443\u0443 \u0436\u04d9\u0440\u0434\u0435\u043c\u0430\u049b\u044b\u0441\u044b \u043c\u044b\u0441\u0430\u043b\u044b \u00b7 A/B \u0448\u0435\u043a\u0442\u0435\u0443\u0456\u043d\u0435 \u0434\u0435\u0439\u0456\u043d {amount}", "category": "\u0421\u0430\u043d\u0430\u0442", "chartData": "\u0413\u0440\u0430\u0444\u0438\u043a \u0434\u0435\u0440\u0435\u043a\u0442\u0435\u0440\u0456", "cliffSummary": "\u0411\u0456\u0440 \u0430\u0434\u0430\u043c\u0493\u0430 {threshold} \u0431\u043e\u043b\u0493\u0430\u043d\u0434\u0430 \u0431\u0430\u043b\u043b {low}-\u0434\u0435\u043d ({lowCat}) {high}-\u0433\u0435 ({highCat}) \u043a\u04e9\u0442\u0435\u0440\u0456\u043b\u0435\u0434\u0456. \u041d\u04e9\u043b\u0434\u0435\u043d \u0436\u043e\u0493\u0430\u0440\u044b, {minimum}-\u0434\u0435\u043d \u0442\u04e9\u043c\u0435\u043d \u0442\u0430\u0431\u044b\u0441 \u04af\u0448\u0456\u043d \u0435\u043a\u0456 \u0431\u0430\u043b\u043b \u043a\u04e9\u0440\u0441\u0435\u0442\u0456\u043b\u0435\u0434\u0456, \u04e9\u0439\u0442\u043a\u0435\u043d\u0456 \u0436\u043e\u0431\u0430 \u043d\u0430\u049b\u0442\u044b \u043a\u0435\u0434\u0435\u0439\u043b\u0456\u043a \u0448\u0435\u0433\u0456\u043d \u0431\u0435\u0440\u043c\u0435\u0439\u0434\u0456.", "componentCar": "\u041a\u04e9\u043b\u0456\u043a \u0438\u0435\u043b\u0456\u0433\u0456", "componentChildren": "\u0411\u0430\u043b\u0430\u043b\u0430\u0440", "componentDebt": "\u041c\u0435\u0440\u0437\u0456\u043c\u0456 \u04e9\u0442\u043a\u0435\u043d \u0431\u0435\u0440\u0435\u0448\u0435\u043a", "componentHousing": "\u0422\u04b1\u0440\u0493\u044b\u043d \u04af\u0439", "componentIncome": "\u0411\u0456\u0440 \u0430\u0434\u0430\u043c\u0493\u0430 \u0448\u0430\u049b\u049b\u0430\u043d\u0434\u0430\u0493\u044b \u0442\u0430\u0431\u044b\u0441", "componentLoan": "\u04e8\u0442\u0435\u043b\u0456\u043f \u0436\u0430\u0442\u049b\u0430\u043d \u043d\u0435\u0441\u0438\u0435", "componentWork": "\u0416\u04b1\u043c\u044b\u0441 \u0456\u0441\u0442\u0435\u0439\u0442\u0456\u043d\u0434\u0435\u0440", "copy": "\u0411\u0435\u043b\u0433\u0456\u043b\u0435\u043d\u0433\u0435\u043d \u0441\u0456\u043b\u0442\u0435\u043c\u0435\u043d\u0456 \u043a\u04e9\u0448\u0456\u0440\u0456\u04a3\u0456\u0437.", "incomeAmount": "\u0431\u0456\u0440 \u0430\u0434\u0430\u043c\u0493\u0430 {amount} \u0442\u0435\u04a3\u0433\u0435", "incomeBands": ["\u0422\u0430\u0431\u044b\u0441 \u0436\u043e\u049b", "\u041a\u0435\u0434\u0435\u0439\u043b\u0456\u043a \u0448\u0435\u0433\u0456\u043d\u0435\u043d \u0442\u04e9\u043c\u0435\u043d", "\u041a\u0435\u0434\u0435\u0439\u043b\u0456\u043a \u0448\u0435\u0433\u0456\u043d\u0435\u043d 1 \u0415\u0422\u041a-\u0433\u0435 \u0434\u0435\u0439\u0456\u043d", "1\u20132 \u0415\u0422\u041a", "2\u20133 \u0415\u0422\u041a", "3\u20134 \u0415\u0422\u041a", "4 \u0415\u0422\u041a \u043d\u0435\u043c\u0435\u0441\u0435 \u043e\u0434\u0430\u043d \u0436\u043e\u0493\u0430\u0440\u044b"], "january": "\u049a\u0430\u04a3\u0442\u0430\u0440", "loadError": "\u0418\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u0442\u0456 \u0434\u0435\u0440\u0435\u043a\u0442\u0435\u0440 \u0436\u04af\u043a\u0442\u0435\u043b\u043c\u0435\u0434\u0456. \u0411\u0435\u0442\u0442\u0456 \u0436\u0430\u04a3\u0430\u0440\u0442\u044b\u043f \u043a\u04e9\u0440\u0456\u04a3\u0456\u0437.", "nominal": "\u0410\u0442\u0430\u0443\u043b\u044b", "points": "{points} \u0431\u0430\u043b\u043b \u00b7 {categories}", "projectedYear": "{year} \u0436\u044b\u043b\u0493\u044b \u0431\u043e\u043b\u0436\u0430\u043c", "projection": "\u0411\u043e\u043b\u0436\u0430\u043c \u00b7 {year} \u0436\u044b\u043b\u0493\u044b \u049b\u0430\u04a3\u0442\u0430\u0440: \u0438\u043d\u0444\u043b\u044f\u0446\u0438\u044f {rate}% \u0431\u043e\u043b\u044b\u043f, \u0430\u0442\u0430\u0443\u043b\u044b \u0436\u04d9\u0440\u0434\u0435\u043c\u0430\u049b\u044b {nominal} \u0431\u043e\u043b\u044b\u043f \u049b\u0430\u043b\u0441\u0430, {basis} \u0436\u044b\u043b\u0493\u044b \u0431\u0430\u0493\u0430\u043c\u0435\u043d {amount}.", "real": "\u041d\u0430\u049b\u0442\u044b \u00b7 {basis} \u0436\u044b\u043b\u0493\u044b \u0431\u0430\u0493\u0430\u043c\u0435\u043d", "realTable": "\u041d\u0430\u049b\u0442\u044b ({basis} \u0436\u044b\u043b\u0493\u044b \u0431\u0430\u0493\u0430\u043c\u0435\u043d)", "score": "\u0411\u0430\u043b\u043b", "shared": "\u0421\u0446\u0435\u043d\u0430\u0440\u0438\u0439 \u0441\u0456\u043b\u0442\u0435\u043c\u0435\u0441\u0456 \u043a\u04e9\u0448\u0456\u0440\u0456\u043b\u0434\u0456.", "simAmbiguous": "\u0411\u04b1\u043b \u0431\u0430\u043b\u043b \u0436\u0430\u0440\u0438\u044f\u043b\u0430\u043d\u0493\u0430\u043d \u0435\u043a\u0456 \u0441\u0430\u043d\u0430\u0442\u0442\u044b\u04a3 \u049b\u0430\u0431\u0430\u0442\u0442\u0430\u0441\u049b\u0430\u043d \u0430\u0440\u0430\u043b\u044b\u0493\u044b\u043d\u0430 \u0442\u04af\u0441\u0435\u0434\u0456.", "simExcluded": "\u0416\u0430\u0440\u0438\u044f\u043b\u0430\u043d\u0493\u0430\u043d \u0435\u0440\u0435\u0436\u0435 \u0431\u043e\u0439\u044b\u043d\u0448\u0430 A/B \u0441\u0430\u043d\u0430\u0442\u044b\u043d\u0430 \u0442\u04af\u0441\u0435\u0434\u0456.", "simIncluded": "\u0416\u0430\u0440\u0438\u044f\u043b\u0430\u043d\u0493\u0430\u043d \u0435\u0440\u0435\u0436\u0435 \u0431\u043e\u0439\u044b\u043d\u0448\u0430 A/B \u0441\u0430\u043d\u0430\u0442\u044b\u043d\u0430 \u043a\u0456\u0440\u043c\u0435\u0439\u0434\u0456."}</script>
+  <script type="module" src="../static/site.mjs"></script>
+</body>
+</html>

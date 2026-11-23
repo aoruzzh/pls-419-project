@@ -1,5 +1,7 @@
-[MISSING: author’s finalized AI transparency statement.]
+## How AI contributed
 
-## Draft from the research pack
+Claude helped develop the research pack and draft the site copy. Codex generated and checked the static site, built interactive charts and the scoring simulator from the supplied data, translated the site into Kazakh and Russian, and revised the problem statement and design.
 
-I built this project with Claude (Anthropic) as a research collaborator across [number] sessions, logged in my PLS419 project as [pseudonym]. AI helped me critique my first research plan, search for and check sources, calculate Figures 1 and 2, draft section text and the website code prompt, and mock up the site design. I accepted its suggestion to treat the Digital Family Card as an algorithmic scoring system rather than a simple means test, and to reframe AI as an audit and explanation tool. I rejected or changed [e.g. a public-debt focus; specific wording; a source I could not verify]. I verified every number against the sources listed and checked the points table against the official methodology on [date]. All final wording and the verdict are my own.
+## Decisions to document
+
+The site illustrates three proposed uses of AI around the existing score: auditing, checking data quality, and explaining a result. The examples show the reported scoring rule and identify unresolved inputs. The author still needs to record which research and design suggestions they accepted or rejected, why, and which official sources they verified.

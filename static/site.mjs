@@ -1,5 +1,6 @@
-import { categoriesFor, referenceFamily, scoreFamily } from './score.mjs';
+import { categoriesFor, scoreFamily } from './score.mjs';
 import { initBenefit, initCliff } from './charts.mjs';
+import { text } from './locale.mjs';
 
 document.documentElement.classList.add('js');
 const $ = (id) => document.getElementById(id);
@@ -8,6 +9,16 @@ const signed = (number) => number > 0 ? `+${number}` : String(number).replace('-
 
 const menu = document.querySelector('.menu-button');
 const nav = $('site-nav');
+const languageLinks = [...document.querySelectorAll('[data-language-link]')];
+function syncLanguageLinks() {
+  for (const link of languageLinks) {
+    const url = new URL(link.href);
+    url.hash = location.hash;
+    link.href = url.href;
+  }
+}
+syncLanguageLinks();
+window.addEventListener('hashchange', syncLanguageLinks);
 function closeMenu() {
   nav.classList.remove('open');
   menu.setAttribute('aria-expanded', 'false');
@@ -90,21 +101,6 @@ function scalePoint(score, rule, channel) {
 }
 
 function initScoreExamples(rule) {
-  const hero = scoreFamily({ ...referenceFamily, income: '6' }, rule);
-  const display = $('hero-score');
-  scalePoint(hero.points, rule, 'hero');
-  if (!motion.matches) {
-    const start = performance.now();
-    function count(now) {
-      const progress = Math.min(1, (now - start) / 520);
-      display.textContent = Math.round(hero.points * (1 - (1 - progress) ** 3));
-      if (progress < 1) requestAnimationFrame(count);
-    }
-    requestAnimationFrame(count);
-  } else {
-    display.textContent = hero.points;
-  }
-
   const points = [
     rule.income_bands_per_person.at(-1).points, rule.employment['2+'],
     rule.children['1'], rule.active_loan,
@@ -113,7 +109,7 @@ function initScoreExamples(rule) {
   const sum = points.reduce((total, value) => total + value, 0);
   tokens.forEach((token, index) => { token.querySelector('b').textContent = signed(points[index]); });
   function setDemo(score) {
-    $('demo-result').textContent = `${score} points · ${categoriesFor(score, rule).join(' / ')}`;
+    $('demo-result').textContent = text('points', { points: score, categories: categoriesFor(score, rule).join(' / ') });
     scalePoint(score, rule, 'demo');
   }
   let replay = [];
@@ -151,15 +147,14 @@ function initSimulator(rule) {
     category.classList.toggle('ambiguous', sample.categories.length > 1);
     $('sim-score').textContent = sample.points;
     $('sim-meaning').textContent = sample.categories.length > 1
-      ? 'Two reported category ranges overlap at this score.'
-      : sample.excluded ? 'Falls in A/B under the reported exclusion rule.' : 'Falls outside A/B under the reported rule.';
+      ? text('simAmbiguous')
+      : sample.excluded ? text('simExcluded') : text('simIncluded');
     scalePoint(sample.points, rule, 'sim');
     output.replaceChildren(...sample.components.map(([label, points]) => {
       const row = document.createElement('div');
       const term = document.createElement('dt');
       const value = document.createElement('dd');
-      const direction = points < 0 ? 'subtracts' : 'adds';
-      term.textContent = `${label} ${direction}`;
+      term.textContent = text(label);
       value.textContent = signed(points);
       row.append(term, value);
       return row;
@@ -179,6 +174,7 @@ function initSimulator(rule) {
   form.addEventListener('change', update);
   form.addEventListener('reset', () => {
     if (location.hash.startsWith('#simulator?')) history.replaceState(null, '', '#simulator');
+    syncLanguageLinks();
     requestAnimationFrame(update);
   });
   window.addEventListener('hashchange', () => { restore(); update(); });
@@ -186,15 +182,16 @@ function initSimulator(rule) {
     const url = new URL(location.href);
     url.hash = `simulator?${new URLSearchParams(new FormData(form))}`;
     history.replaceState(null, '', url);
+    syncLanguageLinks();
     share.value = url.href;
     $('share-label').hidden = false;
     try {
       await navigator.clipboard.writeText(url.href);
-      shareStatus.textContent = 'Scenario link copied.';
+      shareStatus.textContent = text('shared');
     } catch {
       share.focus();
       share.select();
-      shareStatus.textContent = 'Copy the selected scenario link.';
+      shareStatus.textContent = text('copy');
     }
   });
   restore();
@@ -219,7 +216,7 @@ if (document.body.dataset.page === 'home') {
     console.error(error);
     const message = document.createElement('p');
     message.className = 'notice';
-    message.textContent = 'Interactive data could not load. Refresh the page to retry.';
+    message.textContent = text('loadError');
     $('family-form').before(message);
   }
 }

@@ -1,11 +1,13 @@
 import { incomeOptions, projectBenefit, referenceFamily, scoreFamily } from './score.mjs';
 
-const number = new Intl.NumberFormat('en');
+import { messages, text } from './locale.mjs';
+
+const number = new Intl.NumberFormat(document.documentElement.lang);
 const fmt = (value) => number.format(value);
-const money = (value) => `₸${fmt(value)}`;
+const money = (value) => `${fmt(value)} ₸`;
 const $ = (id) => document.getElementById(id);
-const blue = '#0b5e86';
-const amber = '#92420a';
+const blue = '#065451';
+const amber = '#933a25';
 const archetypes = { reference: {}, noChildren: { children: '0' }, oneEarner: { workers: '1' } };
 
 function chart(canvas, { xDomain, yDomain, xTicks, yTicks, formatX, formatY }) {
@@ -73,7 +75,7 @@ function table(parent, headings, rows) {
     row.forEach(value => { tr.insertCell().textContent = value; });
   }
   parent.setAttribute('role', 'region');
-  parent.setAttribute('aria-label', 'Chart data');
+  parent.setAttribute('aria-label', text('chartData'));
   parent.tabIndex = 0;
   parent.replaceChildren(table);
 }
@@ -90,6 +92,7 @@ export function initCliff(rule, benefit) {
   const cliff = bands.at(-1).min;
   const minimum = rule.subsistence_minimum_2026;
   const maximum = minimum * 5;
+  const exclusion = rule.categories.find(({ cat }) => cat === 'B').min;
   input.min = 0;
   input.max = maximum;
   input.step = 1;
@@ -108,12 +111,14 @@ export function initCliff(rule, benefit) {
   function draw() {
     const plot = chart(canvas, {
       xDomain: [0, maximum], yDomain: [0, 1000],
-      xTicks: [0, minimum * 2, cliff, maximum], yTicks: [0, 250, 500, 730, 1000],
-      formatX: (value) => value ? `₸${Math.round(value / 1000)}k` : '₸0',
+      xTicks: [0, minimum * 2, cliff, maximum], yTicks: [0, 250, 500, exclusion, 1000],
+      formatX: (value) => fmt(value),
       formatY: fmt,
     });
     const { ctx, x, y, top, bottom } = plot;
-    ctx.fillStyle = '#e8f1f6';
+    ctx.fillStyle = '#f9ebe5';
+    ctx.fillRect(x(0), top, x(maximum) - x(0), y(exclusion) - top);
+    ctx.fillStyle = '#e0eeea';
     ctx.fillRect(x(0), y(result(2).points), x(minimum) - x(0), y(result(1).points) - y(result(2).points));
     line(plot, [[0, result(1).points], [minimum, result(1).points]], blue, [4, 4]);
     line(plot, [[0, result(2).points], [minimum, result(2).points]], blue, [4, 4]);
@@ -126,6 +131,7 @@ export function initCliff(rule, benefit) {
     steps.push([maximum, result(bands.length - 1).points]);
     line(plot, steps, blue);
     ctx.save();
+    line(plot, [[0, exclusion], [maximum, exclusion]], amber, [5, 5]);
     ctx.setLineDash([4, 4]);
     ctx.strokeStyle = amber;
     ctx.beginPath();
@@ -145,12 +151,12 @@ export function initCliff(rule, benefit) {
     const excluded = sample.every(value => value.excluded);
     const status = $('cliff-status');
     $('chart-income-value').textContent = money(income);
-    input.setAttribute('aria-valuetext', `${fmt(income)} tenge per person`);
-    status.textContent = `${points} points · ${categories}`;
+    input.setAttribute('aria-valuetext', text('incomeAmount', { amount: fmt(income) }));
+    status.textContent = text('points', { points, categories });
     status.classList.toggle('warm', excluded);
     const badge = $('benefit-status');
     const historical = money(benefit.rows.at(-1).nominal);
-    badge.textContent = excluded ? `Birth benefit example · ${historical} to ₸0` : `Birth benefit example · ${historical} before the A/B exclusion`;
+    badge.textContent = text(excluded ? 'benefitExcluded' : 'benefitIncluded', { amount: historical });
     badge.classList.toggle('warm', excluded);
     if (wasExcluded !== undefined && excluded !== wasExcluded && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
       badge.getAnimations().forEach(animation => animation.cancel());
@@ -166,14 +172,25 @@ export function initCliff(rule, benefit) {
   function updateExample() {
     const low = result(5);
     const high = result(6);
-    $('cliff-summary').textContent = `In this example, at ${money(cliff)} per person the score moves from ${low.points} (${low.categories.join('/')}) to ${high.points} (${high.categories.join('/')}). Below ${money(minimum)}, the chart shows the two reported scores for positive income because the monetary poverty line is missing from the pack.`;
-    table($('cliff-table'), ['Income band', 'Score', 'Category'], bands.map((band, index) => {
+    $('cliff-summary').textContent = text('cliffSummary', {
+      threshold: money(cliff), low: low.points, lowCat: low.categories.join('/'),
+      high: high.points, highCat: high.categories.join('/'), minimum: money(minimum),
+    });
+    table($('cliff-table'), ['band', 'score', 'category'].map(key => text(key)), messages.incomeBands.map((label, index) => {
       const value = result(index);
-      return [band.label, value.points, value.categories.join(' / ')];
+      return [label, value.points, value.categories.join(' / ')];
     }));
     update();
   }
 
+  for (const comparison of document.querySelectorAll('[data-income-point]')) {
+    comparison.addEventListener('click', (event) => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      select.value = 'reference';
+      input.value = comparison.dataset.incomePoint === 'below' ? cliff - 1 : cliff;
+      updateExample();
+    });
+  }
   $('below-cliff').addEventListener('click', () => { input.value = cliff - 1; update(); });
   $('at-cliff').addEventListener('click', () => { input.value = cliff; update(); });
   input.addEventListener('input', update);
@@ -213,11 +230,13 @@ export function initBenefit(benefit) {
     const basis = view.value;
     const rate = input.value;
     $('inflation-value').textContent = `${rate}%`;
-    $('real-key').textContent = `Real · ${basis} prices`;
-    $('projection').textContent = `Projection · January ${nextYear}: ${money(projection())} in ${basis} prices at ${rate}% inflation, assuming the nominal benefit stays at ${money(last.nominal)}.`;
-    table($('benefit-table'), ['January', 'Nominal', `Real (${basis} prices)`], [
+    $('real-key').textContent = text('real', { basis });
+    $('projection').textContent = text('projection', {
+      year: nextYear, amount: money(projection()), basis, rate, nominal: money(last.nominal),
+    });
+    table($('benefit-table'), [text('january'), text('nominal'), text('realTable', { basis })], [
       ...rows.map(row => [row.year, money(row.nominal), money(real(row))]),
-      [`${nextYear} projection`, `${money(last.nominal)} assumed`, money(projection())],
+      [text('projectedYear', { year: nextYear }), text('assumed', { amount: money(last.nominal) }), money(projection())],
     ]);
     draw();
   }

@@ -14,13 +14,13 @@ export function scoreFamily(family, rule) {
     none: 0, one: rule.overdue_90d_one_adult, all: rule.overdue_90d_all_adults,
   };
   const components = [
-    ['Income per person', rule.income_bands_per_person[Number(family.income)].points],
-    ['Working members', rule.employment[family.workers]],
-    ['Children', rule.children[family.children]],
-    ['Active loan', family.loan === '1' ? rule.active_loan : 0],
-    ['Overdue debt', overdue[family.overdue]],
-    ['Car ownership', family.car === '0' ? rule.no_car : 0],
-    ['Housing', family.housing === '0' ? rule.no_own_housing : 0],
+    ['componentIncome', rule.income_bands_per_person[Number(family.income)].points],
+    ['componentWork', rule.employment[family.workers]],
+    ['componentChildren', rule.children[family.children]],
+    ['componentLoan', family.loan === '1' ? rule.active_loan : 0],
+    ['componentDebt', overdue[family.overdue]],
+    ['componentCar', family.car === '0' ? rule.no_car : 0],
+    ['componentHousing', family.housing === '0' ? rule.no_own_housing : 0],
   ];
   const points = components.reduce((sum, [, value]) => sum + value, 0);
   const categories = categoriesFor(points, rule);

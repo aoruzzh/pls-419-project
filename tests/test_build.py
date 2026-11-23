@@ -38,14 +38,33 @@ class StaticBuildTests(TestCase):
         self.assertTrue({"problem", "data", "research", "solution", "verdict", "simulator"} <= Page(home).ids)
         self.assertIn("./methods/#undp-kazakhstan-n-d", Page(home).links)
         self.assertIn("./methods/#bizmedia-kz-2026", Page(home).links)
-        self.assertIn("finalized AI transparency statement",
+        self.assertIn("which research and design suggestions they accepted or rejected",
                       (self.output / "about/index.html").read_text(encoding="utf-8"))
         self.assertTrue((self.output / ".nojekyll").is_file())
-        for name in ("site.css", "site.mjs", "charts.mjs", "score.mjs"):
+        for name in ("site.css", "site.mjs", "charts.mjs", "score.mjs", "locale.mjs"):
             self.assertTrue((self.output / "static" / name).is_file())
         for name, field in (("scoring_rule", "income_bands_per_person"), ("birth_benefit_real", "rows")):
             data = json.loads((self.output / "data" / f"{name}.json").read_text(encoding="utf-8"))
             self.assertTrue(data[field])
+
+    def test_language_editions_render_the_problem_and_case_comparison(self):
+        examples = (
+            ("en", "", "The issue is exclusion", "When state registries define"),
+            ("kk", "kk/", "Мәселе", "Мемлекеттік тізілімдер"),
+            ("ru", "ru/", "Проблема", "Когда государственные реестры"),
+        )
+        for lang, prefix, issue, question in examples:
+            with self.subTest(lang=lang):
+                home = (self.output / f"{prefix}index.html").read_text(encoding="utf-8")
+                self.assertIn(f'<html lang="{lang}">', home)
+                self.assertIn(f"<strong>{issue}", home)
+                self.assertIn(f"<strong>{question}", home)
+                self.assertEqual(home.count('data-income-point='), 2)
+                self.assertEqual(home.count('data-language-link'), 3)
+                self.assertIn('id="site-messages"', home)
+                for page in ("methods", "about"):
+                    content = (self.output / prefix / page / "index.html").read_text(encoding="utf-8")
+                    self.assertIn(f'<html lang="{lang}">', content)
 
     def test_local_links_resolve_at_root_and_in_hosting_subdirectory(self):
         for prefix in ("/", "/scored-for-support/"):

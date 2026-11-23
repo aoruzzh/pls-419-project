@@ -1,6 +1,6 @@
 # Scored for Support
 
-A static research site about Kazakhstan’s Digital Family Card. Python and Jinja generate three HTML pages. The household simulator, charts, and prototypes run in the browser using vanilla JavaScript.
+A static research site about Kazakhstan’s Digital Family Card in English, Kazakh, and Russian. Python and Jinja generate the home, methods, and AI transparency pages in each language. The household simulator, charts, and prototypes run in the browser using vanilla JavaScript.
 
 ## Build and preview
 
@@ -29,7 +29,8 @@ To host the site, publish the contents of `dist/` to a static host such as GitHu
 
 ## Edit the project
 
-- `content/` contains the research pack’s prose, references, and author placeholders. Keep the existing section headings and order when editing copy, since the layout uses those headings to place the prose around the interactive components. The renderer supports headings, plain paragraphs, bullet lists, pipe tables, source URLs, and the pack’s citation forms.
+- `content/` contains the English research copy and shared references. `content/kk/` and `content/ru/` contain the Kazakh and Russian prose. Keep the same block types and order across languages so the build can place each translation around the interactive components. The renderer supports headings, paragraphs, bold phrases, bullet lists, pipe tables, and citations.
+- `content/ui.txt` contains the interface strings in English, Kazakh, and Russian, in that order.
 - `data/scoring_rule.json` contains the reported scoring values. The two low-income options are selectable in the simulator. The chart shows their possible range until the monetary poverty line is supplied and the code can map it to the appropriate band.
 - `data/birth_benefit_real.json` contains the historical series. The 2027 projection holds the nominal benefit at the January 2026 value.
 - `data/bill.json` contains the five author-set risk levels. A null value shows “Set by author.”

@@ -24,9 +24,9 @@ A fourth approach asks what scoring does to citizens and the state. Eubanks (201
 
 ## Kazakhstan and the region
 
-Evidence on Kazakhstan comes mostly from evaluations by international organisations: UNICEF's evaluation of child and family social protection for 2015–2020, which reports that the number of children among social assistance recipients fell sharply after 2018 reforms (UNICEF Kazakhstan, n.d.), and the World Bank's 2024 Poverty and Equity Assessment, prepared with the government's planning agency (World Bank, 2024). The DFC has won prizes from the World Government Summit and ITU (UNDP Kazakhstan, 2024), but prizes are not evaluations. I found no independent, peer-reviewed study of how accurately the DFC scores families.
+Evidence on Kazakhstan comes mostly from evaluations by international organisations: UNICEF's evaluation of child and family social protection for 2015–2020, which reports that the number of children among social assistance recipients fell sharply after 2018 reforms (UNICEF Kazakhstan, n.d.), and the World Bank's 2024 Poverty and Equity Assessment, prepared with the government's planning agency (World Bank, 2024a). The DFC has won prizes from the World Government Summit and ITU (UNDP Kazakhstan, 2024), but prizes are not evaluations. I found no independent, peer-reviewed study of how accurately the DFC scores families.
 
-[MISSING: Kazakhstan-focused academic sources from the NU library.]
+In Kazakhstan, an econometric study found that existing targeted assistance had a limited effect on living standards and identified low awareness, especially in rural areas (Daulieva and Sagynbay, 2024). Interviews with caseworkers and observations at service centres identified documentation problems, complex eligibility rules, and limited staff resources (Gutova et al., 2026). In neighbouring Uzbekistan, a digital registry connected eligibility checks to other state databases, yet applicants still faced overlapping procedures across programmes (World Bank, 2024b). These studies connect automation to administrative burden. The rate of misclassification by Kazakhstan’s Digital Family Card remains an open question.
 
 ## What is known, what is contested, and the gap
 

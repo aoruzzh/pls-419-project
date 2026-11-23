@@ -1,13 +1,14 @@
 {% extends "base.html" %}
-{% block title %}{{ title }} · Scored for Support{% endblock %}
+{% block title %}{{ title }} · {{ t('brand') }}{% endblock %}
 {% block main %}
 <article class="shell article-page">
-  <a class="text-link" href="{{ site_root }}/">Scored for Support</a>
+  <a class="text-link" href="{{ urls.home }}">{{ t('brand') }}</a>
   <h1>{{ title }}</h1>
   <div class="prose">{{ body }}</div>
   {% if entries %}
-  <p class="file-links"><a href="{{ site_root }}/data/scoring_rule.json">Scoring data (JSON)</a> <a href="{{ site_root }}/data/birth_benefit_real.json">Benefit data (JSON)</a></p>
-  <h2 id="references">References</h2>
+  <p class="file-links"><a href="{{ site_root }}/data/scoring_rule.json">{{ t('score_json') }}</a> <a href="{{ site_root }}/data/birth_benefit_real.json">{{ t('benefit_json') }}</a></p>
+  <h2 id="references">{{ t('references') }}</h2>
+  {% if lang != 'en' %}<p>{{ t('source_note') }}</p>{% endif %}
   <ul class="references">{% for id, reference in entries %}<li id="{{ id }}">{{ reference }}</li>{% endfor %}</ul>
   {% endif %}
 </article>

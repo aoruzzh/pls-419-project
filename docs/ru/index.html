@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Интерактивное исследование Цифровой карты семьи и доступа к социальной помощи в Казахстане.">
+  <title>Баллы за право на помощь</title>
+  <link rel="stylesheet" href="../static/site.css">
+<link rel="alternate" hreflang="en" href="../"><link rel="alternate" hreflang="kk" href="../kk/"><link rel="alternate" hreflang="ru" href="./"></head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Перейти к основному содержанию</a>
+  <header class="site-header">
+    <div class="shell header-row">
+      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"><b>B</b><b>C</b></span> Баллы за право на помощь</a>
+      <button class="menu-button" type="button" aria-controls="site-nav" aria-expanded="false">Меню</button>
+      <nav id="site-nav" aria-label="Основная навигация">
+        <a href="#problem">Проблема</a>
+        <a href="#data">Данные</a>
+        <a href="#research">Исследования</a>
+        <a href="#solution">Решение</a>
+        <a href="#verdict">Вердикт</a>
+        <a href="./methods/" >Методы</a>
+      </nav>
+      <nav class="language-switch" aria-label="Язык сайта">
+        <a data-language-link href="../" lang="en" hreflang="en" >English</a>
+        <a data-language-link href="../kk/" lang="kk" hreflang="kk" >Қазақша</a>
+        <a data-language-link href="./" lang="ru" hreflang="ru" aria-current="page">Русский</a>
+      </nav>
+    </div>
+    <div class="progress-track" aria-hidden="true"><div id="reading-progress"></div></div>
+  </header>
+  <main id="main" tabindex="-1"><section class="hero">
+  <div class="shell hero-grid">
+    <div>
+      <p class="eyebrow"><span></span> Казахстан · Социальная помощь</p>
+      <h1>Кого упускает алгоритм социальной помощи <em>в Казахстане?</em></h1>
+      <div class="hero-copy"><p>В октябре 2026 года семьи в Казахстане начали получать уведомления. С 1 января некоторые выплаты, в том числе пособия при рождении ребёнка и по уходу за ним, будут зависеть от категории A, B, C, D или E. Её рассчитывает Цифровая карта семьи, государственная система, которая сводит записи из государственных баз данных по более чем шести миллионам семей в один балл.</p>
+<p>Семья из категории A или B лишается права на указанные пособия. При определённом доходе прибавка всего в один тенге может перевести семью из C в B. Проданная, но всё ещё зарегистрированная машина или заработок наличными могут исказить оценку достатка семьи.</p>
+<p>Кого упускает алгоритм и может ли ИИ помочь Казахстану увидеть эти семьи?</p></div>
+      <div class="actions"><a class="button primary" href="#problem">Читать о проблеме</a><a class="button secondary" href="#simulator">Открыть калькулятор баллов</a></div>
+    </div>
+    <aside class="case-file" aria-labelledby="sample-title">
+      <header class="file-header">
+        <p class="eyebrow">Учебное дело семьи</p>
+        <h2 id="sample-title">Одна семья, два исхода</h2>
+        <p>Двое работающих взрослых · один ребёнок · пособие при рождении</p>
+      </header>
+      <div class="case-comparison">
+        <article class="case-slip below">
+          <h3>Ниже порога</h3>
+          <dl>
+            <div><dt>Месячный доход на человека</dt><dd class="file-income">203 403 ₸</dd></div>
+            <div class="file-score"><dt class="file-category">C</dt><dd>650 <span>баллов</span></dd></div>
+            <div class="file-outcome"><dt>Пример пособия при рождении</dt><dd>164 350 ₸</dd></div>
+          </dl>
+          <p class="file-stamp">Исключение A/B не применяется</p>
+          <a class="text-link" href="#cliff" data-income-point="below">Посмотреть эту точку на графике</a>
+        </article>
+<p class="case-delta">+1 ₸ на человека</p>        <article class="case-slip at">
+          <h3>На пороге</h3>
+          <dl>
+            <div><dt>Месячный доход на человека</dt><dd class="file-income">203 404 ₸</dd></div>
+            <div class="file-score"><dt class="file-category">B</dt><dd>870 <span>баллов</span></dd></div>
+            <div class="file-outcome"><dt>Пример пособия при рождении</dt><dd>0 ₸</dd></div>
+          </dl>
+          <p class="file-stamp">Исключение по правилу A/B</p>
+          <a class="text-link" href="#cliff" data-income-point="at">Посмотреть эту точку на графике</a>
+        </article>
+      </div>
+      <p class="file-note">В примере использованы опубликованные баллы и размер пособия за 2026 год. Реальная выплата зависит и от остальных условий.</p>
+    </aside>
+  </div>
+  <div class="shell hero-source"><p>Источники: уведомления получателям A/B с 1 октября 2026 года (<a class="citation" href="./methods/#bizmedia-kz-2026">Bizmedia.kz, 2026</a>); пять категорий и исключение A/B (<a class="citation" href="./methods/#digital-business-2026">Digital Business, 2026</a>); 6,2 млн семей в ЦКС (<a class="citation" href="./methods/#cdb-kz-2026">Ministry of Labour via CDB.kz, 2026</a>); пособия при рождении ребёнка и по уходу за ним (<a class="citation" href="./methods/#bizmedia-kz-2026">Resolution No. 870, via Bizmedia.kz, 2026</a>). Переход из-за одного тенге показан на рисунке 1.</p></div>
+</section>
+<div class="arc"><nav class="shell arc-links" aria-label="Разделы исследования">
+<a class="arc-link" href="#problem"><span>01</span>Проблема</a><a class="arc-link" href="#data"><span>02</span>Контекст и данные</a><a class="arc-link" href="#research"><span>03</span>Исследования</a><a class="arc-link" href="#solution"><span>04</span>Решение и его издержки</a><a class="arc-link" href="#verdict"><span>05</span>Вердикт</a></nav></div>
+
+<section class="chapter shell" id="problem">
+  <header class="chapter-heading"><p class="eyebrow">01 / Проблема</p><h2>От балла зависит, кого считают нуждающимся</h2></header>
+  <div class="issue-lead prose"><p><strong>Проблема — лишение семей доступа к социальным пособиям в Казахстане из-за автоматизированной оценки.</strong> Семья может потерять право на отдельную выплату, если государственные записи или небольшое изменение учтённого дохода переводят её в A или B.</p></div>
+  <section class="decision-flow" aria-labelledby="chain-title">
+    <h3 id="chain-title">От записи в реестре до решения о пособии</h3>
+    <ol>
+      <li><h4>Государственные записи</h4><p>Доход, работа, состав семьи и имущество</p></li>
+      <li><h4>Баллы семьи</h4><p>Цифровая карта семьи присваивает категорию A–E</p></li>
+      <li><h4>Доступ к пособиям</h4><p>Семьи A/B могут лишиться отдельных выплат</p></li>
+      <li><h4>Исправление или обжалование</h4><p>Может ли семья увидеть и оспорить исходные данные?</p></li>
+    </ol>
+  </section>
+  <div class="stat-grid">    <article class="stat"><div>6,2 млн</div><h3>семей в Цифровой карте семьи</h3><p><a href="./methods/#cdb-kz-2026">Минтруда по данным CDB.kz</a></p></article>
+    <article class="stat"><div>≈980 тыс.</div><h3>семей без официального дохода в 2022 году</h3><p><a href="./methods/#undp-kazakhstan-n-d">ПРООН в Казахстане</a></p></article>
+    <article class="stat"><div>700 млрд ₸</div><h3>ожидаемая экономия в 2027 году · около 0,35% ВВП</h3><p><a href="./methods/#zakon-kz-2026b">Zakon.kz, 2026b</a></p></article>
+</div>
+  <div class="split-content"><div class="prose"><p>С 1 января 2027 года Казахстан планирует назначать ряд выплат с учётом «уровня социального благополучия» семьи. Постановление правительства № 870 от 5 октября 2026 года, по данным прессы, перечисляет десять выплат, включая пособие при рождении и пособие по уходу до полутора лет (<a class="citation" href="./methods/#bizmedia-kz-2026">Bizmedia.kz, 2026</a>). Минтруда описывает более широкое изменение как 14 из 36 выплат республиканского бюджета. В других сообщениях фигурирует 39 (<a class="citation" href="./methods/#bizmedia-kz-2026">Bizmedia.kz, 2026</a>; <a class="citation" href="./methods/#finance-kz-2026">Finance.kz, 2026</a>).</p>
+<p>Цифровая карта семьи (ЦКС) автоматически присваивает категорию по государственным базам: от A, высокого достатка, до E, социально и экономически уязвимых семей. Категории A и B, от 730 баллов, исключают семью из числа получателей перечисленных выплат (<a class="citation" href="./methods/#digital-business-2026">Digital Business, 2026</a>). В системе числятся 20,6 млн человек из 6,2 млн семей (<a class="citation" href="./methods/#cdb-kz-2026">Ministry of Labour via CDB.kz, 2026</a>).</p>
+<p>Правительство заявляет о справедливом распределении и экономии. Премьер-министр Олжас Бектенов назвал ожидаемую экономию 700 млрд тенге в 2027 году и 2,5 трлн за три года (<a class="citation" href="./methods/#zakon-kz-2026b">Zakon.kz, 2026b</a>). При прогнозном ВВП в 199,3 трлн на 2027 год это около 0,35% ВВП. По заявлению правительства, средства перенаправят на другие приоритеты (<a class="citation" href="./methods/#government-of-kazakhstan-2026">Government of Kazakhstan, 2026</a>).</p><h3>Кого это затрагивает и что меняется</h3>
+<ul><li>Семьи рядом с порогом B. Баллы изменяются ступенями, поэтому небольшой рост дохода может перевести семью через порог.</li><li>Семьи, которых плохо видят государственные базы. По данным Минтруда за 2022 год, более 980 000 из 5,9 млн семей не имели официального дохода (<a class="citation" href="./methods/#undp-kazakhstan-n-d">UNDP Kazakhstan, n.d.</a>). Неформальный заработок может отсутствовать в реестре.</li><li>Семьи с устаревшими записями. Проданный автомобиль или переехавший родственник могут изменить балл. В октябре 2026 года министерство утвердило новые правила полноты и точности данных ЦКС (<a class="citation" href="./methods/#zakon-kz-2026c">Zakon.kz, 2026c</a>).</li><li>Все семьи, которых касается изменение правил. Методику утвердили в 2023 году, изменили в июне 2026 года и снова пересмотрели после объявления 29 октября 2026 года (<a class="citation" href="./methods/#informburo-kz-2026b">Informburo.kz, 2026b</a>).</li></ul></div>
+    <aside class="question prose"><h3>Вопрос социальной науки</h3>
+<p><strong>Когда государственные реестры определяют, кого считать нуждающимся, кто несёт последствия пропущенных или устаревших записей и у кого есть возможность увидеть, исправить или оспорить балл?</strong> Особенно это важно для семей с неформальным доходом, устаревшими записями и доходом рядом с порогом исключения A/B.</p>
+<p>James Scott (<a class="citation" href="./methods/#scott-1998">1998</a>) объясняет, что государство управляет тем, что может сделать «читаемым»: посчитать, описать и зафиксировать. ЦКС позволяет увидеть миллионы семей, но лишь через записи. Поэтому ключевой вопрос касается власти и институтов: кто определяет, какие данные имеют значение, и может ли семья оспорить оценку, которую ей не показывают?</p>
+<p>Закон Казахстана об искусственном интеллекте, действующий с января 2026 года, предусматривает информирование об использовании ИИ в решениях и возможность возражения (<a class="citation" href="./methods/#legal500-2025">Legal500, 2025</a>; <a class="citation" href="./methods/#astana-times-2025">Astana Times, 2025</a>). Применимость этих правил к балльной методике остаётся открытым вопросом.</p></aside></div>
+</section>
+
+<section class="chapter data-section" id="data"><div class="shell">
+  <header class="chapter-heading"><p class="eyebrow">02 / Контекст и данные</p><h2>Что измеряет государство и что показывают цифры</h2></header>
+  <div class="prose reading-width"><p>ЦКС применяет Методику определения социального благополучия семьи (лица), утверждённую приказом Минтруда № 267 от 29 июня 2023 года и подготовленную совместно с ПРООН (<a class="citation" href="./methods/#zakon-uchet-kz-2023">Zakon.uchet.kz, 2023</a>; <a class="citation" href="./methods/#ministry-of-labour-and-social-protection-of-the-population-2023">Ministry of Labour, 2023</a>). МСЭ описывает её как основанную на методе многомерной бедности Алкирей и Фостера (<a class="citation" href="./methods/#itu-n-d">ITU, n.d.</a>). Пресса сообщает о 59 показателях в восьми сферах: доходы и кредиты, транспорт, занятость, социальная защита, здоровье, образование, жильё и сельское хозяйство (<a class="citation" href="./methods/#azattyq-ryhy-2026b">Azattyq Rýhy, 2026b</a>; <a class="citation" href="./methods/#informburo-kz-2026a">Informburo.kz, 2026a</a>). Сумма прибавленных и вычтенных баллов определяет категорию.</p></div>
+  <div class="panel score-demo">
+    <div><h3>Как начисляются баллы</h3><p>Доход, работа, дети и другие учтённые обстоятельства добавляют или вычитают баллы.</p>
+      <button class="button secondary" type="button" id="replay-score">Повторить пример подсчёта</button></div>
+    <div><div class="tokens" id="score-tokens"><span>Доход <b>+620</b></span><span>Работа <b>+300</b></span><span>Ребёнок <b>−50</b></span><span>Кредит <b>−50</b></span></div><div class="score-scale" data-scale="demo" aria-label="Категории баллов от E до A">
+  <div class="scale-bands" aria-hidden="true"><span>E</span><span>D</span><span>C</span><span>B</span><span>A</span></div>
+  <div class="scale-marker" aria-hidden="true"></div>
+</div>
+<p class="meta" id="demo-result">820 баллов · B</p></div>
+  </div>
+  <details class="disclosure prose"><summary>Опубликованные части методики</summary><p>В таблице собраны сведения министерства и прессы. Полную действующую шкалу необходимо сверить с официальной методикой.</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Таблица исследования"><table><thead><tr><th scope="col">Показатель</th><th scope="col">Опубликованные баллы</th><th scope="col">Источник</th><th scope="col">Оценка</th></tr></thead><tbody><tr><th scope="row">Границы категорий</th><td>A ≥ 1 800 · B 730–1 799 · C от −30 до 729 · D от −460 до −29 · E ≤ −459</td><td>Digital Business (2026); те же пороги A/B в проекте 2023 года (<a class="citation" href="./methods/#informburo-kz-2023">Informburo.kz, 2023</a>)</td><td>B</td></tr><tr><th scope="row">Доход на человека (прожиточный минимум, ПМ = 50 851 ₸ на 2026 год)</th><td>Ниже черты бедности 40 · от черты до 1 ПМ 100 · 1–2 ПМ 170 · 2–3 ПМ 280 · 3–4 ПМ 400 · ≥4 ПМ 620</td><td>Finratings (<a class="citation" href="./methods/#finratings-kz-2026">2026</a>); верхний диапазон подтверждает Azattyq Rýhy (2026a)</td><td>C / D</td></tr><tr><th scope="row">Работающие члены семьи</th><td>Один +150 · двое и более +300</td><td>Только Finratings (<a class="citation" href="./methods/#finratings-kz-2026">2026</a>)</td><td>D</td></tr><tr><th scope="row">Дети</th><td>−50 за ребёнка, до −200 за четверых и более</td><td>Только Finratings (<a class="citation" href="./methods/#finratings-kz-2026">2026</a>)</td><td>D</td></tr><tr><th scope="row">Кредиты</th><td>Действующий −50; просрочка &gt; 90 дней и долг &gt; 1 000 ₸: −250 (один взрослый), −500 (все взрослые)</td><td>Июньская поправка (<a class="citation" href="./methods/#zakon-kz-2026a">Zakon.kz, 2026a</a>); активный кредит: Azattyq Rýhy (2026a), Finratings (<a class="citation" href="./methods/#finratings-kz-2026">2026</a>)</td><td>B / C</td></tr><tr><th scope="row">Автомобиль и жильё</th><td>Нет автомобиля −50 · нет собственного жилья −200; машины старше 20 лет не учитываются</td><td>Azattyq Rýhy (2026a); Informburo.kz (2026b)</td><td>C</td></tr><tr><th scope="row">Не входит в доход</th><td>Пособия, алименты, жилищная помощь, выплаты при рождении, благотворительная помощь, жилищные сбережения в Отбасы банке</td><td>Минтруд через Informburo.kz (2026b)</td><td>B</td></tr></tbody></table></div>
+<p>Эти баллы опубликованы до пересмотра 29 октября 2026 года и могли измениться. Один источник указывает семь категорий, остальные — пять (<a class="citation" href="./methods/#azattyq-ryhy-2026a">Azattyq Rýhy, 2026a</a>).</p></details>
+
+  <figure class="panel chart-card" id="cliff">
+    <h3>Рисунок 1 · Один тенге может изменить категорию семьи</h3>
+    <div class="chart-toolbar">
+      <div><label for="archetype">Пример семьи</label><select id="archetype"><option value="reference">Двое работающих · один ребёнок</option><option value="noChildren">Двое работающих · без детей</option><option value="oneEarner">Один работающий · один ребёнок</option></select></div>
+      <output id="cliff-status" class="result-pill" aria-live="polite">650 баллов · C</output>
+    </div>
+    <canvas id="cliff-chart" aria-hidden="true"></canvas>
+    <div class="range-control"><label for="chart-income">Месячный доход на человека <output id="chart-income-value" for="chart-income"></output></label><input id="chart-income" type="range">
+    <div class="range-ends"><span>₸0</span><span id="income-max"></span></div></div>
+    <div class="chart-toolbar"><div class="small-actions"><button type="button" id="below-cliff">На 1 ₸ ниже порога</button><button type="button" id="at-cliff">На пороге</button></div><p id="benefit-status" class="benefit-status"></p></div>
+    <figcaption class="prose"><p>Рисунок 1. Балл условной семьи из трёх человек (двое работающих взрослых и ребёнок) при разном доходе на человека. Расчёт по опубликованным данным: Finratings (<a class="citation" href="./methods/#finratings-kz-2026">2026</a>), Azattyq Rýhy (2026a), Digital Business (2026). Прожиточный минимум: Kapital.kz (2025).</p><p id="cliff-summary"></p></figcaption>
+    <details class="disclosure"><summary>Показать данные графика</summary><div class="table-wrap" id="cliff-table"></div></details>
+  </figure>
+  <div class="prose reading-width"><p>Баллы меняются ступенями. При достижении 203 404 тенге на человека баллы за доход растут с 400 до 620, итог — с 650 до 870, а категория меняется с C на B. Размер пособия при рождении в 2026 году составлял 164 350 тенге (<a class="citation" href="./methods/#nur-kz-2026">NUR.kz, 2026</a>). Это пороговый эффект: малый рост дохода ведёт к большой потере поддержки. В расчёте доход делится на число членов семьи без отдельной поправки на размер домохозяйства.</p></div>
+
+  <section class="simulator panel" id="simulator" aria-labelledby="simulator-title">
+    <header><p class="eyebrow">Интерактивная карточка баллов</p><h3 id="simulator-title">Рассчитайте баллы семьи</h3>
+      <p class="notice">Исследовательская модель по опубликованным баллам. Неопубликованные детали об имуществе, здоровье и других показателях опущены.</p></header>
+    <noscript><p>Для калькулятора и управления графиками требуется JavaScript.</p></noscript>
+    <div class="sim-grid">
+      <form id="family-form">
+        <fieldset class="choices"><legend>Доход на человека</legend><div>
+  <label><input type="radio" name="income" value="0" ><span>Нет дохода</span></label>
+  <label><input type="radio" name="income" value="1" ><span>Ниже черты бедности</span></label>
+  <label><input type="radio" name="income" value="2" ><span>От черты бедности до 1 ПМ</span></label>
+  <label><input type="radio" name="income" value="3" ><span>1–2 ПМ</span></label>
+  <label><input type="radio" name="income" value="4" ><span>2–3 ПМ</span></label>
+  <label><input type="radio" name="income" value="5" checked><span>3–4 ПМ</span></label>
+  <label><input type="radio" name="income" value="6" ><span>4 ПМ и выше</span></label>
+</div></fieldset>
+
+        <fieldset class="choices"><legend>Работающие члены семьи</legend><div>
+  <label><input type="radio" name="workers" value="0" ><span>0</span></label>
+  <label><input type="radio" name="workers" value="1" ><span>1</span></label>
+  <label><input type="radio" name="workers" value="2+" checked><span>2+</span></label>
+</div></fieldset>
+
+        <fieldset class="choices"><legend>Дети</legend><div>
+  <label><input type="radio" name="children" value="0" ><span>0</span></label>
+  <label><input type="radio" name="children" value="1" checked><span>1</span></label>
+  <label><input type="radio" name="children" value="2" ><span>2</span></label>
+  <label><input type="radio" name="children" value="3" ><span>3</span></label>
+  <label><input type="radio" name="children" value="4+" ><span>4+</span></label>
+</div></fieldset>
+
+        <fieldset class="choices"><legend>Действующий кредит</legend><div>
+  <label><input type="radio" name="loan" value="0" checked><span>Нет</span></label>
+  <label><input type="radio" name="loan" value="1" ><span>Да</span></label>
+</div></fieldset>
+
+        <fieldset class="choices"><legend>Просрочка свыше 90 дней и долг более 1 000 ₸</legend><div>
+  <label><input type="radio" name="overdue" value="none" checked><span>Нет</span></label>
+  <label><input type="radio" name="overdue" value="one" ><span>Один взрослый</span></label>
+  <label><input type="radio" name="overdue" value="all" ><span>Все взрослые</span></label>
+</div></fieldset>
+
+        <fieldset class="choices"><legend>Наличие автомобиля</legend><div>
+  <label><input type="radio" name="car" value="1" checked><span>Есть автомобиль</span></label>
+  <label><input type="radio" name="car" value="0" ><span>Нет автомобиля</span></label>
+</div></fieldset>
+
+        <fieldset class="choices"><legend>Жильё</legend><div>
+  <label><input type="radio" name="housing" value="1" checked><span>Есть своё жильё</span></label>
+  <label><input type="radio" name="housing" value="0" ><span>Нет своего жилья</span></label>
+</div></fieldset>
+
+      </form>
+      <div class="sim-result">
+        <div class="hero-result" aria-live="polite" aria-atomic="true"><div class="category-tile cool" id="sim-category">C</div><div><div class="display-number" id="sim-score">650</div><span class="meta">Расчётные баллы</span></div></div>
+        <div class="score-scale" data-scale="sim" aria-label="Категории баллов от E до A">
+  <div class="scale-bands" aria-hidden="true"><span>E</span><span>D</span><span>C</span><span>B</span><span>A</span></div>
+  <div class="scale-marker" aria-hidden="true"></div>
+</div>
+
+        <p class="sim-meaning" id="sim-meaning"></p>
+        <dl class="hero-points" id="sim-points"></dl>
+        <div class="small-actions"><button class="button secondary" type="button" id="share-family">Поделиться сценарием</button><button type="reset" form="family-form">Сбросить</button></div>
+        <label for="share-url" id="share-label" hidden>Ссылка на сценарий<input id="share-url" type="url" readonly></label>
+        <p id="share-status" role="status"></p>
+      </div>
+    </div>
+    <p class="source">Баллы приведены по сообщениям прессы. См. примечание к методике. <a href="./methods/#references">Источники</a></p>
+  </section>
+
+  <figure class="panel chart-card" id="inflation">
+    <h3>Рисунок 2 · Инфляция снижает покупательную способность пособия</h3>
+    <div class="chart-toolbar"><div><label for="price-view">Ценовая база</label><select id="price-view"><option value="2020">Цены декабря 2020 года</option><option value="2026">Цены января 2026 года</option></select></div>
+    <div class="chart-key"><span class="nominal-key">Номинал</span><span class="real-key" id="real-key">Реально · в ценах 2020 года</span></div></div>
+    <canvas id="benefit-chart" aria-hidden="true"></canvas>
+    <div class="range-control"><label for="inflation-rate">Допущение об инфляции в 2026 году <output id="inflation-value" for="inflation-rate">10%</output></label><input type="range" id="inflation-rate" min="0" max="20" value="10"><div class="range-ends"><span>0%</span><span>20%</span></div></div>
+    <p class="benefit-status" id="projection" aria-live="polite"></p>
+    <figcaption class="prose"><p>Рисунок 2. Единовременное пособие при рождении первого, второго или третьего ребёнка в номинальных ценах и ценах декабря 2020 года. Собственный расчёт: 38 × МРП (<a class="citation" href="./methods/#cdb-kz-n-d">CDB.kz, n.d.</a>; <a class="citation" href="./methods/#zakon-kz-2025">Zakon.kz, 2025</a>). ИПЦ декабря к декабрю: Bureau of National Statistics (<a class="citation" href="./methods/#bureau-of-national-statistics-of-kazakhstan-2024">2024</a>, <a class="citation" href="./methods/#bureau-of-national-statistics-of-kazakhstan-2026">2026</a>).</p><p>The January 2026 benefit was ₸164,350, equivalent to ₸94,116 in Цены декабря 2020 года.</p></figcaption>
+    <details class="disclosure"><summary>Показать данные графика</summary><div class="table-wrap" id="benefit-table"></div></details>
+  </figure>
+  <div class="prose reading-width"><p>С января 2021 по январь 2026 года МРП вырос на 48%, с 2 917 до 4 325 тенге. За тот же период цены выросли примерно на 75%: 8,4% в 2021 году, 20,3% в 2022-м, 9,8% в 2023-м, 8,6% в 2024-м и 12,3% в 2025-м (Bureau of National Statistics, 2024, 2026). Пособие в 38 МРП (<a class="citation" href="./methods/#nur-kz-2026">NUR.kz, 2026</a>) сократилось в ценах 2020 года примерно со 110 800 до 94 100 тенге. Это потеря около 15% покупательной способности.</p>
+<p>Методика: январские выплаты пересчитаны с учётом накопленного ИПЦ на конец предыдущего года. Повышение МРП до 3 180 ₸ в апреле 2022 года на графике не показано.</p></div>
+  <h3 class="feature-heading">О чём молчат данные</h3>
+  <div class="gap-grid">    <details class="gap-card"><summary>Правила оценки</summary><div class="prose">Источники расходятся в числе баз данных (<a class="citation" href="./methods/#kapital-kz-2026">Kapital.kz, 2026</a>; <a class="citation" href="./methods/#itu-2025">ITU, 2025</a>), показателей (<a class="citation" href="./methods/#azattyq-ryhy-2026b">Azattyq Rýhy, 2026b</a>; <a class="citation" href="./methods/#undp-kazakhstan-n-d">UNDP Kazakhstan, n.d.</a>; <a class="citation" href="./methods/#itu-n-d">ITU, n.d.</a>), выплат и категорий. Семье сложно найти полную действующую шкалу.</div></details>
+    <details class="gap-card"><summary>Неформальный доход</summary><div class="prose">Оплата наличными и работа за рубежом могут слабо отражаться в реестрах.</div></details>
+    <details class="gap-card"><summary>Ошибки в записях</summary><div class="prose">В материалах проекта нет публичных данных о числе ошибок, запросов на исправление или успешных жалоб.</div></details>
+    <details class="gap-card"><summary>Частота неверной классификации</summary><div class="prose">Для оценки числа нуждающихся в A/B нужны связанные микроданные обследования бюджетов домохозяйств и ЦКС. Они не опубликованы.</div></details>
+    <details class="gap-card"><summary>Банковские данные</summary><div class="prose">По сообщениям прессы, с 2027 года банки будут передавать сведения о счетах заявителей с их согласия. Как это повлияет на балл, неизвестно (<a class="citation" href="./methods/#sputnik-kazakhstan-2026">Sputnik Kazakhstan, 2026</a>).</div></details>
+</div>
+  <div class="prose reading-width"><h3>Насколько надёжны цифры?</h3>
+<p>Ряды цен и МРП основаны на официальных данных. Отдельные баллы из прессы предшествуют октябрьскому пересмотру и требуют сверки. Экономия — прогноз правительства. Частота ошибок неизвестна, и именно этот пробел исследует проект.</p></div>
+</div></section>
+
+<section class="chapter shell" id="research">
+  <header class="chapter-heading"><p class="eyebrow">03 / Состояние исследований</p><h2>Четыре подхода к вопросу о том, кто получает помощь</h2><p>Исследования отбора получателей социальной помощи делятся на четыре подхода. У каждого свой вопрос и собственные ограничения.</p></header>
+  <div class="research-grid"><article class="panel prose"><h3>1. Экономика адресности</h3>
+<p>Проверка доходов и оценка по косвенным признакам исключают часть бедных семей. Выигрыш адресности следует сопоставлять с ошибками и с универсальными выплатами (<a class="citation" href="./methods/#hanna-2018">Hanna and Olken, 2018</a>). В девяти африканских странах косвенная оценка отсеивала обеспеченных, но пропускала многих из беднейших. Простая демографическая шкала часто давала сопоставимый результат (<a class="citation" href="./methods/#brown-2018">Brown, Ravallion and van de Walle, 2018</a>). В Индонезии местные сообщества выбирали получателей немного менее точно по критерию потребления, но жители лучше принимали такой выбор (<a class="citation" href="./methods/#alatas-2012">Alatas et al., 2012</a>). Проверка на новых данных и ансамбли улучшают прогноз (<a class="citation" href="./methods/#mcbride-2018">McBride and Nichols, 2018</a>). Между точностью, стоимостью, скоростью и легитимностью сохраняется компромисс (<a class="citation" href="./methods/#grosh-2022">Grosh et al., 2022</a>).</p>
+<p>ЦКС оценивает нуждаемость косвенно, по административным данным. Открытый вопрос — величина ошибок и их распределение между семьями.</p></article><article class="panel prose"><h3>2. Машинное обучение и новые данные</h3>
+<p>Программа Novissi в Того использовала мобильные и спутниковые данные для помощи во время COVID-19. Ошибки исключения снизились на 4–21% по сравнению с географическим отбором, но при наличии полного социального реестра могли бы быть на 9–35% выше, чем при отборе по реестру (<a class="citation" href="./methods/#aiken-2022">Aiken et al., 2022</a>). В Афганистане мобильные данные выявляли крайне бедные домохозяйства почти так же точно, как обследования потребления (<a class="citation" href="./methods/#aiken-2023">Aiken et al., 2023</a>). Сравнение Бангладеш и Того показало, что косвенные проверки были точнее, а алгоритмы могли снизить стоимость при массовом отборе с малым бюджетом (<a class="citation" href="./methods/#aiken-2025">Aiken et al., 2025</a>). В Латинской Америке машинное обучение улучшало точность и справедливость по отдельным критериям, но определения справедливости у ведомств различались (<a class="citation" href="./methods/#noriega-campero-2020">Noriega-Campero et al., 2020</a>).</p>
+<p>У Казахстана уже есть почти полный реестр. Машинное обучение уместно использовать при независимой проверке ошибок по данным обследования.</p></article><article class="panel prose"><h3>3. Доступ и административная нагрузка</h3>
+<p>Право на помощь само по себе не гарантирует её получения. Людей отталкивают нехватка информации, стигма и формальные препятствия (<a class="citation" href="./methods/#ko-2022">Ko and Moffitt, 2022</a>). Бремя изучения правил, выполнения требований и психологические издержки тяжелее для людей с ограниченным временем и ресурсами (<a class="citation" href="./methods/#herd-2018">Herd and Moynihan, 2018</a>). В эксперименте со специалистами из Лос-Анджелеса точные подсказки чат-бота повысили точность ответов о праве на пособие на 27 процентных пунктов. Ошибочные подсказки снизили её на вопросах, с которыми специалисты справились бы сами (<a class="citation" href="./methods/#gosciak-2026">Gosciak et al., 2026</a>).</p></article><article class="panel prose"><h3>4. Критические исследования и власть над оценкой</h3>
+<p>Автоматизированные системы назначения пособий в США переносили риск на бедные семьи (<a class="citation" href="./methods/#eubanks-2018">Eubanks, 2018</a>). Оценивать справедливость модели следует в контексте института, который её применяет (<a class="citation" href="./methods/#selbst-2019">Selbst et al., 2019</a>). Государство упрощает людей до категорий, которыми может управлять (<a class="citation" href="./methods/#scott-1998">Scott, 1998</a>). Голландский суд остановил систему SyRI в 2020 году из-за нарушения права на частную жизнь (<a class="citation" href="./methods/#hague-district-court-2020">Hague District Court, 2020</a>). Австралийская комиссия признала механизм автоматизированного расчёта задолженности Robodebt неточным и незаконным (<a class="citation" href="./methods/#royal-commission-into-the-robodebt-scheme-2023">Royal Commission into the Robodebt Scheme, 2023</a>).</p></article></div>
+  <div class="prose reading-width regional"><h3>Казахстан и регион</h3>
+<p>Данные по Казахстану в основном представлены оценками международных организаций. ЮНИСЕФ сообщает о резком сокращении числа детей среди получателей помощи после реформ 2018 года (<a class="citation" href="./methods/#unicef-kazakhstan-n-d">UNICEF Kazakhstan, n.d.</a>). Всемирный банк и казахстанское агентство по планированию подготовили оценку бедности и равенства за 2024 год (<a class="citation" href="./methods/#world-bank-2024a">World Bank, 2024a</a>). ЦКС получила международные награды (<a class="citation" href="./methods/#undp-kazakhstan-2024">UNDP Kazakhstan, 2024</a>). По использованным источникам нельзя судить о точности её оценок.</p>
+<p>Эконометрическое исследование в Казахстане выявило ограниченное влияние адресной помощи на уровень жизни и низкую информированность, особенно в сельских районах (<a class="citation" href="./methods/#daulieva-2024">Daulieva and Sagynbay, 2024</a>). Интервью со специалистами и наблюдения в центрах обслуживания выявили сложности с документами, запутанные критерии и нехватку ресурсов у сотрудников (<a class="citation" href="./methods/#gutova-2026">Gutova et al., 2026</a>). В соседнем Узбекистане цифровой реестр подключил проверку права на пособие к другим государственным базам, однако заявители всё ещё сталкивались с повторяющимися процедурами разных программ (<a class="citation" href="./methods/#world-bank-2024b">World Bank, 2024b</a>). Эти исследования связывают автоматизацию с административной нагрузкой. Частота ошибок ЦКС остаётся открытым вопросом.</p></div>
+  <div class="research-summary"><article class="panel prose"><h4>Известно</h4>
+<p>Адресные системы пропускают часть нуждающихся. Реестры дают сильную базу сравнения, а издержки доступа мешают получить даже положенную помощь.</p></article><article class="panel prose"><h4>Оспаривается</h4>
+<p>Соотношение выигрыша адресности и ошибок по сравнению с универсальными выплатами, а также само определение справедливости.</p></article><article class="panel prose"><h4>Пробел</h4>
+<p>Нет доступной независимой оценки того, где и у кого ЦКС ошибается, могут ли семьи понять расчёт и оспорить его. Проект предлагает инструменты для такой проверки.</p></article></div>
+</section>
+
+<section class="chapter data-section" id="solution"><div class="shell">
+  <header class="chapter-heading"><p class="eyebrow">04 / Решение и его издержки</p><h2>Проверить балл, исправить данные и объяснить расчёт семье</h2><p>Предложение добавляет к существующей ЦКС три инструмента. Каждый отвечает на конкретную проблему: неизвестна частота ошибок, записи могут быть неверными, а семья не всегда видит свой расчёт и способ его оспорить. Решение о пособии остаётся за человеком.</p></header>
+  <div class="pipeline" aria-label="Предлагаемый порядок работы с пособиями">
+    <div class="pipeline-step">Государственные базы данных</div>
+    <details class="pipeline-step tool"><summary>Метки качества данных</summary><p>Отмечает вероятно устаревшие или ошибочные записи</p><p>Специалисты министерства внутри ЦКС</p><p>Специалист подтверждает каждую метку и уведомляет семью</p></details>
+    <div class="pipeline-step">Правила начисления <span>A–E</span></div>
+    <details class="pipeline-step tool"><summary>Разъяснение для семьи</summary><p>Объясняет балл на казахском или русском и путь исправления или обжалования</p><p>Министерство через eGov Mobile</p><p>Семья может обратиться к специалисту; модель не принимает решение</p></details>
+    <div class="pipeline-step">Решение принимает специалист</div>
+    <details class="pipeline-step tool audit"><summary>Независимый аудит</summary><p>Сравнивает категорию ЦКС с измеренной бедностью по регионам и типам семей</p><p>Высшая аудиторская палата или университет независимо от министерства</p><p>Аудиторы интерпретируют результаты без индивидуальных решений</p></details>
+  </div>
+  <details class="disclosure prose"><summary>Как будут работать предложенные инструменты</summary><div class="table-wrap" tabindex="0" role="region" aria-label="Таблица исследования"><table><thead><tr><th scope="col"></th><th scope="col">Независимый аудит</th><th scope="col">Метки качества данных</th><th scope="col">Разъяснение для семьи</th></tr></thead><tbody><tr><th scope="row">Что делает</th><td>Сравнивает категорию ЦКС с измеренной бедностью по регионам и типам семей</td><td>Отмечает вероятно устаревшие или ошибочные записи</td><td>Объясняет балл на казахском или русском и путь исправления или обжалования</td></tr><tr><th scope="row">Какой ИИ</th><td>Обучение с учителем на данных обследования бюджетов и сравнение с ЦКС</td><td>Сопоставление записей и выявление аномалий, например давно незастрахованного автомобиля</td><td>Языковая модель с поиском по опубликованным правилам и записям самой семьи</td></tr><tr><th scope="row">Кто запускает</th><td>Высшая аудиторская палата или университет независимо от министерства</td><td>Специалисты министерства внутри ЦКС</td><td>Министерство через eGov Mobile</td></tr><tr><th scope="row">Кому помогает</th><td>Парламенту, министерству и обществу через годовой отчёт</td><td>Семьям с возможной ошибочной классификацией</td><td>Семьям, получившим уведомление о категории</td></tr><tr><th scope="row">Контроль человека</th><td>Аудиторы интерпретируют результаты без индивидуальных решений</td><td>Специалист подтверждает каждую метку и уведомляет семью</td><td>Семья может обратиться к специалисту; модель не принимает решение</td></tr></tbody></table></div>
+<p>Метка ИИ может инициировать проверку, которая восстановит помощь. ИИ не должен участвовать в лишении выплаты. Это отличает предложение от нидерландской SyRI, где объединение данных применялось для поиска предполагаемого мошенничества.</p>
+<p>Один вариант для разъяснений — ISSAI KAZ-LLM, открытая модель Института умных систем и искусственного интеллекта Назарбаев Университета для казахского, русского и английского, выпущенная в декабре 2024 года (<a class="citation" href="./methods/#issai-2024">ISSAI, 2024</a>). Размещение в стране позволяет хранить данные в Казахстане.</p></details>
+  <div class="prototype-grid">
+    <article class="panel prototype">
+      <p class="eyebrow">Телефон</p><h3>Разъяснение для семьи</h3><p class="meta">Прототип · Готовые ответы</p>
+      <div class="device phone"><details class="chat-question"><summary>Почему у семьи категория B?</summary><p>При 203 404 тенге на человека баллы за доход меняются с 400 до 620. Общий балл растёт с 650 до 870 и по опубликованным правилам переводит учебную семью из C в B.</p></details><details class="chat-question"><summary>Что делать, если запись неверна?</summary><p>Специалист проверяет каждую метку и сообщает семье результат.</p></details><details class="chat-question"><summary>С кем можно поговорить?</summary><p>В предлагаемом интерфейсе можно связаться со специалистом.</p></details></div>
+    </article>
+    <article class="panel prototype">
+      <p class="eyebrow">Рабочее место специалиста</p><h3>Очередь на проверку</h3><p class="meta">Прототип · Вымышленные записи</p>
+      <div class="device laptop"><details><summary>Расхождение в данных об автомобиле</summary><p>Семья сообщает о продаже машины, а она всё ещё числится в реестре. Специалист проверил бы запись.</p></details><details><summary>Расхождение в составе семьи</summary><p>Семья сообщает, что один из её членов переехал. Специалист уточнил бы текущий состав семьи.</p></details></div>
+    </article>
+    <article class="panel prototype">
+      <p class="eyebrow">Годовой отчёт</p><h3>Независимый аудит</h3><p class="meta">Прототип · Данных пока нет</p>
+      <div class="device"><table class="matrix"><caption>Матрица ошибок аудита</caption><thead><tr><th scope="col">Обследование</th><th scope="col">A/B</th><th scope="col">C–E</th></tr></thead><tbody><tr><th scope="row">За чертой бедности</th><td>[x]%</td><td>[x]%</td></tr><tr><th scope="row">Выше черты бедности</th><td>[x]%</td><td>[x]%</td></tr></tbody></table></div>
+    </article>
+  </div>
+  <h3 class="feature-heading">Документированные примеры</h3>
+  <div class="case-grid"><article class="panel prose "><h4>Того · Novissi</h4>
+<p>Программа выдавала помощь во время COVID-19. Независимая оценка в Nature показала сокращение ошибок исключения на 4–21% относительно географического отбора, но полный реестр дал бы лучший результат (<a class="citation" href="./methods/#aiken-2022">Aiken et al., 2022</a>). Для Казахстана урок — применять машинное обучение для аудита существующего реестра.</p></article><article class="panel prose "><h4>Великобритания · GOV.UK Chat</h4>
+<p>В двух публичных пилотах за 18 месяцев более 10 000 пользователей задали около 26 000 вопросов о госуслугах, включая пособия. По данным команды проекта, точность выросла с 76 до 90%. Система ссылается на официальные инструкции, а пользователи просили возможность перейти к консультанту (<a class="citation" href="./methods/#government-digital-service-2026">Government Digital Service, 2026</a>). Разъяснение должно показывать источник и давать доступ к человеку.</p></article><article class="panel prose "><h4>Лос-Анджелес</h4>
+<p>В рандомизированном эксперименте точные подсказки помогли специалистам по пособиям, а ошибочные ухудшили их ответы (<a class="citation" href="./methods/#gosciak-2026">Gosciak et al., 2026</a>).</p></article><article class="panel prose warning-card"><h4>SyRI и Robodebt</h4>
+<p>SyRI и Robodebt показывают последствия отсутствия прозрачности и человеческого контроля. Robodebt сформировал около 470 000 неправомерных долгов до закрытия в 2020 году (<a class="citation" href="./methods/#hague-district-court-2020">Hague District Court, 2020</a>; <a class="citation" href="./methods/#jurist-2023">Jurist, 2023</a>; <a class="citation" href="./methods/#royal-commission-into-the-robodebt-scheme-2023">Royal Commission into the Robodebt Scheme, 2023</a>).</p></article></div>
+  <details class="disclosure prose"><summary>Дополнительная проверка разъяснений</summary><p>После проверки официальной шкалы можно дать KAZ-LLM, Claude или ChatGPT десять учебных примеров, заранее рассчитанных вручную. Сравнить категории и объяснения на русском и казахском. [НУЖНО: результаты дополнительного эксперимента.]</p></details>
+  <section class="panel bill" aria-labelledby="bill-title">
+    <h3 id="bill-title">Издержки</h3>
+    <div class="tab-list" id="bill-tabs" aria-label="Издержки и риски" hidden>
+<button type="button" id="bill-tab-1" data-tab="bill-1">Экологические</button><button type="button" id="bill-tab-2" data-tab="bill-2">Экономические</button><button type="button" id="bill-tab-3" data-tab="bill-3">Труд</button><button type="button" id="bill-tab-4" data-tab="bill-4">Управление</button><button type="button" id="bill-tab-5" data-tab="bill-5">Этика данных</button>    </div>
+    <div class="bill-panel prose" id="bill-1"><h4>Экологические</h4>
+<p>Аудит выполняется несколько раз в год. Главная вычислительная нагрузка — разъяснения сразу после рассылки категорий. Перед пилотом следует измерить энергопотребление на тысячу ответов и запросить у дата-центра данные о воде для охлаждения. При сравнении вариантов нужно учесть угольную генерацию Казахстана и проверить долю угля. Сопоставить модель на 8 млрд параметров с более крупной и с текстовым разъяснением по правилу.</p><p class="risk">Уровень риска · Определяет автор</p></div>
+    <div class="bill-panel prose" id="bill-2"><h4>Экономические</h4>
+<p>Расходы включают разработку, размещение, обмен данными, независимую команду, время специалистов и обновления при изменении правил. Ведомство оплачивает внедрение и проверку, а подрядчик может получить долгосрочный контракт и влияние на обслуживание. ЦКС ведёт государственная компания «Национальные информационные технологии» при участии ПРООН (<a class="citation" href="./methods/#itu-n-d">ITU, n.d.</a>). Сравнить пилот с публикацией шкалы, службой проверки и открытой статистикой жалоб. Смета отсутствует.</p><p class="risk">Уровень риска · Определяет автор</p></div>
+    <div class="bill-panel prose" id="bill-3"><h4>Труд</h4>
+<p>Специалисты получат новые задачи: проверять метки и отвечать людям, которых перенаправил помощник. Скрытая работа включает очистку и разметку реестров, перевод и проверку ответов на казахском. Переход к машинным подсказкам может ослабить самостоятельную оценку специалистов (<a class="citation" href="./methods/#gosciak-2026">Gosciak et al., 2026</a>).</p><p class="risk">Уровень риска · Определяет автор</p></div>
+    <div class="bill-panel prose" id="bill-4"><h4>Управление</h4>
+<p>Закон Казахстана № 230-VIII о регулировании ИИ подписан 17 ноября 2025 года и действует с 18 января 2026 года. Обзоры выделяют категории риска и права на информацию, возражение и объяснение (<a class="citation" href="./methods/#ey-kazakhstan-2025">EY Kazakhstan, 2025</a>; <a class="citation" href="./methods/#legal500-2025">Legal500, 2025</a>). Требования для такой системы нужно проверить отдельно. Объединение банковских сведений и автоматических меток создаёт риск расширения наблюдения. Данные предлагается хранить в стране, а контроль и публикацию результатов поручить независимому аудитору.</p><p class="risk">Уровень риска · Определяет автор</p></div>
+    <div class="bill-panel prose" id="bill-5"><h4>Этика данных</h4>
+<p>Для аудита нужны связанные данные обследования и ЦКС, правовое основание и строгая деидентификация. Семьям нужно сообщать об использовании записей и дать способ их исправить. Регион, жильё и размер семьи могут косвенно отражать этничность или сельскую бедность. Частоту ошибок следует публиковать по группам.</p><p class="risk">Уровень риска · Определяет автор</p></div>
+  </section>
+</div></section>
+
+<section id="verdict" class="chapter verdict"><div class="shell">
+  <header class="chapter-heading"><p class="eyebrow">05 / Вердикт</p><h2>Только при этих условиях</h2></header>
+  <div class="verdict-grid">    <article><p class="eyebrow">Независимый аудит</p><h3>Да</h3><p>Проводить независимо от министерства и ежегодно публиковать результаты с указанием неопределённости.</p></article>
+    <article><p class="eyebrow">Метки качества данных</p><h3>Да, с проверкой</h3><p>Метка может помочь восстановить выплату. Специалист проверяет её, а семью уведомляют.</p></article>
+    <article><p class="eyebrow">Разъяснение для семьи</p><h3>Только пилот</h3><p>Расширять пилот, если проверка покажет высокую точность на казахском и больше успешных исправлений или жалоб.</p></article>
+</div>
+  <div class="closing prose"><p>ИИ следует использовать для проверки расчёта и помощи семьям в его обжаловании. Полная шкала и независимый аудит — необходимые условия. Иначе ИИ ускорит непрозрачную систему.</p></div>
+  <a class="button light" href="./methods/">Читать о методах и источниках</a>
+</div></section>
+</main>
+  <footer class="site-footer">
+    <div class="shell footer-row">
+      <div><a class="brand" href="./">Баллы за право на помощь</a><p>Итоговый проект PLS 419 · Казахстан</p></div>
+      <nav aria-label="О проекте"><a href="./methods/">Методы и источники</a><a href="./about/">Прозрачность использования ИИ</a></nav>
+      <p>Дата исследовательских материалов <time datetime="2026-11-23">23 ноября 2026</time><br>Правила начисления баллов требуют проверки</p>
+    </div>
+  </footer>
+  <script type="application/json" id="site-messages">{"assumed": "\u0414\u043e\u043f\u0443\u0449\u0435\u043d\u0438\u0435: {amount}", "band": "\u0414\u0438\u0430\u043f\u0430\u0437\u043e\u043d \u0434\u043e\u0445\u043e\u0434\u0430", "benefitExcluded": "\u041f\u0440\u0438\u043c\u0435\u0440 \u043f\u043e\u0441\u043e\u0431\u0438\u044f \u043f\u0440\u0438 \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u0438 \u00b7 \u0441 {amount} \u0434\u043e 0 \u20b8", "benefitIncluded": "\u041f\u0440\u0438\u043c\u0435\u0440 \u043f\u043e\u0441\u043e\u0431\u0438\u044f \u043f\u0440\u0438 \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u0438 \u00b7 {amount} \u0434\u043e \u043f\u0440\u0438\u043c\u0435\u043d\u0435\u043d\u0438\u044f \u0438\u0441\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u044f A/B", "category": "\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f", "chartData": "\u0414\u0430\u043d\u043d\u044b\u0435 \u0433\u0440\u0430\u0444\u0438\u043a\u0430", "cliffSummary": "\u041f\u0440\u0438 {threshold} \u043d\u0430 \u0447\u0435\u043b\u043e\u0432\u0435\u043a\u0430 \u0431\u0430\u043b\u043b \u043c\u0435\u043d\u044f\u0435\u0442\u0441\u044f \u0441 {low} ({lowCat}) \u043d\u0430 {high} ({highCat}). \u0414\u043b\u044f \u043f\u043e\u043b\u043e\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0433\u043e \u0434\u043e\u0445\u043e\u0434\u0430 \u043d\u0438\u0436\u0435 {minimum} \u043f\u043e\u043a\u0430\u0437\u0430\u043d\u044b \u0434\u0432\u0430 \u0431\u0430\u043b\u043b\u0430, \u043f\u043e\u0441\u043a\u043e\u043b\u044c\u043a\u0443 \u0442\u043e\u0447\u043d\u043e\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u0447\u0435\u0440\u0442\u044b \u0431\u0435\u0434\u043d\u043e\u0441\u0442\u0438 \u0432 \u0447\u0435\u0440\u043d\u043e\u0432\u0438\u043a\u0435 \u043d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u043e.", "componentCar": "\u041d\u0430\u043b\u0438\u0447\u0438\u0435 \u0430\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u044f", "componentChildren": "\u0414\u0435\u0442\u0438", "componentDebt": "\u041f\u0440\u043e\u0441\u0440\u043e\u0447\u0435\u043d\u043d\u044b\u0439 \u0434\u043e\u043b\u0433", "componentHousing": "\u0416\u0438\u043b\u044c\u0451", "componentIncome": "\u0414\u043e\u0445\u043e\u0434 \u043d\u0430 \u0447\u0435\u043b\u043e\u0432\u0435\u043a\u0430", "componentLoan": "\u0414\u0435\u0439\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0439 \u043a\u0440\u0435\u0434\u0438\u0442", "componentWork": "\u0420\u0430\u0431\u043e\u0442\u0430\u044e\u0449\u0438\u0435 \u0447\u043b\u0435\u043d\u044b \u0441\u0435\u043c\u044c\u0438", "copy": "\u0421\u043a\u043e\u043f\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u044b\u0434\u0435\u043b\u0435\u043d\u043d\u0443\u044e \u0441\u0441\u044b\u043b\u043a\u0443.", "incomeAmount": "{amount} \u0442\u0435\u043d\u0433\u0435 \u043d\u0430 \u0447\u0435\u043b\u043e\u0432\u0435\u043a\u0430", "incomeBands": ["\u041d\u0435\u0442 \u0434\u043e\u0445\u043e\u0434\u0430", "\u041d\u0438\u0436\u0435 \u0447\u0435\u0440\u0442\u044b \u0431\u0435\u0434\u043d\u043e\u0441\u0442\u0438", "\u041e\u0442 \u0447\u0435\u0440\u0442\u044b \u0431\u0435\u0434\u043d\u043e\u0441\u0442\u0438 \u0434\u043e 1 \u041f\u041c", "1\u20132 \u041f\u041c", "2\u20133 \u041f\u041c", "3\u20134 \u041f\u041c", "4 \u041f\u041c \u0438 \u0432\u044b\u0448\u0435"], "january": "\u042f\u043d\u0432\u0430\u0440\u044c", "loadError": "\u0418\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043d\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435 \u043d\u0435 \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u043b\u0438\u0441\u044c. \u041e\u0431\u043d\u043e\u0432\u0438\u0442\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443.", "nominal": "\u041d\u043e\u043c\u0438\u043d\u0430\u043b", "points": "{points} \u0431\u0430\u043b\u043b\u043e\u0432 \u00b7 {categories}", "projectedYear": "\u041f\u0440\u043e\u0433\u043d\u043e\u0437 \u043d\u0430 {year} \u0433\u043e\u0434", "projection": "\u041f\u0440\u043e\u0433\u043d\u043e\u0437 \u00b7 \u044f\u043d\u0432\u0430\u0440\u044c {year} \u0433\u043e\u0434\u0430: {amount} \u0432 \u0446\u0435\u043d\u0430\u0445 {basis} \u0433\u043e\u0434\u0430 \u043f\u0440\u0438 \u0438\u043d\u0444\u043b\u044f\u0446\u0438\u0438 {rate}%, \u0435\u0441\u043b\u0438 \u043d\u043e\u043c\u0438\u043d\u0430\u043b \u043e\u0441\u0442\u0430\u043d\u0435\u0442\u0441\u044f {nominal}.", "real": "\u0420\u0435\u0430\u043b\u044c\u043d\u043e \u00b7 \u0432 \u0446\u0435\u043d\u0430\u0445 {basis} \u0433\u043e\u0434\u0430", "realTable": "\u0420\u0435\u0430\u043b\u044c\u043d\u043e (\u0446\u0435\u043d\u044b {basis} \u0433\u043e\u0434\u0430)", "score": "\u0411\u0430\u043b\u043b\u044b", "shared": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0446\u0435\u043d\u0430\u0440\u0438\u0439 \u0441\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u0430.", "simAmbiguous": "\u041f\u0440\u0438 \u044d\u0442\u043e\u043c \u0431\u0430\u043b\u043b\u0435 \u0434\u0432\u0430 \u043e\u043f\u0443\u0431\u043b\u0438\u043a\u043e\u0432\u0430\u043d\u043d\u044b\u0445 \u0434\u0438\u0430\u043f\u0430\u0437\u043e\u043d\u0430 \u043f\u0435\u0440\u0435\u0441\u0435\u043a\u0430\u044e\u0442\u0441\u044f.", "simExcluded": "\u041f\u043e \u043e\u043f\u0443\u0431\u043b\u0438\u043a\u043e\u0432\u0430\u043d\u043d\u044b\u043c \u043f\u0440\u0430\u0432\u0438\u043b\u0430\u043c \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442 \u043f\u043e\u043f\u0430\u0434\u0430\u0435\u0442 \u0432 A/B.", "simIncluded": "\u041f\u043e \u043e\u043f\u0443\u0431\u043b\u0438\u043a\u043e\u0432\u0430\u043d\u043d\u044b\u043c \u043f\u0440\u0430\u0432\u0438\u043b\u0430\u043c \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442 \u0432\u043d\u0435 A/B."}</script>
+  <script type="module" src="../static/site.mjs"></script>
+</body>
+</html>

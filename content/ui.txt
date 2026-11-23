@@ -1,0 +1,173 @@
+brand|Scored for Support|Көмекке қойылған балл|Баллы за право на помощь
+description|An interactive research project on the Digital Family Card and welfare eligibility in Kazakhstan.|Қазақстандағы Отбасының цифрлық картасы мен әлеуметтік көмекке қол жеткізу туралы интерактивті зерттеу.|Интерактивное исследование Цифровой карты семьи и доступа к социальной помощи в Казахстане.
+skip|Skip to main content|Негізгі мазмұнға өту|Перейти к основному содержанию
+menu|Menu|Мәзір|Меню
+main_nav|Main navigation|Негізгі мәзір|Основная навигация
+language|Site language|Сайт тілі|Язык сайта
+problem|Problem|Мәселе|Проблема
+data|Data|Деректер|Данные
+research|Research|Зерттеулер|Исследования
+solution|Solution|Шешім|Решение
+verdict|Verdict|Қорытынды|Вердикт
+methods|Methods|Әдістер|Методы
+methods_title|Methods & sources|Әдістер мен дереккөздер|Методы и источники
+about_title|AI transparency|ЖИ қолдану туралы мәлімдеме|Прозрачность использования ИИ
+course|PLS 419 final project · Kazakhstan|PLS 419 қорытынды жобасы · Қазақстан|Итоговый проект PLS 419 · Казахстан
+project_info|Project information|Жоба туралы|О проекте
+pack_date|Research pack dated|Зерттеу жинағының күні|Дата исследовательских материалов
+date|23 November 2026|2026 жылғы 23 қараша|23 ноября 2026
+verification|Rule verification pending|Бағалау ережесі әлі тексерілуде|Правила начисления баллов требуют проверки
+references|References|Әдебиеттер мен дереккөздер|Литература и источники
+source_note|Bibliographic entries retain the original titles.|Дереккөз атаулары түпнұсқа тілінде берілген.|Названия источников приведены на языке оригинала.
+score_json|Scoring data (JSON)|Балл есептеу деректері (JSON)|Данные о баллах (JSON)
+benefit_json|Benefit data (JSON)|Жәрдемақы деректері (JSON)|Данные о пособии (JSON)
+research_table|Research table|Зерттеу кестесі|Таблица исследования
+sources|Sources|Дереккөздер|Источники
+source_rule|Scoring values reported in the press; see the methodology note.|Балл мәндері баспасөзде жарияланған. Әдістеме ескертпесін қараңыз.|Баллы приведены по сообщениям прессы. См. примечание к методике.
+scale|Score categories from E to A|E-ден A-ға дейінгі балл санаттары|Категории баллов от E до A
+jurisdiction|Kazakhstan · Social assistance|Қазақстан · Әлеуметтік көмек|Казахстан · Социальная помощь
+hero_title|Who does Kazakhstan’s welfare algorithm|Қазақстанның әлеуметтік көмек алгоритмі|Кого упускает алгоритм социальной помощи
+hero_end|miss?|кімді байқамай қалады?|в Казахстане?
+go_sim|Open the score simulator|Балл калькуляторын ашу|Открыть калькулятор баллов
+go_problem|Read the policy problem|Мәселені оқу|Читать о проблеме
+file_title|One household, two outcomes|Бір отбасы, екі нәтиже|Одна семья, два исхода
+file_label|Illustrative case file|Үлгі отбасының ісі|Учебное дело семьи
+file_profile|Two earners · one child · birth benefit|Екі жұмыс істейтін ересек · бір бала · бала туу жәрдемақысы|Двое работающих взрослых · один ребёнок · пособие при рождении
+income_month|Monthly income per person|Бір адамға шаққандағы айлық табыс|Месячный доход на человека
+file_below|Below the threshold|Шектен төмен|Ниже порога
+file_at|At the threshold|Шекке жеткенде|На пороге
+file_kept|A/B exclusion does not apply|A/B шектеуі қолданылмайды|Исключение A/B не применяется
+file_excluded|Excluded by the A/B rule|A/B ережесі бойынша шеттетіледі|Исключение по правилу A/B
+file_compare|Compare this point on the chart|Осы мәнді графикте көру|Посмотреть эту точку на графике
+file_amount|Birth benefit example|Бала туу жәрдемақысының мысалы|Пример пособия при рождении
+file_note|Uses reported points and the 2026 benefit amount. An actual award would also depend on the other eligibility rules.|Мысалда жарияланған баллдар мен 2026 жылғы жәрдемақы сомасы қолданылған. Нақты төлем басқа талаптарға да байланысты.|В примере использованы опубликованные баллы и размер пособия за 2026 год. Реальная выплата зависит и от остальных условий.
+file_delta|+₸1 per person|Адам басына +1 ₸|+1 ₸ на человека
+file_score|points|балл|баллов
+research_nav|Research sections|Зерттеу бөлімдері|Разделы исследования
+data_long|Background & data|Мәнмәтін және деректер|Контекст и данные
+research_long|Current state of research|Зерттеулерге шолу|Состояние исследований
+solution_long|Solution & costs|Шешім және шығындар|Решение и его издержки
+stat_1|families in the Digital Family Card|Отбасының цифрлық картасына енген отбасы|семей в Цифровой карте семьи
+stat_2|families with no official income in 2022|2022 жылы ресми табысы болмаған отбасы|семей без официального дохода в 2022 году
+stat_3|projected 2027 savings · about 0.35% of GDP|2027 жылға болжанған үнем · ЖІӨ-нің шамамен 0,35%-ы|ожидаемая экономия в 2027 году · около 0,35% ВВП
+stat_value_1|6.2M|6,2 млн|6,2 млн
+stat_value_2|≈980K|≈980 мың|≈980 тыс.
+stat_value_3|₸700bn|700 млрд ₸|700 млрд ₸
+stat_source_1|Ministry of Labour via CDB.kz|Еңбек министрлігі, CDB.kz арқылы|Минтруда по данным CDB.kz
+stat_source_2|UNDP Kazakhstan|БҰҰДБ Қазақстан|ПРООН в Казахстане
+stat_source_3|Zakon.kz, 2026b|Zakon.kz, 2026b|Zakon.kz, 2026b
+chain_label|From a registry entry to a benefit decision|Тізілімдегі жазбадан жәрдемақы шешіміне дейін|От записи в реестре до решения о пособии
+chain_1_title|State records|Мемлекеттік жазбалар|Государственные записи
+chain_1|Income, work, family and registered assets|Табыс, жұмыс, отбасы және тіркелген мүлік|Доход, работа, состав семьи и имущество
+chain_2_title|Family score|Отбасы баллы|Баллы семьи
+chain_2|The Digital Family Card assigns A–E|Отбасының цифрлық картасы A–E санатын береді|Цифровая карта семьи присваивает категорию A–E
+chain_3_title|Access to benefits|Жәрдемақы алу|Доступ к пособиям
+chain_3|A/B can exclude families from listed payments|A/B санаты кей төлемдерден айыруы мүмкін|Семьи A/B могут лишиться отдельных выплат
+chain_4_title|Correction or appeal|Түзету немесе шағым|Исправление или обжалование
+chain_4|Can the family see and challenge the inputs?|Отбасы бастапқы деректерді көріп, дауласа ала ма?|Может ли семья увидеть и оспорить исходные данные?
+how_score|How the score works|Балл қалай есептеледі?|Как начисляются баллы
+score_intro|Income, work, children and other recorded circumstances each add or subtract points.|Табыс, жұмыс, балалар және тіркелген өзге жағдайлар баллды арттырады немесе азайтады.|Доход, работа, дети и другие учтённые обстоятельства добавляют или вычитают баллы.
+replay|Replay scoring example|Есептеу үлгісін қайталау|Повторить пример подсчёта
+income|Income|Табыс|Доход
+work|Work|Жұмыс|Работа
+child|Child|Бала|Ребёнок
+loan|Loan|Несие|Кредит
+household_example|Household example|Отбасы үлгісі|Пример семьи
+two_one|Two earners · one child|Екі жұмыс істейтін адам · бір бала|Двое работающих · один ребёнок
+two_zero|Two earners · no children|Екі жұмыс істейтін адам · бала жоқ|Двое работающих · без детей
+one_one|One earner · one child|Бір жұмыс істейтін адам · бір бала|Один работающий · один ребёнок
+below|₸1 below the threshold|Шектен 1 ₸ төмен|На 1 ₸ ниже порога
+at|At the threshold|Шекке жеткенде|На пороге
+chart_table|Show chart data|График деректерін көрсету|Показать данные графика
+scorecard|Interactive scorecard|Интерактивті бағалау парағы|Интерактивная карточка баллов
+sim_title|Score a family yourself|Отбасының баллын өзіңіз есептеңіз|Рассчитайте баллы семьи
+sim_notice|Research simulation of the reported points. It leaves out unpublished details about property, health and other indicators.|Жарияланған баллдарға негізделген зерттеу моделі. Мүлік, денсаулық және өзге көрсеткіштердің жарияланбаған бөлшектері есепке алынбаған.|Исследовательская модель по опубликованным баллам. Неопубликованные детали об имуществе, здоровье и других показателях опущены.
+script_needed|The calculator and chart controls require JavaScript.|Калькулятор мен графикті басқару үшін JavaScript қажет.|Для калькулятора и управления графиками требуется JavaScript.
+income_person|Income per person|Бір адамға шаққандағы табыс|Доход на человека
+workers|Working members|Жұмыс істейтін мүшелер|Работающие члены семьи
+children|Children|Балалар|Дети
+active_loan|Active loan|Өтеліп жатқан несие|Действующий кредит
+no|No|Жоқ|Нет
+yes|Yes|Иә|Да
+overdue|Debt over 90 days and above ₸1,000|90 күннен асқан және 1 000 ₸-ден жоғары берешек|Просрочка свыше 90 дней и долг более 1 000 ₸
+none|None|Жоқ|Нет
+one_adult|One adult|Бір ересек|Один взрослый
+all_adults|All adults|Барлық ересектер|Все взрослые
+car|Car ownership|Көлік иелігі|Наличие автомобиля
+has_car|Has a car|Көлігі бар|Есть автомобиль
+no_car|No car|Көлігі жоқ|Нет автомобиля
+housing|Housing|Тұрғын үй|Жильё
+has_housing|Owns housing|Баспана меншігінде|Есть своё жильё
+no_housing|No own housing|Меншікті баспанасы жоқ|Нет своего жилья
+estimated|Estimated points|Болжамды балл|Расчётные баллы
+share|Share this family|Осы үлгімен бөлісу|Поделиться сценарием
+reset|Reset|Қалпына келтіру|Сбросить
+scenario|Scenario link|Сценарий сілтемесі|Ссылка на сценарий
+prices|Display basis|Баға негізі|Ценовая база
+prices_2020|December 2020 prices|2020 жылғы желтоқсан бағасы|Цены декабря 2020 года
+prices_2026|January 2026 prices|2026 жылғы қаңтар бағасы|Цены января 2026 года
+nominal|Nominal|Атаулы|Номинал
+real|Real · 2020 prices|Нақты · 2020 бағасы|Реально · в ценах 2020 года
+inflation|2026 inflation assumption|2026 жылғы инфляция болжамы|Допущение об инфляции в 2026 году
+inflation_summary|The January 2026 benefit was ₸164,350, equivalent to ₸94,116 in December 2020 prices.|2026 жылғы қаңтарда жәрдемақы 164 350 ₸ болды. Бұл 2020 жылғы желтоқсан бағасымен 94 116 ₸-ге тең.|В январе 2026 года пособие составило 164 350 ₸, или 94 116 ₸ в ценах декабря 2020 года.
+workflow|Proposed welfare workflow|Әлеуметтік көмек рәсімінің ұсынылған сызбасы|Предлагаемый порядок работы с пособиями
+databases|Government databases|Мемлекеттік дерекқорлар|Государственные базы данных
+scoring_rule|Scoring rule|Балл ережесі|Правила начисления
+official|Official decides|Шешімді маман қабылдайды|Решение принимает специалист
+tools|How the proposed tools would work|Ұсынылған құралдардың жұмыс тәртібі|Как будут работать предложенные инструменты
+phone|Phone|Телефон|Телефон
+scripted|Prototype · Scripted answers|Прототип · Дайын жауаптар|Прототип · Готовые ответы
+caseworker|Caseworker workspace|Маманның жұмыс орны|Рабочее место специалиста
+queue|Flag queue|Тексеру кезегі|Очередь на проверку
+fictional|Prototype · Fictional records|Прототип · Ойдан шығарылған жазбалар|Прототип · Вымышленные записи
+car_mismatch|Vehicle ownership mismatch|Көлік иесі туралы сәйкессіздік|Расхождение в данных об автомобиле
+car_example|A household reports a vehicle sale while the registry still lists the vehicle. A caseworker would check the record.|Отбасы көлігін сатқанын хабарлайды, бірақ ол әлі тізілімде тұр. Маман жазбаны тексерер еді.|Семья сообщает о продаже машины, а она всё ещё числится в реестре. Специалист проверил бы запись.
+roster_mismatch|Household roster mismatch|Отбасы құрамы туралы сәйкессіздік|Расхождение в составе семьи
+roster_example|A household reports a member moving out. A caseworker would confirm the current household composition.|Отбасы бір мүшесінің көшіп кеткенін хабарлайды. Маман отбасының қазіргі құрамын анықтар еді.|Семья сообщает, что один из её членов переехал. Специалист уточнил бы текущий состав семьи.
+annual|Annual report|Жылдық есеп|Годовой отчёт
+no_data|Prototype · No data yet|Прототип · Дерек әлі жоқ|Прототип · Данных пока нет
+matrix|Audit error matrix|Аудиттің қателер матрицасы|Матрица ошибок аудита
+survey|Survey|Сауалнама|Обследование
+poverty|In poverty|Кедейлік жағдайында|За чертой бедности
+poverty_above|Above poverty line|Кедейлік шегінен жоғары|Выше черты бедности
+cost_risk|Costs and risks|Шығындар мен тәуекелдер|Издержки и риски
+risk_level|Risk level|Тәуекел деңгейі|Уровень риска
+risk_author|Set by author|Автор белгілейді|Определяет автор
+verdict_title|Only under conditions|Тек осы шарттармен|Только при этих условиях
+read_methods|Read the methods & sources|Әдістер мен дереккөздерді оқу|Читать о методах и источниках
+income_band_0|No income|Табыс жоқ|Нет дохода
+income_band_1|Below poverty line|Кедейлік шегінен төмен|Ниже черты бедности
+income_band_2|Poverty line to 1 SM|Кедейлік шегінен 1 ЕТК-ге дейін|От черты бедности до 1 ПМ
+income_band_3|1–2 SM|1–2 ЕТК|1–2 ПМ
+income_band_4|2–3 SM|2–3 ЕТК|2–3 ПМ
+income_band_5|3–4 SM|3–4 ЕТК|3–4 ПМ
+income_band_6|4 SM or more|4 ЕТК немесе одан жоғары|4 ПМ и выше
+js_points|{points} points · {categories}|{points} балл · {categories}|{points} баллов · {categories}
+js_incomeAmount|{amount} tenge per person|бір адамға {amount} теңге|{amount} тенге на человека
+js_benefitExcluded|Birth benefit example · {amount} to ₸0|Бала туу жәрдемақысы мысалы · {amount}-ден 0 ₸-ге|Пример пособия при рождении · с {amount} до 0 ₸
+js_benefitIncluded|Birth benefit example · {amount} before the A/B exclusion|Бала туу жәрдемақысы мысалы · A/B шектеуіне дейін {amount}|Пример пособия при рождении · {amount} до применения исключения A/B
+js_cliffSummary|At {threshold} per person the score moves from {low} ({lowCat}) to {high} ({highCat}). For positive income below {minimum}, two scores are shown because the exact poverty-line amount is unclear in the draft.|Бір адамға {threshold} болғанда балл {low}-ден ({lowCat}) {high}-ге ({highCat}) көтеріледі. Нөлден жоғары, {minimum}-ден төмен табыс үшін екі балл көрсетіледі, өйткені жоба нақты кедейлік шегін бермейді.|При {threshold} на человека балл меняется с {low} ({lowCat}) на {high} ({highCat}). Для положительного дохода ниже {minimum} показаны два балла, поскольку точное значение черты бедности в черновике не указано.
+js_chartData|Chart data|График деректері|Данные графика
+js_band|Income band|Табыс аралығы|Диапазон дохода
+js_score|Score|Балл|Баллы
+js_category|Category|Санат|Категория
+js_real|Real · {basis} prices|Нақты · {basis} жылғы бағамен|Реально · в ценах {basis} года
+js_projection|Projection · January {year}: {amount} in {basis} prices at {rate}% inflation, assuming the nominal benefit stays at {nominal}.|Болжам · {year} жылғы қаңтар: инфляция {rate}% болып, атаулы жәрдемақы {nominal} болып қалса, {basis} жылғы бағамен {amount}.|Прогноз · январь {year} года: {amount} в ценах {basis} года при инфляции {rate}%, если номинал останется {nominal}.
+js_january|January|Қаңтар|Январь
+js_nominal|Nominal|Атаулы|Номинал
+js_realTable|Real ({basis} prices)|Нақты ({basis} жылғы бағамен)|Реально (цены {basis} года)
+js_projectedYear|{year} projection|{year} жылғы болжам|Прогноз на {year} год
+js_assumed|{amount} assumed|Болжам: {amount}|Допущение: {amount}
+js_simAmbiguous|Two reported category ranges overlap at this score.|Бұл балл жарияланған екі санаттың қабаттасқан аралығына түседі.|При этом балле два опубликованных диапазона пересекаются.
+js_simExcluded|Falls in A/B under the reported exclusion rule.|Жарияланған ереже бойынша A/B санатына түседі.|По опубликованным правилам результат попадает в A/B.
+js_simIncluded|Falls outside A/B under the reported rule.|Жарияланған ереже бойынша A/B санатына кірмейді.|По опубликованным правилам результат вне A/B.
+js_componentIncome|Income per person|Бір адамға шаққандағы табыс|Доход на человека
+js_componentWork|Working members|Жұмыс істейтіндер|Работающие члены семьи
+js_componentChildren|Children|Балалар|Дети
+js_componentLoan|Active loan|Өтеліп жатқан несие|Действующий кредит
+js_componentDebt|Overdue debt|Мерзімі өткен берешек|Просроченный долг
+js_componentCar|Car ownership|Көлік иелігі|Наличие автомобиля
+js_componentHousing|Housing|Тұрғын үй|Жильё
+js_shared|Scenario link copied.|Сценарий сілтемесі көшірілді.|Ссылка на сценарий скопирована.
+js_copy|Copy the selected scenario link.|Белгіленген сілтемені көшіріңіз.|Скопируйте выделенную ссылку.
+js_loadError|Interactive data could not load. Refresh the page to retry.|Интерактивті деректер жүктелмеді. Бетті жаңартып көріңіз.|Интерактивные данные не загрузились. Обновите страницу.

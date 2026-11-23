@@ -34,17 +34,17 @@ SyRI (Hague District Court, 2020) and Robodebt, which issued around 470,000 wron
 
 ## Optional: test the explainer yourself
 
-Give a real model (KAZ-LLM, Claude or ChatGPT) the published points rule and ten archetype families whose correct category you have calculated. Ask in Kazakh and Russian: "What category is this family, and why?" Record how many categories and explanations it gets right. [MISSING: optional experiment results.] If it makes mistakes, that is
+Give a real model (KAZ-LLM, Claude or ChatGPT) the published points rule and ten archetype families whose correct category you have calculated. Ask in Kazakh and Russian: "What category is this family, and why?" Record how many categories and explanations it gets right. [MISSING: optional experiment results.]
 
 ## The bill
 
 ### Environmental
 
-The audit runs a few times a year on survey-sized data and needs little compute. Data-quality flags run on registry records and are also light. The explainer is the main load: a language model answering questions from up to 6.2 million families, mostly in the months after categories are announced. Kazakhstan's electricity comes largely from coal, so this load has a carbon cost; a smaller local model such as the 8-billion-parameter KAZ-LLM, run in a domestic data centre, would cost far less energy than a 70-billion-parameter one. [Check the coal share with KEGOC or IEA data before publishing.]
+The audit runs a few times a year. The largest compute load would come from answering questions after families receive their categories. During a pilot, meter electricity per thousand answers and ask the data centre for cooling-water use. Compare the 8-billion-parameter KAZ-LLM, a larger model, and a plain-language rules page. Use Kazakhstan’s grid mix to estimate emissions. The coal share and actual operating figures still need verification.
 
 ### Economic
 
-Costs are building the tools, hosting, data-sharing agreements, the independent audit team, caseworker time to review flags, and maintenance every time the rule changes. These would be small next to the 700 billion tenge the government expects to save in 2027. Who profits matters: the DFC is run by the state company National Information Technologies with UNDP (ITU, n.d.), and an outsourced AI contract risks vendor lock-in. The cheapest alternative, which AI must beat, is to publish the full points table, staff a review desk and publish appeals statistics.
+Costs are building the tools, hosting, data-sharing agreements, the independent audit team, caseworker time to review flags, and maintenance every time the rule changes. A cost estimate still needs a ministry staffing and hosting budget. The ministry would pay for implementation and review. A vendor could earn a recurring contract and gain control over maintenance. The DFC is run by the state company National Information Technologies with UNDP (ITU, n.d.). Compare the pilot with publishing the full points table, staffing a review desk and publishing appeals statistics.
 
 ### Labor
 
@@ -62,7 +62,7 @@ The audit needs survey data linked to DFC categories, which requires a legal bas
 
 ### Why is this family in category B?
 
-The rule works in steps. For this family, every income band below four subsistence minimums leaves them in category C. Cross 203,404 tenge per person and their income points jump from 400 to 620, the score rises from 650 to 870, and the family moves into
+At 203,404 tenge per person, the income contribution rises from 400 to 620 points. The household score rises from 650 to 870, moving the example from C to B under the reported rule.
 
 ### What if a record is incorrect?
 

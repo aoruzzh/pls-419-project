@@ -1,23 +1,29 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An interactive research project on the Digital Family Card and welfare eligibility in Kazakhstan.">
-  <title>{% block title %}Scored for Support{% endblock %}</title>
+  <meta name="description" content="{{ t('description') }}">
+  <title>{% block title %}{{ t('brand') }}{% endblock %}</title>
   <link rel="stylesheet" href="{{ site_root }}/static/site.css">
+  {% for code, title, link in languages %}<link rel="alternate" hreflang="{{ code }}" href="{{ link }}">{% endfor %}
 </head>
 <body data-page="{{ page }}">
-  <a class="skip-link" href="#main">Skip to main content</a>
+  <a class="skip-link" href="#main">{{ t('skip') }}</a>
   <header class="site-header">
     <div class="shell header-row">
-      <a class="brand" href="{{ site_root }}/" aria-label="Scored for Support home"><span class="brand-mark" aria-hidden="true"><b>B</b><b>C</b></span> Scored for Support</a>
-      <button class="menu-button" type="button" aria-controls="site-nav" aria-expanded="false">Menu</button>
-      <nav id="site-nav" aria-label="Main navigation">
-        {% for id, label in [('problem','Problem'),('data','Data'),('research','Research'),('solution','Solution'),('verdict','Verdict')] %}
-        <a href="{% if page != 'home' %}{{ site_root }}/{% endif %}#{{ id }}">{{ label }}</a>
+      <a class="brand" href="{{ urls.home }}"><span class="brand-mark" aria-hidden="true"><b>B</b><b>C</b></span> {{ t('brand') }}</a>
+      <button class="menu-button" type="button" aria-controls="site-nav" aria-expanded="false">{{ t('menu') }}</button>
+      <nav id="site-nav" aria-label="{{ t('main_nav') }}">
+        {% for id in ['problem','data','research','solution','verdict'] %}
+        <a href="{{ '' if page == 'home' else urls.home }}#{{ id }}">{{ t(id) }}</a>
         {% endfor %}
-        <a href="{{ site_root }}/methods/" {% if page == 'methods' %}aria-current="page"{% endif %}>Methods</a>
+        <a href="{{ urls.methods }}" {% if page == 'methods' %}aria-current="page"{% endif %}>{{ t('methods') }}</a>
+      </nav>
+      <nav class="language-switch" aria-label="{{ t('language') }}">
+      {% for code, title, link in languages %}
+        <a data-language-link href="{{ link }}" lang="{{ code }}" hreflang="{{ code }}" {% if code == lang %}aria-current="page"{% endif %}>{{ title }}</a>
+      {% endfor %}
       </nav>
     </div>
     <div class="progress-track" aria-hidden="true"><div id="reading-progress"></div></div>
@@ -25,11 +31,12 @@
   <main id="main" tabindex="-1">{% block main %}{% endblock %}</main>
   <footer class="site-footer">
     <div class="shell footer-row">
-      <div><a class="brand" href="{{ site_root }}/">Scored for Support</a><p>PLS 419 final project · Kazakhstan</p></div>
-      <nav aria-label="Project information"><a href="{{ site_root }}/methods/">Methods & sources</a><a href="{{ site_root }}/about/">AI transparency</a></nav>
-      <p>Research pack dated <time datetime="2026-11-23">23 November 2026</time><br>Rule verification pending</p>
+      <div><a class="brand" href="{{ urls.home }}">{{ t('brand') }}</a><p>{{ t('course') }}</p></div>
+      <nav aria-label="{{ t('project_info') }}"><a href="{{ urls.methods }}">{{ t('methods_title') }}</a><a href="{{ urls.about }}">{{ t('about_title') }}</a></nav>
+      <p>{{ t('pack_date') }} <time datetime="2026-11-23">{{ t('date') }}</time><br>{{ t('verification') }}</p>
     </div>
   </footer>
+  <script type="application/json" id="site-messages">{{ messages | tojson }}</script>
   <script type="module" src="{{ site_root }}/static/site.mjs"></script>
 </body>
 </html>
