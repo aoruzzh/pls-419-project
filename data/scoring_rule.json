@@ -1,0 +1,99 @@
+{
+  "source": "Ministry methodology as reported by Digital Business, Finratings, Azattyq Rýhy, Informburo, Zakon.kz (2026). To be checked against Order No. 267 as amended.",
+  "retrieved": "2026-11-23",
+  "subsistence_minimum_2026": 50851,
+  "income_bands_per_person": [
+    {
+      "label": "No income",
+      "min": 0,
+      "max": 0,
+      "points": 0
+    },
+    {
+      "label": "Below poverty line",
+      "points": 40
+    },
+    {
+      "label": "Poverty line to 1 SM",
+      "max": 50851,
+      "points": 100
+    },
+    {
+      "label": "1–2 SM",
+      "min": 50851,
+      "max": 101702,
+      "points": 170
+    },
+    {
+      "label": "2–3 SM",
+      "min": 101702,
+      "max": 152553,
+      "points": 280
+    },
+    {
+      "label": "3–4 SM",
+      "min": 152553,
+      "max": 203404,
+      "points": 400
+    },
+    {
+      "label": "4 SM or more",
+      "min": 203404,
+      "points": 620
+    }
+  ],
+  "employment": {
+    "0": 0,
+    "1": 150,
+    "2+": 300
+  },
+  "children": {
+    "0": 0,
+    "1": -50,
+    "2": -100,
+    "3": -150,
+    "4+": -200
+  },
+  "active_loan": -50,
+  "overdue_90d_one_adult": -250,
+  "overdue_90d_all_adults": -500,
+  "no_car": -50,
+  "no_own_housing": -200,
+  "categories": [
+    {
+      "cat": "A",
+      "min": 1800
+    },
+    {
+      "cat": "B",
+      "min": 730,
+      "max": 1799
+    },
+    {
+      "cat": "C",
+      "min": -30,
+      "max": 729
+    },
+    {
+      "cat": "D",
+      "min": -460,
+      "max": -29
+    },
+    {
+      "cat": "E",
+      "max": -459
+    }
+  ],
+  "excluded_categories": [
+    "A",
+    "B"
+  ],
+  "unpublished": [
+    "property",
+    "health",
+    "education",
+    "agriculture",
+    "social protection",
+    "exact car rules"
+  ]
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive research project on the Digital Family Card and welfare eligibility in Kazakhstan.">
+  <title>{% block title %}Scored for Support{% endblock %}</title>
+  <link rel="stylesheet" href="{{ site_root }}/static/site.css">
+</head>
+<body data-page="{{ page }}">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="shell header-row">
+      <a class="brand" href="{{ site_root }}/" aria-label="Scored for Support home"><span class="brand-mark" aria-hidden="true"><b>B</b><b>C</b></span> Scored for Support</a>
+      <button class="menu-button" type="button" aria-controls="site-nav" aria-expanded="false">Menu</button>
+      <nav id="site-nav" aria-label="Main navigation">
+        {% for id, label in [('problem','Problem'),('data','Data'),('research','Research'),('solution','Solution'),('verdict','Verdict')] %}
+        <a href="{% if page != 'home' %}{{ site_root }}/{% endif %}#{{ id }}">{{ label }}</a>
+        {% endfor %}
+        <a href="{{ site_root }}/methods/" {% if page == 'methods' %}aria-current="page"{% endif %}>Methods</a>
+      </nav>
+    </div>
+    <div class="progress-track" aria-hidden="true"><div id="reading-progress"></div></div>
+  </header>
+  <main id="main" tabindex="-1">{% block main %}{% endblock %}</main>
+  <footer class="site-footer">
+    <div class="shell footer-row">
+      <div><a class="brand" href="{{ site_root }}/">Scored for Support</a><p>PLS 419 final project · Kazakhstan</p></div>
+      <nav aria-label="Project information"><a href="{{ site_root }}/methods/">Methods & sources</a><a href="{{ site_root }}/about/">AI transparency</a></nav>
+      <p>Research pack dated <time datetime="2026-11-23">23 November 2026</time><br>Rule verification pending</p>
+    </div>
+  </footer>
+  <script type="module" src="{{ site_root }}/static/site.mjs"></script>
+</body>
+</html>
