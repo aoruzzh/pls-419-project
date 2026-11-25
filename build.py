@@ -251,6 +251,7 @@ def home(lang):
 
     return templates.get_template("index.html").render(
         **context, lookup=lookup, render=renderer(lookup, context), grouped=grouped, close_cases=close_cases,
+        purchasing_loss=round(100 * (1 - benefit["rows"][-1]["real"] / benefit["rows"][0]["real"])),
         economy_rows=[benefit["rows"][0], benefit["rows"][-1]], historical_benefit=benefit["rows"][-1]["nominal"],
         hook=hook, problem=problem[:affected], affected=problem[affected:question],
         question=problem[question:], stats=dataset("stats")["cards"],

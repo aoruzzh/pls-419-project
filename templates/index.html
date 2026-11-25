@@ -22,7 +22,7 @@
       <div class="hero-copy">{{ t('citizen_intro') }}</div>
       <div class="actions"><a class="button primary" href="#simulator">{{ t('go_sim') }}</a><a class="button secondary" href="#record-check">{{ t('check_record') }}</a></div>
     </div>
-    <div class="city-photo" aria-hidden="true"></div>
+    <img class="city-photo" src="{{ site_root }}/static/astana.jpg" alt="" width="1536" height="1024" fetchpriority="high">
 
   </div>
 
@@ -58,18 +58,26 @@
       </div>
       <p class="file-note">{{ t('file_note') }} <a href="{{ urls.methods }}#bizmedia-kz-2026">Bizmedia.kz</a></p>
     </aside>
-    <figure class="economy-card">
-      <h3>{{ t('economy_title') }}</h3>
-      <p class="unit">{{ t('prices_2020') }} · ₸</p>
-      {% for row in economy_rows %}
-      <div class="buying-row"><span>{{ row.year }}</span><strong>{{ grouped(row.real) }} ₸</strong>
-        <div class="bar-track"><i style="width:{{ 100 * row.real / economy_rows[0].real }}%"></i></div>
-      </div>{% endfor %}
-      <figcaption>{{ t('economy_copy') }}</figcaption>
-      <a href="#inflation">{{ t('price_link') }} →</a>
-    </figure>
+    <section class="record-guide" id="record-check"><h3>{{ t('check_record') }}</h3><p>{{ t('record_steps') }}</p></section>
   </div>
-  <section class="record-guide" id="record-check"><h3>{{ t('check_record') }}</h3><p>{{ t('record_steps') }}</p></section>
+  <figure class="economy-card" aria-labelledby="buying-title">
+    <div class="market-scene">
+      <img src="{{ site_root }}/static/market.jpg" alt="" loading="lazy" width="1536" height="1024">
+      <div class="market-overlay"><strong>−{{ purchasing_loss }}%</strong><span>{{ t('buying_power') }}<br>2021–2026</span></div>
+    </div>
+    <div class="economy-body">
+      <h3 id="buying-title">{{ t('economy_title') }}</h3>
+      <p class="unit">{{ t('prices_2020') }}</p>
+      {% for row in economy_rows %}
+      <div class="buying-row">
+        <div class="amount-line"><span>{{ row.year }}</span><strong>{{ "{:,}".format(row.real) | replace(",", " ") }} ₸</strong></div>
+        <div class="bar-track" aria-hidden="true"><i style="width:{{ 100 * row.real / economy_rows[0].real }}%"></i></div>
+      </div>
+      {% endfor %}
+      <p>{{ t('economy_copy') }}</p>
+      <a href="#inflation">{{ t('price_link') }} →</a>
+    </div>
+  </figure>
   <section class="decision-flow" aria-labelledby="chain-title">
     <h3 id="chain-title">{{ t('chain_label') }}</h3>
     <ol>

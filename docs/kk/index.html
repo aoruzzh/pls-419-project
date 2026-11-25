@@ -37,7 +37,7 @@
       <div class="hero-copy">Табыс өзгерсе немесе деректе қате болса, отбасы алатын көмек қалай өзгеруі мүмкін? Өз деректеріңізді тексермес бұрын мысалды қараңыз.</div>
       <div class="actions"><a class="button primary" href="#simulator">Балл калькуляторын ашу</a><a class="button secondary" href="#record-check">Деректерді тексеруге дайындалу</a></div>
     </div>
-    <div class="city-photo" aria-hidden="true"></div>
+    <img class="city-photo" src="../static/astana.jpg" alt="" width="1536" height="1024" fetchpriority="high">
 
   </div>
 
@@ -79,18 +79,28 @@
       </div>
       <p class="file-note">Мысалда жарияланған баллдар мен 2026 жылғы жәрдемақы сомасы қолданылған. Нақты төлем басқа талаптарға да байланысты. <a href="./methods/#bizmedia-kz-2026">Bizmedia.kz</a></p>
     </aside>
-    <figure class="economy-card">
-      <h3>Бала туу жәрдемақысына не сатып алуға болады?</h3>
-      <p class="unit">2020 жылғы желтоқсан бағасы · ₸</p>
-      <div class="buying-row"><span>2021</span><strong>110 846 ₸</strong>
-        <div class="bar-track"><i style="width:100.0%"></i></div>
-      </div>      <div class="buying-row"><span>2026</span><strong>94 116 ₸</strong>
-        <div class="bar-track"><i style="width:84.90698807354347%"></i></div>
-      </div>      <figcaption>Бағаларды бір деңгейге келтірсек, 2026 жылғы төлемнің сатып алу қабілеті 2021 жылмен салыстырғанда шамамен 15% төмендеген. Күнделікті тауарлар қымбаттаса, отбасының басқа жергілікті кәсіпорындарда жұмсайтын ақшасы азаяды.</figcaption>
-      <a href="#inflation">Баға мен инфляцияны қарау →</a>
-    </figure>
+    <section class="record-guide" id="record-check"><h3>Деректерді тексеруге дайындалу</h3><p>Хабарламадағы табыс кезеңін, отбасы құрамын және тіркелген мүлікті өз құжаттарыңызбен салыстырыңыз. Айырмашылықты, күнін және оны растайтын құжатты жазып алыңыз. Хабарлама берген мекемеден қандай дерек қолданылғанын және оны қалай түзетуге болатынын сұраңыз.</p></section>
   </div>
-  <section class="record-guide" id="record-check"><h3>Деректерді тексеруге дайындалу</h3><p>Хабарламадағы табыс кезеңін, отбасы құрамын және тіркелген мүлікті өз құжаттарыңызбен салыстырыңыз. Айырмашылықты, күнін және оны растайтын құжатты жазып алыңыз. Хабарлама берген мекемеден қандай дерек қолданылғанын және оны қалай түзетуге болатынын сұраңыз.</p></section>
+  <figure class="economy-card" aria-labelledby="buying-title">
+    <div class="market-scene">
+      <img src="../static/market.jpg" alt="" loading="lazy" width="1536" height="1024">
+      <div class="market-overlay"><strong>−15%</strong><span>Сатып алу қабілеті<br>2021–2026</span></div>
+    </div>
+    <div class="economy-body">
+      <h3 id="buying-title">Бала туу жәрдемақысына не сатып алуға болады?</h3>
+      <p class="unit">2020 жылғы желтоқсан бағасы</p>
+      <div class="buying-row">
+        <div class="amount-line"><span>2021</span><strong>110 846 ₸</strong></div>
+        <div class="bar-track" aria-hidden="true"><i style="width:100.0%"></i></div>
+      </div>
+      <div class="buying-row">
+        <div class="amount-line"><span>2026</span><strong>94 116 ₸</strong></div>
+        <div class="bar-track" aria-hidden="true"><i style="width:84.90698807354347%"></i></div>
+      </div>
+      <p>Бағаларды бір деңгейге келтірсек, 2026 жылғы төлемнің сатып алу қабілеті 2021 жылмен салыстырғанда шамамен 15% төмендеген. Күнделікті тауарлар қымбаттаса, отбасының басқа жергілікті кәсіпорындарда жұмсайтын ақшасы азаяды.</p>
+      <a href="#inflation">Баға мен инфляцияны қарау →</a>
+    </div>
+  </figure>
   <section class="decision-flow" aria-labelledby="chain-title">
     <h3 id="chain-title">Тізілімдегі жазбадан жәрдемақы шешіміне дейін</h3>
     <ol>

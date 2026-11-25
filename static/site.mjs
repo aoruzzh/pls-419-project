@@ -221,13 +221,14 @@ if (document.body.dataset.page === 'home') {
   }
 }
 
-const economy = document.querySelector('.economy-card');
-if (economy && 'IntersectionObserver' in window) {
-  const observer = new IntersectionObserver(([entry]) => {
-    if (entry.isIntersecting) {
-      economy.classList.add('in-view');
-      observer.disconnect();
+if (!motion.matches && 'IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('enter-view');
+        observer.unobserve(entry.target);
+      }
     }
   });
-  observer.observe(economy);
+  document.querySelectorAll('.chapter-heading, .economy-card, .record-guide, .chart-card, .simulator, .decision-flow, .prototype-grid').forEach(block => observer.observe(block));
 }

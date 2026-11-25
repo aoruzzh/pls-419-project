@@ -37,7 +37,7 @@
       <div class="hero-copy">Посмотрите, как изменение дохода или ошибка в записи могут повлиять на помощь семье в Казахстане. Начните с примера, затем проверьте свои данные.</div>
       <div class="actions"><a class="button primary" href="#simulator">Открыть калькулятор баллов</a><a class="button secondary" href="#record-check">Подготовиться к проверке данных</a></div>
     </div>
-    <div class="city-photo" aria-hidden="true"></div>
+    <img class="city-photo" src="../static/astana.jpg" alt="" width="1536" height="1024" fetchpriority="high">
 
   </div>
 
@@ -79,18 +79,28 @@
       </div>
       <p class="file-note">В примере использованы опубликованные баллы и размер пособия за 2026 год. Реальная выплата зависит и от остальных условий. <a href="./methods/#bizmedia-kz-2026">Bizmedia.kz</a></p>
     </aside>
-    <figure class="economy-card">
-      <h3>Что можно купить на пособие при рождении?</h3>
-      <p class="unit">Цены декабря 2020 года · ₸</p>
-      <div class="buying-row"><span>2021</span><strong>110 846 ₸</strong>
-        <div class="bar-track"><i style="width:100.0%"></i></div>
-      </div>      <div class="buying-row"><span>2026</span><strong>94 116 ₸</strong>
-        <div class="bar-track"><i style="width:84.90698807354347%"></i></div>
-      </div>      <figcaption>В сопоставимых ценах на пособие 2026 года можно было купить примерно на 15% меньше, чем в 2021 году. Когда дорожают необходимые товары, у семей остаётся меньше денег на другие покупки в местных магазинах.</figcaption>
-      <a href="#inflation">Посмотреть цены и инфляцию →</a>
-    </figure>
+    <section class="record-guide" id="record-check"><h3>Подготовиться к проверке данных</h3><p>Сверьте период дохода, состав семьи и зарегистрированное имущество в уведомлении со своими документами. Запишите расхождение, дату и подтверждающий документ. Спросите в органе, выдавшем уведомление, какую запись использовали и как запросить исправление.</p></section>
   </div>
-  <section class="record-guide" id="record-check"><h3>Подготовиться к проверке данных</h3><p>Сверьте период дохода, состав семьи и зарегистрированное имущество в уведомлении со своими документами. Запишите расхождение, дату и подтверждающий документ. Спросите в органе, выдавшем уведомление, какую запись использовали и как запросить исправление.</p></section>
+  <figure class="economy-card" aria-labelledby="buying-title">
+    <div class="market-scene">
+      <img src="../static/market.jpg" alt="" loading="lazy" width="1536" height="1024">
+      <div class="market-overlay"><strong>−15%</strong><span>Покупательная способность<br>2021–2026</span></div>
+    </div>
+    <div class="economy-body">
+      <h3 id="buying-title">Что можно купить на пособие при рождении?</h3>
+      <p class="unit">Цены декабря 2020 года</p>
+      <div class="buying-row">
+        <div class="amount-line"><span>2021</span><strong>110 846 ₸</strong></div>
+        <div class="bar-track" aria-hidden="true"><i style="width:100.0%"></i></div>
+      </div>
+      <div class="buying-row">
+        <div class="amount-line"><span>2026</span><strong>94 116 ₸</strong></div>
+        <div class="bar-track" aria-hidden="true"><i style="width:84.90698807354347%"></i></div>
+      </div>
+      <p>В сопоставимых ценах на пособие 2026 года можно было купить примерно на 15% меньше, чем в 2021 году. Когда дорожают необходимые товары, у семей остаётся меньше денег на другие покупки в местных магазинах.</p>
+      <a href="#inflation">Посмотреть цены и инфляцию →</a>
+    </div>
+  </figure>
   <section class="decision-flow" aria-labelledby="chain-title">
     <h3 id="chain-title">От записи в реестре до решения о пособии</h3>
     <ol>

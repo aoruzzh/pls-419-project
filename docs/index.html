@@ -37,7 +37,7 @@
       <div class="hero-copy">Explore how a change in income or a mistake in a record could affect support for a family in Kazakhstan. Try an example before checking your own records.</div>
       <div class="actions"><a class="button primary" href="#simulator">Open the score simulator</a><a class="button secondary" href="#record-check">Prepare a record check</a></div>
     </div>
-    <div class="city-photo" aria-hidden="true"></div>
+    <img class="city-photo" src="./static/astana.jpg" alt="" width="1536" height="1024" fetchpriority="high">
 
   </div>
 
@@ -79,18 +79,28 @@
       </div>
       <p class="file-note">Uses reported points and the 2026 benefit amount. An actual award would also depend on the other eligibility rules. <a href="./methods/#bizmedia-kz-2026">Bizmedia.kz</a></p>
     </aside>
-    <figure class="economy-card">
-      <h3>What can the birth payment buy?</h3>
-      <p class="unit">December 2020 prices · ₸</p>
-      <div class="buying-row"><span>2021</span><strong>110,846 ₸</strong>
-        <div class="bar-track"><i style="width:100.0%"></i></div>
-      </div>      <div class="buying-row"><span>2026</span><strong>94,116 ₸</strong>
-        <div class="bar-track"><i style="width:84.90698807354347%"></i></div>
-      </div>      <figcaption>Measured at the same prices, the 2026 payment bought about 15% less than the 2021 payment. When essentials cost more, families have less room to spend at other local businesses.</figcaption>
-      <a href="#inflation">Explore prices and inflation →</a>
-    </figure>
+    <section class="record-guide" id="record-check"><h3>Prepare a record check</h3><p>Compare the income period, household members and registered assets in your notice with your own records. Write down any difference, its date and the document that shows it. Ask the office that issued the notice which entry it used and how to request a correction.</p></section>
   </div>
-  <section class="record-guide" id="record-check"><h3>Prepare a record check</h3><p>Compare the income period, household members and registered assets in your notice with your own records. Write down any difference, its date and the document that shows it. Ask the office that issued the notice which entry it used and how to request a correction.</p></section>
+  <figure class="economy-card" aria-labelledby="buying-title">
+    <div class="market-scene">
+      <img src="./static/market.jpg" alt="" loading="lazy" width="1536" height="1024">
+      <div class="market-overlay"><strong>−15%</strong><span>Purchasing power<br>2021–2026</span></div>
+    </div>
+    <div class="economy-body">
+      <h3 id="buying-title">What can the birth payment buy?</h3>
+      <p class="unit">December 2020 prices</p>
+      <div class="buying-row">
+        <div class="amount-line"><span>2021</span><strong>110 846 ₸</strong></div>
+        <div class="bar-track" aria-hidden="true"><i style="width:100.0%"></i></div>
+      </div>
+      <div class="buying-row">
+        <div class="amount-line"><span>2026</span><strong>94 116 ₸</strong></div>
+        <div class="bar-track" aria-hidden="true"><i style="width:84.90698807354347%"></i></div>
+      </div>
+      <p>Measured at the same prices, the 2026 payment bought about 15% less than the 2021 payment. When essentials cost more, families have less room to spend at other local businesses.</p>
+      <a href="#inflation">Explore prices and inflation →</a>
+    </div>
+  </figure>
   <section class="decision-flow" aria-labelledby="chain-title">
     <h3 id="chain-title">From a registry entry to a benefit decision</h3>
     <ol>
