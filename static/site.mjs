@@ -220,3 +220,14 @@ if (document.body.dataset.page === 'home') {
     $('family-form').before(message);
   }
 }
+
+const economy = document.querySelector('.economy-card');
+if (economy && 'IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      economy.classList.add('in-view');
+      observer.disconnect();
+    }
+  });
+  observer.observe(economy);
+}

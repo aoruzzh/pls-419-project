@@ -305,3 +305,52 @@ figcaption { margin-top: 1.2rem; }
   .menu-button { margin-inline-start: auto; }
   .language-switch { width: max-content; max-width: 100%; margin-inline-start: 0; }
 }
+
+:root {
+  --ink: #103342; --muted: #425e69; --paper: #f7fbfc;
+  --blue: #00687c; --blue-soft: #d9f1f4; --line: #c5dbe0;
+}
+.site-header, .arc { background: rgba(247,252,253,.94); backdrop-filter: blur(16px); }
+.hero {
+  position: relative; isolation: isolate; overflow: hidden; color: white;
+  background: #063c51; padding: 0; border-bottom: 5px solid #e9b93e;
+}
+.hero-grid { min-height: clamp(26rem,39vw,38rem); align-items: center; }
+.city-photo {
+  position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(90deg,#063c51 4%,rgba(6,60,81,.95) 32%,rgba(6,60,81,.65) 51%,transparent 73%),
+              url(astana.jpg) right 37% / cover;
+}
+.hero-grid > :first-child { padding-block: clamp(2rem,5vw,5rem); }
+.hero h1 em, .hero .eyebrow { color: #ffda71; }
+.hero .eyebrow span { background: currentColor; }
+.hero-copy { font-size: 1.1rem; }
+.hero .primary { background: #ffdb71; color: #123542; border-color: transparent; }
+.hero .secondary { color: white; background: #103b4aa8; border-color: #bdd9de; backdrop-filter: blur(12px); }
+.data-section { background: linear-gradient(135deg,#e4f4f6,#f4f9fa 48%,#d9edf2); }
+.panel, .case-file { background: linear-gradient(130deg,#ffffffed,#f3fbfbd9); box-shadow: 0 8px 26px #073c5010; }
+.citizen-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1rem; margin-block: 1.5rem; }
+.case-file, .economy-card { border-radius: 14px; }
+.economy-card { margin: 0; background: linear-gradient(135deg,#064156,#006e7f); color: white; padding: clamp(1.25rem,3vw,2.25rem); }
+.economy-card h3 { font-family: var(--serif); font-size: 2rem; }
+.economy-card .unit { margin-block: .75rem 1rem; font-size: .86rem; }
+.buying-row { display: grid; grid-template-columns: 1fr auto; margin: 1rem 0; }
+.bar-track { grid-column: span 2; background: #ffffff26; height: .8rem; border-radius: 1rem; overflow: hidden; }
+.bar-track i { display: block; background: #8fe4ec; height: 100%; border-radius: inherit; transform-origin: left; }
+.buying-row + .buying-row i { background: #ffdb71; }
+.economy-card figcaption { margin: 1.4rem 0 .75rem; font-size: 1rem; color: white; }
+.economy-card a { color: #ffe295; }
+.record-guide { background: var(--blue-soft); border-inline-start: 4px solid var(--blue); padding: 1.4rem; }
+.record-guide p { max-width: 80ch; margin-top: .6rem; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-grid > :first-child, details[open] > p { animation: enter .55s ease-out both; }
+  .economy-card.in-view i { animation: grow .9s ease-out; }
+  @keyframes enter { from { opacity: 0; transform: translateY(.6rem); } }
+  @keyframes grow { from { transform: scaleX(0); } }
+}
+@media (max-width: 960px) {
+  .hero-grid, .citizen-grid { grid-template-columns: 1fr; }
+  .hero-grid { padding-top: 12rem; }
+  .city-photo { background: linear-gradient(0deg,#063c51 24%,rgba(6,60,81,.94) 56%,transparent 87%),url(astana.jpg) center top / cover; }
+  .hero-grid > :first-child { max-width: 38rem; }
+}

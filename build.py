@@ -251,7 +251,7 @@ def home(lang):
 
     return templates.get_template("index.html").render(
         **context, lookup=lookup, render=renderer(lookup, context), grouped=grouped, close_cases=close_cases,
-        historical_benefit=benefit["rows"][-1]["nominal"],
+        economy_rows=[benefit["rows"][0], benefit["rows"][-1]], historical_benefit=benefit["rows"][-1]["nominal"],
         hook=hook, problem=problem[:affected], affected=problem[affected:question],
         question=problem[question:], stats=dataset("stats")["cards"],
         data_intro=data[:figure_one], figure_one=data[figure_one:figure_two],
@@ -273,11 +273,15 @@ def home(lang):
 def article(lang, page, prefix):
     entries, lookup = references()
     context = page_context(lang, page)
+    body = renderer(lookup, context)(blocks(prefix, lang))
+    if page == "methods":
+        rule = list(blocks("02", lang))[2:6]
+        body += Markup('<section id="score-rule">') + renderer(lookup, context)(rule) + Markup("</section>")
     return templates.get_template("article.html").render(
         **context,
         title=context["t"](page + "_title"),
         entries=entries if page == "methods" else None,
-        body=renderer(lookup, context)(blocks(prefix, lang)),
+        body=body,
     )
 
 
