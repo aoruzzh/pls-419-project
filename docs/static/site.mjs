@@ -230,5 +230,5 @@ if (!motion.matches && 'IntersectionObserver' in window) {
       }
     }
   });
-  document.querySelectorAll('.chapter-heading, .economy-card, .record-guide, .chart-card, .simulator, .decision-flow, .prototype-grid, .source-plot, .contributions .panel, .methods-intro .panel, .regional, .verdict-grid').forEach(block => observer.observe(block));
+  document.querySelectorAll('.data-opener, .chapter-heading, .economy-card, .record-guide, .chart-card, .simulator, .decision-flow, .prototype-grid, .source-plot, .contributions .panel, .methods-intro .panel, .regional, .verdict-grid').forEach(block => observer.observe(block));
 }

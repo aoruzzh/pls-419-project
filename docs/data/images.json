@@ -1,0 +1,62 @@
+{
+  "family": {
+    "alt": "family_alt",
+    "width": 1280,
+    "height": 853,
+    "generated": true,
+    "credit": "OpenAI ImageGen",
+    "source": null,
+    "licence": null,
+    "licence_url": null
+  },
+  "market": {
+    "alt": "market_alt",
+    "width": 1250,
+    "height": 703,
+    "generated": true,
+    "credit": "OpenAI ImageGen",
+    "source": null,
+    "licence": null,
+    "licence_url": null
+  },
+  "consultation": {
+    "alt": "consult_alt",
+    "width": 1120,
+    "height": 630,
+    "generated": true,
+    "credit": "OpenAI ImageGen",
+    "source": null,
+    "licence": null,
+    "licence_url": null
+  },
+  "astana": {
+    "alt": "astana_alt",
+    "width": 1536,
+    "height": 1024,
+    "generated": true,
+    "credit": "OpenAI ImageGen",
+    "source": null,
+    "licence": null,
+    "licence_url": null
+  },
+  "centre": {
+    "alt": "centre_alt",
+    "width": 1600,
+    "height": 1200,
+    "generated": false,
+    "credit": "MarchHare1977",
+    "source": "https://commons.wikimedia.org/wiki/File:%D0%A6%D0%9E%D0%9D%D0%90%D1%83%D1%8D%D0%B7%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%D0%A0%D0%B0%D0%B9%D0%BE%D0%BD%D0%A3%D0%BB%D0%B8%D1%86%D0%B0%D0%94%D0%B6%D0%B0%D0%BD%D0%B4%D0%BE%D1%81%D0%BE%D0%B2%D0%B0%D0%90%D0%BB%D0%BC%D0%B0%D0%90%D1%82%D0%B0%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D0%9E%D0%BA%D1%82%D1%8F%D0%B1%D1%80%D1%8C2014.JPG",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "bazaar": {
+    "alt": "bazaar_alt",
+    "width": 3865,
+    "height": 2268,
+    "generated": false,
+    "credit": "Bgag",
+    "source": "https://commons.wikimedia.org/wiki/File:Green_Market,_Almaty.jpg",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  }
+}

@@ -1,3 +1,6 @@
+@font-face { font-family: "Noto Sans"; src: url("fonts/notosans.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Noto Serif"; src: url("fonts/notoserif.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Noto Sans Mono"; src: url("fonts/notosansmono.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
 :root {
   color-scheme: light;
   --ink: #173334;
@@ -9,9 +12,9 @@
   --blue-soft: #e0eeea;
   --amber: #933a25;
   --amber-soft: #f8e9e0;
-  --sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
-  --serif: Georgia, "Times New Roman", serif;
-  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+  --sans: "Noto Sans", sans-serif;
+  --serif: "Noto Serif", serif;
+  --mono: "Noto Sans Mono", monospace;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
@@ -408,3 +411,34 @@ figcaption { margin-top: 1.2rem; }
 @media (max-width: 760px) {
   .source-heading, .service-intro, .methods-intro, .contributions { grid-template-columns: minmax(0,1fr); }
 }
+
+.site-photo { position: relative; overflow: hidden; margin: 0; border-radius: .55rem; }
+.site-photo picture, .site-photo img { display: block; width: 100%; }
+.site-photo img { object-fit: cover; }
+.site-photo figcaption {
+  position: absolute; inset: auto .5rem .5rem auto; margin: 0; padding: .22rem .48rem;
+  background: #07313ded; color: #fff; border-radius: .25rem; font: 500 .72rem/1.4 var(--sans);
+}
+.site-photo figcaption a { color: inherit; }
+.market-image, .skyline { position: absolute; inset: 0; border-radius: 0; }
+.market-image figcaption { z-index: 1; inset: .5rem .5rem auto auto; }
+.skyline img, .skyline picture { height: 100%; }
+.source-image img { height: clamp(13rem,24vw,21rem); }
+#data { padding-top: 0; }
+.data-opener { position: relative; isolation: isolate; margin-bottom: 2rem; }
+.data-opener .skyline { z-index: -1; }
+.skyline picture::after { position: absolute; content: ""; inset: 0; background: linear-gradient(90deg,#042d40ee,#073448a3); }
+.data-opener .chapter-heading { max-width: 1200px; padding-block: clamp(4rem,8vw,8rem); color: white; }
+.data-opener .eyebrow { color: #ffda71; }
+.bazaar-image { margin-bottom: 1.4rem; }
+.bazaar-image img { height: clamp(10rem,19vw,15rem); }
+@media (prefers-reduced-motion: no-preference) {
+  .skyline img { animation: photo-pan 12s ease-out both; animation-play-state: paused; }
+  .data-opener.enter-view .skyline img { animation-play-state: running; }
+  @keyframes photo-pan { from { transform: scale(1); } to { transform: scale(1.05); } }
+}
+.hero-image { min-width: 0; }
+.market-overlay { pointer-events: none; }
+.hero-grid > :first-child { min-width: 0; }
+:lang(kk) .hero h1 { font-size: clamp(2.55rem, 4.5vw, 4.3rem); overflow-wrap: anywhere; }
+@media (min-width: 1051px) { .menu-button { display: none; } }

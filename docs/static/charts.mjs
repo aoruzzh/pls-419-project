@@ -3,7 +3,9 @@ import { incomeOptions, projectBenefit, referenceFamily, scoreFamily } from './s
 import { messages, text } from './locale.mjs';
 
 const number = new Intl.NumberFormat(document.documentElement.lang);
-const fmt = (value) => number.format(value);
+const fmt = (value) => number.formatToParts(value).map(part =>
+  part.type === 'group' && document.documentElement.lang !== 'en' ? '\u202f' : part.value
+).join('');
 const money = (value) => `${fmt(value)} ₸`;
 const $ = (id) => document.getElementById(id);
 const blue = '#065451';
@@ -24,7 +26,7 @@ function chart(canvas, { xDomain, yDomain, xTicks, yTicks, formatX, formatY }) {
   const bottom = height - 28;
   const x = (value) => left + (value - xDomain[0]) / (xDomain[1] - xDomain[0]) * (right - left);
   const y = (value) => bottom - (value - yDomain[0]) / (yDomain[1] - yDomain[0]) * (bottom - top);
-  ctx.font = `${compact ? 11 : 12}px ui-monospace, monospace`;
+  ctx.font = `${compact ? 11 : 12}px "Noto Sans Mono", monospace`;
   ctx.fillStyle = '#46546a';
   ctx.textBaseline = 'middle';
   ctx.textAlign = 'right';
