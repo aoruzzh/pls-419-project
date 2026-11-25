@@ -1,15 +1,35 @@
 {% extends "base.html" %}
 {% block title %}{{ title }} · {{ t('brand') }}{% endblock %}
 {% block main %}
-<article class="shell article-page">
-  <a class="text-link" href="{{ urls.home }}">{{ t('brand') }}</a>
-  <h1>{{ title }}</h1>
-  <div class="prose">{{ body }}</div>
-  {% if entries %}
-  <p class="file-links"><a href="{{ site_root }}/data/scoring_rule.json">{{ t('score_json') }}</a> <a href="{{ site_root }}/data/birth_benefit_real.json">{{ t('benefit_json') }}</a></p>
-  <h2 id="references">{{ t('references') }}</h2>
-  {% if lang != 'en' %}<p>{{ t('source_note') }}</p>{% endif %}
-  <ul class="references">{% for id, reference in entries %}<li id="{{ id }}">{{ reference }}</li>{% endfor %}</ul>
+<article class="source-page">
+  <header class="source-banner"><div class="shell source-heading">
+    <div><a href="{{ urls.home }}">← {{ t('brand') }}</a><h1>{{ title }}</h1>
+      {% if page == 'methods' %}<nav class="source-shortcuts"><a href="#score-rule">{{ rule[0].text }}</a><a href="#references">{{ t('references') }}</a></nav>{% endif %}
+    </div>
+    {% if page == 'methods' %}
+    <figure class="source-plot"><figcaption>{{ t('buying_power') }} · {{ t('prices_2020') }}</figcaption>
+      <div class="source-bars">{% for row in benefit_rows %}
+        <div><span>{{ "{:,}".format(row.real) | replace(",", " ") }} ₸</span><i aria-hidden="true" style="height:{{ 5 * row.real / benefit_rows[0].real }}rem"></i><b>{{ row.year }}</b></div>
+      {% endfor %}</div>
+    </figure>
+    {% else %}
+    <img class="source-photo" src="{{ site_root }}/static/consultation.jpg" alt="{{ t('consult_alt') }}">
+    {% endif %}
+  </div></header>
+  <div class="shell source-content">
+  {% if page == 'methods' %}
+    <div class="methods-intro"><div class="panel prose">{{ render(parts[:1]) }}</div><div class="panel prose">{{ render(parts[1:]) }}</div></div>
+    <section class="panel prose" id="score-rule">{{ render(rule) }}</section>
+    <p class="file-links"><a class="button secondary" href="{{ site_root }}/data/scoring_rule.json">{{ t('score_json') }}</a><a class="button secondary" href="{{ site_root }}/data/birth_benefit_real.json">{{ t('benefit_json') }}</a></p>
+    <h2 id="references">{{ t('references') }}</h2>
+    {% if lang != 'en' %}<p>{{ t('source_note') }}</p>{% endif %}
+    <ul class="references">{% for id, reference in entries %}<li id="{{ id }}">{{ reference }}</li>{% endfor %}</ul>
+  {% else %}
+    <div class="contributions">{% for heading in parts[::2] %}
+      <section class="panel prose"><h2>{{ heading.text }}</h2>{{ render([parts[loop.index0 * 2 + 1]]) }}</section>
+    {% endfor %}</div>
+    <a class="button primary" href="{{ urls.methods }}">{{ t('methods_title') }} →</a>
   {% endif %}
+  </div>
 </article>
 {% endblock %}

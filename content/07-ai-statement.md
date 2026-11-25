@@ -1,6 +1,6 @@
 ## How AI contributed
 
-Claude helped develop the research pack and draft the site copy. Codex generated and checked the static site, built interactive charts and the scoring simulator from the supplied data, translated the site into Kazakh and Russian, and revised the problem statement and design.
+Claude helped develop the research pack and draft the site copy. Codex generated and checked the static site, built interactive charts and the scoring simulator from the supplied data, translated the site into Kazakh and Russian, and revised the problem statement and design. The family portrait, market scene and service-desk image are AI-generated illustrations.
 
 ## Decisions to document
 

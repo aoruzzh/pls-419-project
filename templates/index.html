@@ -22,7 +22,7 @@
       <div class="hero-copy">{{ t('citizen_intro') }}</div>
       <div class="actions"><a class="button primary" href="#simulator">{{ t('go_sim') }}</a><a class="button secondary" href="#record-check">{{ t('check_record') }}</a></div>
     </div>
-    <img class="city-photo" src="{{ site_root }}/static/astana.jpg" alt="" width="1536" height="1024" fetchpriority="high">
+    <img class="family-photo" src="{{ site_root }}/static/family.jpg" alt="{{ t('family_alt') }}" width="1536" height="1024" fetchpriority="high">
 
   </div>
 
@@ -171,7 +171,7 @@
 </section>
 
 <section class="chapter data-section" id="solution"><div class="shell">
-  <header class="chapter-heading"><p class="eyebrow">04 / {{ t('solution_long') }}</p><h2>{{ solution_intro[0].text }}</h2>{{ render(solution_intro[1:2]) }}</header>
+  <header class="chapter-heading service-intro"><div><p class="eyebrow">04 / {{ t('solution_long') }}</p><h2>{{ solution_intro[0].text }}</h2>{{ render(solution_intro[1:2]) }}</div><img src="{{ site_root }}/static/consultation.jpg" loading="lazy" alt="{{ t('consult_alt') }}"></header>
   <div class="pipeline" aria-label="{{ t('workflow') }}">
     <div class="pipeline-step">{{ t('databases') }}</div>
     <details class="pipeline-step tool"><summary>{{ tools[0][2] }}</summary><p>{{ tools[2][2] }}</p><p>{{ tools[4][2] }}</p><p>{{ tools[6][2] }}</p></details>

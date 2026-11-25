@@ -274,15 +274,13 @@ def home(lang):
 def article(lang, page, prefix):
     entries, lookup = references()
     context = page_context(lang, page)
-    body = renderer(lookup, context)(blocks(prefix, lang))
+    parts = list(blocks(prefix, lang))
+    context.update(parts=parts, render=renderer(lookup, context))
     if page == "methods":
-        rule = list(blocks("02", lang))[2:6]
-        body += Markup('<section id="score-rule">') + renderer(lookup, context)(rule) + Markup("</section>")
+        context.update(rule=list(blocks("02", lang))[2:6],
+                       benefit_rows=dataset("birth_benefit_real")["rows"], entries=entries)
     return templates.get_template("article.html").render(
-        **context,
-        title=context["t"](page + "_title"),
-        entries=entries if page == "methods" else None,
-        body=body,
+        **context, title=context["t"](page + "_title"),
     )
 
 

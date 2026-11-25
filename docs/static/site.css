@@ -316,7 +316,7 @@ figcaption { margin-top: 1.2rem; }
   background: #063c51; padding: 0; border-bottom: 5px solid #e9b93e;
 }
 .hero-grid { min-height: clamp(26rem,39vw,38rem); align-items: center; }
-.city-photo { width: 100%; height: clamp(23rem,38vw,35rem); object-fit: cover; object-position: 72% center; border-radius: 4px 4px 3rem 4px; }
+.family-photo { width: 100%; height: clamp(23rem,38vw,35rem); object-fit: cover; object-position: center 42%; border-radius: 4px 4px 3rem 4px; }
 .hero-grid { padding-block: 2rem; }
 .hero-grid > :first-child { padding-block: 1rem; }
 .hero h1 em, .hero .eyebrow { color: #ffda71; }
@@ -355,7 +355,7 @@ figcaption { margin-top: 1.2rem; }
 .record-guide p { margin-top: .7rem; }
 @media (prefers-reduced-motion: no-preference) {
   .hero-grid > :first-child, details[open] > p { animation: enter .65s ease-out both; }
-  .city-photo { animation: photo-enter 1.1s ease-out both; }
+  .family-photo { animation: photo-enter 1.1s ease-out both; }
   .enter-view { animation: enter .75s cubic-bezier(.2,.7,.2,1) both; }
   .economy-card.enter-view i { animation: grow .95s ease-out both; }
   .economy-card.enter-view .buying-row + .buying-row i { animation-delay: .15s; }
@@ -368,6 +368,43 @@ figcaption { margin-top: 1.2rem; }
 @media (max-width: 800px) {
   .hero-grid, .citizen-grid, .economy-card { grid-template-columns: 1fr; }
   .hero-grid { gap: 1rem; }
-  .city-photo { height: clamp(13rem,49vw,23rem); }
+  .family-photo { height: clamp(13rem,49vw,23rem); }
   .market-scene { min-height: clamp(13rem,44vw,21rem); }
+}
+
+.source-banner, .verdict {
+  background: radial-gradient(ellipse at 90% 0%,#107588,transparent 60%),#093948;
+  color: white; border-block-end: 4px solid #e3b747;
+}
+.source-heading, .service-intro {
+  display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(1.5rem,4vw,4rem);
+}
+.source-heading { padding-block: clamp(2rem,5vw,4rem); }
+.source-heading h1 { margin-block: 1.2rem; }
+.source-heading a { color: #ffde85; }
+.source-shortcuts { display: flex; gap: .8rem 1.5rem; flex-wrap: wrap; }
+.source-photo, .service-intro img { width: 100%; height: clamp(13rem,24vw,21rem); object-fit: cover; border-radius: .5rem 2.5rem .5rem .5rem; }
+.source-plot { margin: 0; padding: clamp(.75rem,2.5vw,1.8rem); background: #ffffff10; border: 1px solid #ffffff47; border-radius: 1rem; }
+.source-plot figcaption { margin: 0 0 1.4rem; color: #fff; font-weight: 700; }
+.source-bars { display: flex; justify-content: space-between; gap: .25rem; }
+.source-bars div { flex: 1; display: flex; flex-direction: column; align-items: center; align-self: end; gap: .45rem; }
+.source-bars i { background: linear-gradient(#83e1ea,#2098ab); width: 65%; }
+.source-bars div:last-child i { background: #f2c659; }
+.source-bars span { font-size: clamp(.64rem,1vw,.8rem); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.source-content { padding-block: clamp(2rem,5vw,4rem); }
+.methods-intro, .contributions { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.15rem; margin-bottom: 1.3rem; }
+.source-content .panel { padding: clamp(1.2rem,3vw,2rem); border-top: 4px solid #00788c; }
+.contributions h2 { font-size: clamp(1.6rem,3vw,2.35rem); }
+.contributions .panel:last-child { border-top-color: #c59728; }
+.source-content .references { list-style: none; padding: 0; }
+.source-content .references li { margin: 0; padding: .85rem 1rem; border-bottom: 1px solid var(--line); }
+.source-content .references li:nth-child(odd) { background: #e7f3f4; }
+.source-content .references li:target { outline: 2px solid var(--blue); }
+.service-intro { max-width: none; }
+.service-intro h2 + p { margin-top: .9rem; }
+.research-grid summary { font-weight: 700; }
+.regional { max-width: 85ch; border-inline-start: .35rem solid #d8a931; padding: 1rem 1.5rem; background: #eef7f8; }
+.verdict-grid article { background: #ffffff12; border-color: #ffffff50; border-top: 3px solid #edc559; }
+@media (max-width: 760px) {
+  .source-heading, .service-intro, .methods-intro, .contributions { grid-template-columns: minmax(0,1fr); }
 }
