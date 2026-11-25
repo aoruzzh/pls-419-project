@@ -182,3 +182,8 @@ record_steps|Compare the income period, household members and registered assets 
 buying_power|Purchasing power|Сатып алу қабілеті|Покупательная способность
 family_alt|Three generations of a family sharing tea at home.|Үш ұрпақ бір дастарқан басында шай ішіп отыр.|Три поколения семьи пьют чай за одним столом.
 consult_alt|A parent and a service worker reviewing a document together.|Ата-ана мен қызметкер құжатты бірге қарап отыр.|Родитель и сотрудница службы вместе изучают документ.
+ai_picture|AI-generated illustration|ЖИ жасаған иллюстрация|Иллюстрация, созданная ИИ
+market_alt|A vendor weighs apples at a produce stall.|Сатушы жеміс сөресінде алмаларды өлшеп жатыр.|Продавец взвешивает яблоки у фруктового прилавка.
+centre_alt|Public Service Centre in the Auezov district of Almaty, photographed in 2014.|Алматының Әуезов ауданындағы Халыққа қызмет көрсету орталығы, 2014 жылғы фотосурет.|Центр обслуживания населения в Ауэзовском районе Алматы, снимок 2014 года.
+astana_alt|An illustrated view of Astana’s skyline and the Baiterek monument.|Астана қаласы мен Бәйтерек монументінің көркем бейнесі.|Иллюстрация панорамы Астаны с монументом Байтерек.
+bazaar_alt|Meat stalls in Almaty’s Green Market.|Алматыдағы Көк базардың ет сөрелері.|Мясные прилавки Зелёного базара в Алматы.

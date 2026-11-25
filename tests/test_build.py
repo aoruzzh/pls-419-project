@@ -87,3 +87,25 @@ class StaticBuildTests(TestCase):
                         if destination.fragment:
                             target_page = Page(target.read_text(encoding="utf-8"))
                             self.assertIn(destination.fragment, target_page.ids)
+
+    def test_responsive_photos_and_translated_credits(self):
+        images = json.loads((self.output / "data/images.json").read_text())
+        for name, info in images.items():
+            for width in (640, 1024, 1600):
+                for ext in ("jpg", "avif", "webp"):
+                    asset = self.output / f"static/img/{name}-{width}.{ext}"
+                    self.assertTrue(asset.is_file(), asset)
+                    if ext == "webp":
+                        self.assertLess(asset.stat().st_size, 200000)
+            self.assertTrue(info["credit"])
+            if not info["generated"]:
+                self.assertTrue(info["licence_url"])
+        for prefix, caption in [("", "AI-generated illustration"), ("kk/", "ЖИ жасаған иллюстрация"), ("ru/", "Иллюстрация, созданная ИИ")]:
+            html = (self.output / prefix / "index.html").read_text()
+            self.assertEqual(html.count("<picture>"), len(images))
+            self.assertEqual(html.count(caption), sum(info["generated"] for info in images.values()))
+            self.assertIn('width="1250" height="703" alt="', html)
+            self.assertNotIn('height="703" alt=""', html)
+            self.assertIn("110\u202f846" if prefix else "110,846", html)
+            for name in images:
+                self.assertIn(f"{name}-1600.avif 1600w", html)

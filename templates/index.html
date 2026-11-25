@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "photos.html" import photo with context %}
 {% macro source() %}<p class="source">{{ t("source_rule") }} <a href="{{ urls.methods }}#references">{{ t("sources") }}</a></p>{% endmacro %}
 {% macro scale(id) %}
 <div class="score-scale" data-scale="{{ id }}" aria-label="{{ t('scale') }}">
@@ -22,7 +23,7 @@
       <div class="hero-copy">{{ t('citizen_intro') }}</div>
       <div class="actions"><a class="button primary" href="#simulator">{{ t('go_sim') }}</a><a class="button secondary" href="#record-check">{{ t('check_record') }}</a></div>
     </div>
-    <img class="family-photo" src="{{ site_root }}/static/family.jpg" alt="{{ t('family_alt') }}" width="1536" height="1024" fetchpriority="high">
+    {{ photo('family', '(max-width: 850px) 100vw, 50vw', 'hero-image', true) }}
 
   </div>
 
@@ -32,7 +33,7 @@
 </nav></div>
 
 <section class="chapter shell" id="problem">
-  <header class="chapter-heading"><p class="eyebrow">01 / {{ t('problem') }}</p><h2>{{ problem[0].text }}</h2></header>
+  <header class="chapter-heading service-intro"><div><p class="eyebrow">01 / {{ t('problem') }}</p><h2>{{ problem[0].text }}</h2></div>{{ photo('centre', '(max-width: 760px) 100vw, 50vw') }}</header>
   <div class="issue-lead prose">{{ render(problem[1:2]) }}</div>
   <div class="citizen-grid">
     <aside class="case-file" aria-labelledby="sample-title">
@@ -62,7 +63,7 @@
   </div>
   <figure class="economy-card" aria-labelledby="buying-title">
     <div class="market-scene">
-      <img src="{{ site_root }}/static/market.jpg" alt="" loading="lazy" width="1536" height="1024">
+      {{ photo('market', '(max-width: 800px) 100vw, 45vw', 'market-image') }}
       <div class="market-overlay"><strong>−{{ purchasing_loss }}%</strong><span>{{ t('buying_power') }}<br>2021–2026</span></div>
     </div>
     <div class="economy-body">
@@ -70,7 +71,7 @@
       <p class="unit">{{ t('prices_2020') }}</p>
       {% for row in economy_rows %}
       <div class="buying-row">
-        <div class="amount-line"><span>{{ row.year }}</span><strong>{{ "{:,}".format(row.real) | replace(",", " ") }} ₸</strong></div>
+        <div class="amount-line"><span>{{ row.year }}</span><strong>{{ grouped(row.real) }} ₸</strong></div>
         <div class="bar-track" aria-hidden="true"><i style="width:{{ 100 * row.real / economy_rows[0].real }}%"></i></div>
       </div>
       {% endfor %}
@@ -93,8 +94,8 @@
     <aside class="question prose">{{ render(question) }}</aside></div>
 </section>
 
-<section class="chapter data-section" id="data"><div class="shell">
-  <header class="chapter-heading"><p class="eyebrow">02 / {{ t('data_long') }}</p><h2>{{ data_intro[0].text }}</h2></header>
+<section class="chapter data-section" id="data"><div class="data-opener">{{ photo('astana', '100vw', 'skyline') }}
+  <header class="chapter-heading shell"><p class="eyebrow">02 / {{ t('data_long') }}</p><h2>{{ data_intro[0].text }}</h2></header></div><div class="shell">
   <div class="prose reading-width">{{ render(data_intro[1:2]) }}</div>
   <div class="panel score-demo">
     <div><h3>{{ t('how_score') }}</h3><p>{{ t('score_intro') }}</p>
@@ -146,6 +147,7 @@
   </section>
 
   <figure class="panel chart-card" id="inflation">
+    {{ photo('bazaar', '(max-width: 1200px) 100vw, 1200px', 'bazaar-image') }}
     {{ render(figure_two[:1]) }}
     <div class="chart-toolbar"><div><label for="price-view">{{ t('prices') }}</label><select id="price-view"><option value="2020">{{ t('prices_2020') }}</option><option value="2026">{{ t('prices_2026') }}</option></select></div>
     <div class="chart-key"><span class="nominal-key">{{ t('nominal') }}</span><span class="real-key" id="real-key">{{ t('real') }}</span></div></div>
@@ -171,7 +173,7 @@
 </section>
 
 <section class="chapter data-section" id="solution"><div class="shell">
-  <header class="chapter-heading service-intro"><div><p class="eyebrow">04 / {{ t('solution_long') }}</p><h2>{{ solution_intro[0].text }}</h2>{{ render(solution_intro[1:2]) }}</div><img src="{{ site_root }}/static/consultation.jpg" loading="lazy" alt="{{ t('consult_alt') }}"></header>
+  <header class="chapter-heading service-intro"><div><p class="eyebrow">04 / {{ t('solution_long') }}</p><h2>{{ solution_intro[0].text }}</h2>{{ render(solution_intro[1:2]) }}</div>{{ photo('consultation', '(max-width: 760px) 100vw, 50vw') }}</header>
   <div class="pipeline" aria-label="{{ t('workflow') }}">
     <div class="pipeline-step">{{ t('databases') }}</div>
     <details class="pipeline-step tool"><summary>{{ tools[0][2] }}</summary><p>{{ tools[2][2] }}</p><p>{{ tools[4][2] }}</p><p>{{ tools[6][2] }}</p></details>

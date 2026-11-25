@@ -40,13 +40,21 @@ def href(lang, page, target_lang, target_page):
     return path + "/"
 
 
+def local_spacing(value, lang):
+    if lang == "en":
+        return value
+    return re.sub(r"(?<=\d)[ \u00a0](?=\d{3}(?!\d))", "\u202f", value)
+
+
 def page_context(lang, page):
     def text(key):
-        return UI[key][lang]
+        return local_spacing(UI[key][lang], lang)
 
     return {
         "lang": lang,
         "page": page,
+        "images": dataset("images"),
+        "grouped": lambda value: f"{value:,}".replace(",", "," if lang == "en" else "\u202f"),
         "site_root": relpath(".", location(lang, page)),
         "urls": {target: href(lang, page, lang, target) for target in PAGES},
         "languages": [(code, title, href(lang, page, code, page)) for code, title in LANGUAGES.items()],
@@ -90,7 +98,7 @@ def read_content(prefix, lang="en"):
     directory = ROOT / "content"
     if lang != "en":
         directory /= lang
-    return next(directory.glob(f"{prefix}-*.md")).read_text(encoding="utf-8").strip()
+    return local_spacing(next(directory.glob(f"{prefix}-*.md")).read_text(encoding="utf-8").strip(), lang)
 
 
 def dataset(name):
@@ -246,11 +254,10 @@ def home(lang):
     offsets = rule["employment"]["2+"] + rule["children"]["1"]
     close_cases = [(key, threshold + delta, rule["income_bands_per_person"][band]["points"] + offsets, category)
                    for key, delta, band, category in (("below", -1, -2, "C"), ("at", 0, -1, "B"))]
-    grouped = lambda value: f"{value:,}" if lang == "en" else f"{value:,}".replace(",", "\u202f")
     context["messages"]["incomeBands"] = [text(f"income_band_{i}") for i in range(len(rule["income_bands_per_person"]))]
 
     return templates.get_template("index.html").render(
-        **context, lookup=lookup, render=renderer(lookup, context), grouped=grouped, close_cases=close_cases,
+        **context, lookup=lookup, render=renderer(lookup, context), close_cases=close_cases,
         purchasing_loss=round(100 * (1 - benefit["rows"][-1]["real"] / benefit["rows"][0]["real"])),
         economy_rows=[benefit["rows"][0], benefit["rows"][-1]], historical_benefit=benefit["rows"][-1]["nominal"],
         hook=hook, problem=problem[:affected], affected=problem[affected:question],

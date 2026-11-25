@@ -1,0 +1,13 @@
+{% macro photo(key, sizes, style='', priority=false) %}
+  {% set image = images[key] %}
+  {% set base = site_root ~ '/static/img/' ~ key ~ '-' %}
+  <figure class="site-photo {{ style }}">
+    <picture>
+      {% for format in ['avif','webp'] %}
+      <source type="image/{{ format }}" sizes="{{ sizes }}" srcset="{{ base }}640.{{ format }} 640w, {{ base }}1024.{{ format }} 1024w, {{ base }}1600.{{ format }} 1600w">
+      {% endfor %}
+      <img src="{{ base }}1024.jpg" sizes="{{ sizes }}" srcset="{{ base }}640.jpg 640w, {{ base }}1024.jpg 1024w, {{ base }}1600.jpg 1600w" width="{{ image.width }}" height="{{ image.height }}" alt="{{ t(image.alt) }}" {% if priority %}class="family-photo" fetchpriority="high"{% else %}loading="lazy"{% endif %}>
+    </picture>
+    <figcaption>{% if image.generated %}{{ t('ai_picture') }} · {{ image.credit }}{% else %}<a href="{{ image.source }}">{{ image.credit }}</a> · <a href="{{ image.licence_url }}">{{ image.licence }}</a>{% endif %}</figcaption>
+  </figure>
+{% endmacro %}

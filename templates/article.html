@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "photos.html" import photo with context %}
 {% block title %}{{ title }} · {{ t('brand') }}{% endblock %}
 {% block main %}
 <article class="source-page">
@@ -9,11 +10,11 @@
     {% if page == 'methods' %}
     <figure class="source-plot"><figcaption>{{ t('buying_power') }} · {{ t('prices_2020') }}</figcaption>
       <div class="source-bars">{% for row in benefit_rows %}
-        <div><span>{{ "{:,}".format(row.real) | replace(",", " ") }} ₸</span><i aria-hidden="true" style="height:{{ 5 * row.real / benefit_rows[0].real }}rem"></i><b>{{ row.year }}</b></div>
+        <div><span>{{ grouped(row.real) }} ₸</span><i aria-hidden="true" style="height:{{ 5 * row.real / benefit_rows[0].real }}rem"></i><b>{{ row.year }}</b></div>
       {% endfor %}</div>
     </figure>
     {% else %}
-    <img class="source-photo" src="{{ site_root }}/static/consultation.jpg" alt="{{ t('consult_alt') }}">
+    {{ photo('consultation', '(max-width: 760px) 100vw, 50vw', 'source-image') }}
     {% endif %}
   </div></header>
   <div class="shell source-content">
